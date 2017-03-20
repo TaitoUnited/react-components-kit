@@ -7376,9 +7376,37 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = colorGetter;
+
+var _defaultTheme = __webpack_require__(3);
+
+var defaultTheme = _interopRequireWildcard(_defaultTheme);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+/* colorGetter =======
+ *
+ * We can use this helper function to grab given color value from either
+ * the theme object if it is defined or the default theme variables.
+ */
+
+function colorGetter(props, colorName) {
+  return props.theme ? props.theme[colorName] || defaultTheme[colorName] : defaultTheme[colorName];
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.successColorDarkest = exports.successColorDarker = exports.successColorDark = exports.successColorLightest = exports.successColorLighter = exports.successColorLight = exports.successColor = exports.successBaseColor = exports.errorColorDarkest = exports.errorColorDarker = exports.errorColorDark = exports.errorColorLightest = exports.errorColorLighter = exports.errorColorLight = exports.errorColor = exports.errorBaseColor = exports.secondaryColorDarkest = exports.secondaryColorDarker = exports.secondaryColorDark = exports.secondaryColorLightest = exports.secondaryColorLighter = exports.secondaryColorLight = exports.secondaryColor = exports.secondaryBaseColor = exports.primaryColorDarkest = exports.primaryColorDarker = exports.primaryColorDark = exports.primaryColorLightest = exports.primaryColorLighter = exports.primaryColorLight = exports.primaryColor = exports.primaryBaseColor = exports.greyDarkest = exports.greyDarker = exports.greyDark = exports.greyLight = exports.greyLighter = exports.greyLightest = exports.textColorLight = exports.textColorDark = exports.infoColor = exports.warnColor = undefined;
 
-var _color = __webpack_require__(32);
+var _color = __webpack_require__(34);
 
 var _color2 = _interopRequireDefault(_color);
 
@@ -7446,7 +7474,7 @@ var successColorDarkest = exports.successColorDarkest = (0, _color2.default)(bas
 /* eslint-enable max-len */
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7455,8 +7483,11 @@ var successColorDarkest = exports.successColorDarkest = (0, _color2.default)(bas
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.withRipple = exports.media = exports.Box = exports.Layout = exports.Heading = exports.Text = exports.Badge = exports.ToggleSwitch = exports.PlaceholderRows = exports.CircleProgress = exports.ContentEditable = exports.Spinner = exports.Tooltip = exports.LineSeparator = exports.Icon = exports.LoadingOverlay = exports.CardAnimated = exports.Card = exports.Select = exports.FormControl = exports.Textarea = exports.Input = exports.Padder = exports.IconButton = exports.Button = exports.defaultTheme = undefined;
 
-var _Button = __webpack_require__(8);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _Button = __webpack_require__(11);
 
 Object.defineProperty(exports, 'Button', {
   enumerable: true,
@@ -7465,7 +7496,7 @@ Object.defineProperty(exports, 'Button', {
   }
 });
 
-var _IconButton = __webpack_require__(14);
+var _IconButton = __webpack_require__(17);
 
 Object.defineProperty(exports, 'IconButton', {
   enumerable: true,
@@ -7474,7 +7505,7 @@ Object.defineProperty(exports, 'IconButton', {
   }
 });
 
-var _Padder = __webpack_require__(19);
+var _Padder = __webpack_require__(22);
 
 Object.defineProperty(exports, 'Padder', {
   enumerable: true,
@@ -7483,7 +7514,7 @@ Object.defineProperty(exports, 'Padder', {
   }
 });
 
-var _Input = __webpack_require__(15);
+var _Input = __webpack_require__(18);
 
 Object.defineProperty(exports, 'Input', {
   enumerable: true,
@@ -7492,7 +7523,7 @@ Object.defineProperty(exports, 'Input', {
   }
 });
 
-var _Textarea = __webpack_require__(25);
+var _Textarea = __webpack_require__(28);
 
 Object.defineProperty(exports, 'Textarea', {
   enumerable: true,
@@ -7501,7 +7532,7 @@ Object.defineProperty(exports, 'Textarea', {
   }
 });
 
-var _FormControl = __webpack_require__(12);
+var _FormControl = __webpack_require__(15);
 
 Object.defineProperty(exports, 'FormControl', {
   enumerable: true,
@@ -7510,7 +7541,7 @@ Object.defineProperty(exports, 'FormControl', {
   }
 });
 
-var _Select = __webpack_require__(21);
+var _Select = __webpack_require__(24);
 
 Object.defineProperty(exports, 'Select', {
   enumerable: true,
@@ -7519,7 +7550,7 @@ Object.defineProperty(exports, 'Select', {
   }
 });
 
-var _Card = __webpack_require__(9);
+var _Card = __webpack_require__(12);
 
 Object.defineProperty(exports, 'Card', {
   enumerable: true,
@@ -7534,7 +7565,7 @@ Object.defineProperty(exports, 'CardAnimated', {
   }
 });
 
-var _LoadingOverlay = __webpack_require__(18);
+var _LoadingOverlay = __webpack_require__(21);
 
 Object.defineProperty(exports, 'LoadingOverlay', {
   enumerable: true,
@@ -7543,7 +7574,7 @@ Object.defineProperty(exports, 'LoadingOverlay', {
   }
 });
 
-var _Icon = __webpack_require__(5);
+var _Icon = __webpack_require__(6);
 
 Object.defineProperty(exports, 'Icon', {
   enumerable: true,
@@ -7552,7 +7583,7 @@ Object.defineProperty(exports, 'Icon', {
   }
 });
 
-var _LineSeparator = __webpack_require__(17);
+var _LineSeparator = __webpack_require__(20);
 
 Object.defineProperty(exports, 'LineSeparator', {
   enumerable: true,
@@ -7561,7 +7592,7 @@ Object.defineProperty(exports, 'LineSeparator', {
   }
 });
 
-var _Tooltip = __webpack_require__(26);
+var _Tooltip = __webpack_require__(30);
 
 Object.defineProperty(exports, 'Tooltip', {
   enumerable: true,
@@ -7570,7 +7601,7 @@ Object.defineProperty(exports, 'Tooltip', {
   }
 });
 
-var _Spinner = __webpack_require__(22);
+var _Spinner = __webpack_require__(25);
 
 Object.defineProperty(exports, 'Spinner', {
   enumerable: true,
@@ -7579,7 +7610,7 @@ Object.defineProperty(exports, 'Spinner', {
   }
 });
 
-var _ContentEditable = __webpack_require__(11);
+var _ContentEditable = __webpack_require__(14);
 
 Object.defineProperty(exports, 'ContentEditable', {
   enumerable: true,
@@ -7588,7 +7619,7 @@ Object.defineProperty(exports, 'ContentEditable', {
   }
 });
 
-var _CircleProgress = __webpack_require__(10);
+var _CircleProgress = __webpack_require__(13);
 
 Object.defineProperty(exports, 'CircleProgress', {
   enumerable: true,
@@ -7597,7 +7628,7 @@ Object.defineProperty(exports, 'CircleProgress', {
   }
 });
 
-var _PlaceholderRows = __webpack_require__(20);
+var _PlaceholderRows = __webpack_require__(23);
 
 Object.defineProperty(exports, 'PlaceholderRows', {
   enumerable: true,
@@ -7606,7 +7637,25 @@ Object.defineProperty(exports, 'PlaceholderRows', {
   }
 });
 
-var _Text = __webpack_require__(24);
+var _ToggleSwitch = __webpack_require__(29);
+
+Object.defineProperty(exports, 'ToggleSwitch', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ToggleSwitch).default;
+  }
+});
+
+var _Badge = __webpack_require__(10);
+
+Object.defineProperty(exports, 'Badge', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Badge).default;
+  }
+});
+
+var _Text = __webpack_require__(27);
 
 Object.defineProperty(exports, 'Text', {
   enumerable: true,
@@ -7615,7 +7664,7 @@ Object.defineProperty(exports, 'Text', {
   }
 });
 
-var _Heading = __webpack_require__(13);
+var _Heading = __webpack_require__(16);
 
 Object.defineProperty(exports, 'Heading', {
   enumerable: true,
@@ -7624,16 +7673,7 @@ Object.defineProperty(exports, 'Heading', {
   }
 });
 
-var _media = __webpack_require__(4);
-
-Object.defineProperty(exports, 'media', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_media).default;
-  }
-});
-
-var _Layout = __webpack_require__(16);
+var _Layout = __webpack_require__(19);
 
 Object.defineProperty(exports, 'Layout', {
   enumerable: true,
@@ -7648,10 +7688,38 @@ Object.defineProperty(exports, 'Box', {
   }
 });
 
+var _media = __webpack_require__(5);
+
+Object.defineProperty(exports, 'media', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_media).default;
+  }
+});
+
+var _withRipple = __webpack_require__(7);
+
+Object.defineProperty(exports, 'withRipple', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_withRipple).default;
+  }
+});
+
+var _defaultTheme = __webpack_require__(3);
+
+var dt = _interopRequireWildcard(_defaultTheme);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var defaultTheme = exports.defaultTheme = _extends({}, dt);
+
+// Re-export for easier importing in other components
+
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7689,7 +7757,7 @@ exports.default = media;
 /* eslint-enable no-param-reassign */
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7724,11 +7792,75 @@ var Icon = _styledComponents2.default.i(_templateObject, function (props) {
 exports.default = Icon;
 
 /***/ }),
-/* 6 */
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:after {\n    content: "";\n    display: block;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    pointer-events: none;\n    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);\n    background-repeat: no-repeat;\n    background-position: 50%;\n    transform: scale(10,10);\n    opacity: 0;\n    transition: transform .5s, opacity 1s;\n  }\n\n  &:active:after {\n    transform: scale(0,0);\n    opacity: .2;\n    transition: 0s;\n  }\n'], ['\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n\n  &:after {\n    content: "";\n    display: block;\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    pointer-events: none;\n    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);\n    background-repeat: no-repeat;\n    background-position: 50%;\n    transform: scale(10,10);\n    opacity: 0;\n    transition: transform .5s, opacity 1s;\n  }\n\n  &:active:after {\n    transform: scale(0,0);\n    opacity: .2;\n    transition: 0s;\n  }\n']);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styledComponents = __webpack_require__(0);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var RippleWrapper = _styledComponents2.default.div(_templateObject);
+
+/* eslint-disable react/prefer-stateless-function */
+var withRipple = function withRipple(Comp) {
+  return function (_Component) {
+    _inherits(RippleProvider, _Component);
+
+    function RippleProvider() {
+      _classCallCheck(this, RippleProvider);
+
+      return _possibleConstructorReturn(this, (RippleProvider.__proto__ || Object.getPrototypeOf(RippleProvider)).apply(this, arguments));
+    }
+
+    _createClass(RippleProvider, [{
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
+          RippleWrapper,
+          null,
+          _react2.default.createElement(Comp, this.props)
+        );
+      }
+    }]);
+
+    return RippleProvider;
+  }(_react.Component);
+};
+/* eslint-enable react/prefer-stateless-function */
+
+exports.default = withRipple;
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var cssKeywords = __webpack_require__(7);
+var cssKeywords = __webpack_require__(9);
 
 // NOTE: conversions should only return primitive values (i.e. arrays, or
 //       values that give correct `typeof` results).
@@ -8591,7 +8723,7 @@ convert.rgb.gray = function (rgb) {
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -8746,7 +8878,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8756,8 +8888,72 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  outline: none;\n  font-size: 1rem;\n  padding: 8px 16px;\n  font-weight: normal;\n  width: ', ';\n  margin: ', ';\n  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);\n  border-style: solid;\n  border-width: ', ';\n  border-radius: 4px;\n  border-color: ', ';\n  color: ', ';\n  ', '\n  ', ';\n  ', ';\n  ', '\n  ', '\n  ', '\n  ', '\n\n  &:hover {\n    background: ', ';\n    ', '\n    cursor: pointer;\n  }\n  &:active {\n    background: ', ';\n    color: ', ';\n  }\n'], ['\n  outline: none;\n  font-size: 1rem;\n  padding: 8px 16px;\n  font-weight: normal;\n  width: ', ';\n  margin: ', ';\n  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);\n  border-style: solid;\n  border-width: ', ';\n  border-radius: 4px;\n  border-color: ', ';\n  color: ', ';\n  ', '\n  ', ';\n  ', ';\n  ', '\n  ', '\n  ', '\n  ', '\n\n  &:hover {\n    background: ', ';\n    ', '\n    cursor: pointer;\n  }\n  &:active {\n    background: ', ';\n    color: ', ';\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n'], ['\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  align-items: center;\n  background-color: ', ';\n  border: 1px solid ', ';\n  color: ', ';\n  font-size: 0.7rem;\n  border-radius: 4px;\n  height: 22px;\n  padding: 0px 6px;\n  ', '\n  ', '\n'], ['\n  display: flex;\n  align-items: center;\n  background-color: ', ';\n  border: 1px solid ', ';\n  color: ', ';\n  font-size: 0.7rem;\n  border-radius: 4px;\n  height: 22px;\n  padding: 0px 6px;\n  ', '\n  ', '\n']);
+
+var _styledComponents = __webpack_require__(0);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _colorGetter = __webpack_require__(2);
+
+var _colorGetter2 = _interopRequireDefault(_colorGetter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); } // import React from 'react';
+
+
+var getBgColor = function getBgColor(props) {
+  if (props.primary) return (0, _colorGetter2.default)(props, 'primaryColorLightest');
+  if (props.secondary) return (0, _colorGetter2.default)(props, 'secondaryColorLightest');
+  if (props.error) return (0, _colorGetter2.default)(props, 'errorColorLightest');
+  if (props.success) return (0, _colorGetter2.default)(props, 'successColorLightest');
+  return (0, _colorGetter2.default)(props, 'greyLightest');
+};
+
+var getBorderColor = function getBorderColor(props) {
+  if (props.primary) return (0, _colorGetter2.default)(props, 'primaryColor');
+  if (props.secondary) return (0, _colorGetter2.default)(props, 'secondaryColor');
+  if (props.error) return (0, _colorGetter2.default)(props, 'errorColor');
+  if (props.success) return (0, _colorGetter2.default)(props, 'successColor');
+  return (0, _colorGetter2.default)(props, 'greyDark');
+};
+
+var getColor = function getColor(props) {
+  if (props.primary) return (0, _colorGetter2.default)(props, 'primaryColorDarker');
+  if (props.secondary) return (0, _colorGetter2.default)(props, 'secondaryColorDarker');
+  if (props.error) return (0, _colorGetter2.default)(props, 'errorColorDarker');
+  if (props.success) return (0, _colorGetter2.default)(props, 'successColorDarker');
+  return (0, _colorGetter2.default)(props, 'greyDarker');
+};
+
+var Badge = _styledComponents2.default.div(_templateObject, function (props) {
+  return getBgColor(props);
+}, function (props) {
+  return getBorderColor(props);
+}, function (props) {
+  return getColor(props);
+}, function (props) {
+  return props.mleft && 'margin-left: ' + props.mleft + ';';
+}, function (props) {
+  return props.mright && 'margin-right: ' + props.mright + ';';
+});
+
+exports.default = Badge;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['\n  outline: none;\n  font-size: 1rem;\n  padding: 8px 16px;\n  font-weight: normal;\n  width: ', ';\n  margin: ', ';\n  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);\n  border-style: solid;\n  border-width: ', ';\n  border-radius: 4px;\n  border-color: ', ';\n  color: ', ';\n  ', '\n  ', ';\n  ', ';\n  ', '\n  ', '\n  ', '\n  ', '\n\n  &:hover {\n    background: ', ';\n    ', '\n    ', '\n  }\n  &:active {\n    background: ', ';\n    color: ', ';\n  }\n'], ['\n  outline: none;\n  font-size: 1rem;\n  padding: 8px 16px;\n  font-weight: normal;\n  width: ', ';\n  margin: ', ';\n  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);\n  border-style: solid;\n  border-width: ', ';\n  border-radius: 4px;\n  border-color: ', ';\n  color: ', ';\n  ', '\n  ', ';\n  ', ';\n  ', '\n  ', '\n  ', '\n  ', '\n\n  &:hover {\n    background: ', ';\n    ', '\n    ', '\n  }\n  &:active {\n    background: ', ';\n    color: ', ';\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  ', ';\n'], ['\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  ', ';\n']);
 
 var _react = __webpack_require__(1);
 
@@ -8767,7 +8963,13 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _colorGetter = __webpack_require__(2);
+
+var _colorGetter2 = _interopRequireDefault(_colorGetter);
+
+var _withRipple = __webpack_require__(7);
+
+var _withRipple2 = _interopRequireDefault(_withRipple);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8776,21 +8978,21 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function getBgColor(props) {
-  var color = _defaultTheme.primaryColor;
-  var colorDark = _defaultTheme.primaryColorDark;
+  var color = (0, _colorGetter2.default)(props, 'primaryColor');
+  var colorDark = (0, _colorGetter2.default)(props, 'primaryColorDark');
 
   // Determine color based on props
   if (props.secondary) {
-    color = _defaultTheme.secondaryColor;
-    colorDark = _defaultTheme.secondaryColorDark;
+    color = (0, _colorGetter2.default)(props, 'secondaryColor');
+    colorDark = (0, _colorGetter2.default)(props, 'secondaryColorDark');
   }
   if (props.danger) {
-    color = _defaultTheme.errorColor;
-    colorDark = _defaultTheme.errorColorDark;
+    color = (0, _colorGetter2.default)(props, 'errorColor');
+    colorDark = (0, _colorGetter2.default)(props, 'errorColorDark');
   }
   if (props.success) {
-    color = _defaultTheme.successColor;
-    colorDark = _defaultTheme.successColorDark;
+    color = (0, _colorGetter2.default)(props, 'successColor');
+    colorDark = (0, _colorGetter2.default)(props, 'successColorDark');
   }
   if (props.outline || props.clear) {
     color = 'transparent';
@@ -8803,30 +9005,30 @@ function getBgColor(props) {
 }
 
 function getHoverColor(props) {
-  var color = _defaultTheme.primaryColorDark;
-  if (props.secondary) color = _defaultTheme.secondaryColorDark;
-  if (props.danger) color = _defaultTheme.errorColorDark;
-  if (props.success) color = _defaultTheme.successColorDark;
+  var color = (0, _colorGetter2.default)(props, 'primaryColorDark');
+  if (props.secondary) color = (0, _colorGetter2.default)(props, 'secondaryColorDark');
+  if (props.danger) color = (0, _colorGetter2.default)(props, 'errorColorDark');
+  if (props.success) color = (0, _colorGetter2.default)(props, 'successColorDark');
   if (props.clear) color = 'transparent';
 
   return color;
 }
 
 function getActiveColor(props) {
-  var color = _defaultTheme.primaryColorDarker;
-  if (props.secondary) color = _defaultTheme.secondaryColorDarker;
-  if (props.danger) color = _defaultTheme.errorColorDarker;
-  if (props.success) color = _defaultTheme.successColorDarker;
+  var color = (0, _colorGetter2.default)(props, 'primaryColorDarker');
+  if (props.secondary) color = (0, _colorGetter2.default)(props, 'secondaryColorDarker');
+  if (props.danger) color = (0, _colorGetter2.default)(props, 'errorColorDarker');
+  if (props.success) color = (0, _colorGetter2.default)(props, 'successColorDarker');
 
   return color;
 }
 
 function getColor(props) {
-  if (props.primary) return _defaultTheme.primaryColor;
-  if (props.secondary) return _defaultTheme.secondaryColor;
-  if (props.danger) return _defaultTheme.errorColor;
-  if (props.success) return _defaultTheme.successColor;
-  return _defaultTheme.primaryColor; // default
+  if (props.primary) return (0, _colorGetter2.default)(props, 'primaryColor');
+  if (props.secondary) return (0, _colorGetter2.default)(props, 'secondaryColor');
+  if (props.danger) return (0, _colorGetter2.default)(props, 'errorColor');
+  if (props.success) return (0, _colorGetter2.default)(props, 'successColor');
+  return (0, _colorGetter2.default)(props, 'primaryColor'); // default
 }
 
 function getAlignement(props) {
@@ -8847,7 +9049,7 @@ var ButtonWrapper = _styledComponents2.default.button(_templateObject, function 
 }, function (props) {
   return props.outline || props.clear ? getColor(props) : '#fff';
 }, function (props) {
-  return !props.outline && !props.clear && 'box-shadow: 1px 3px 6px rgba(0,0,0,0.1);';
+  return !props.outline && !props.clear && !props.flat && 'box-shadow: 1px 3px 6px rgba(0,0,0,0.1);';
 }, function (props) {
   return getBgColor(props);
 }, function (props) {
@@ -8865,12 +9067,16 @@ var ButtonWrapper = _styledComponents2.default.button(_templateObject, function 
 }, function (props) {
   return !props.clear && 'color: #fff;';
 }, function (props) {
+  return !props.disabled && 'cursor: pointer;';
+}, function (props) {
   return !props.clear && getActiveColor(props);
 }, function (props) {
   return props.clear && getActiveColor(props);
 });
 
-var ButtonContent = _styledComponents2.default.div(_templateObject2);
+var ButtonContent = _styledComponents2.default.div(_templateObject2, function (props) {
+  return props.disabled && 'pointer-events: none;';
+});
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -8881,7 +9087,7 @@ var Button = function Button(_ref) {
     rest,
     _react2.default.createElement(
       ButtonContent,
-      null,
+      { disabled: rest.disabled },
       children
     )
   );
@@ -8891,10 +9097,10 @@ Button.propTypes = {
   children: _react.PropTypes.any
 };
 
-exports.default = Button;
+exports.default = (0, _withRipple2.default)(Button);
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8946,7 +9152,7 @@ var CardAnimated = exports.CardAnimated = (0, _styledComponents2.default)(Card)(
 exports.default = Card;
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8968,7 +9174,7 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _defaultTheme = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9079,7 +9285,7 @@ CircleProgress.propTypes = propTypes;
 exports.default = CircleProgress;
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9161,7 +9367,7 @@ ContentEditable.propTypes = {
 exports.default = ContentEditable;
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9173,7 +9379,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  color: ', ';\n  margin-bottom: ', ';\n  ', '\n  ', '\n'], ['\n  display: flex;\n  flex-direction: column;\n  color: ', ';\n  margin-bottom: ', ';\n  ', '\n  ', '\n']),
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  color: ', ';\n  margin-bottom: ', ';\n  ', '\n  ', '\n'], ['\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  color: ', ';\n  margin-bottom: ', ';\n  ', '\n  ', '\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n']);
 
 var _react = __webpack_require__(1);
@@ -9184,9 +9390,11 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _colorGetter = __webpack_require__(2);
 
-var _Icon = __webpack_require__(5);
+var _colorGetter2 = _interopRequireDefault(_colorGetter);
+
+var _Icon = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9194,7 +9402,9 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var FormControlWrapper = _styledComponents2.default.label(_templateObject, _defaultTheme.primaryColor, function (props) {
+var FormControlWrapper = _styledComponents2.default.label(_templateObject, function (props) {
+  return (0, _colorGetter2.default)(props, 'primaryColor');
+}, function (props) {
   return props.mb || '40px';
 }, function (props) {
   return props.horizontal && 'flex-direction: row;';
@@ -9239,7 +9449,7 @@ FormControl.propTypes = {
 exports.default = FormControl;
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9323,7 +9533,7 @@ Heading.propTypes = {
 exports.default = Heading;
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9345,7 +9555,7 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _defaultTheme = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9409,7 +9619,7 @@ IconButton.propTypes = {
 exports.default = IconButton;
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9425,8 +9635,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _templateObject = _taggedTemplateLiteral(['\n  from { opacity: 0; }\n  to { opacity: 1; }\n'], ['\n  from { opacity: 0; }\n  to { opacity: 1; }\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  margin-top: 8px;\n  position: relative;\n  width: ', ';\n  ', '\n  ', '\n  ', '\n'], ['\n  display: flex;\n  flex-direction: column;\n  margin-top: 8px;\n  position: relative;\n  width: ', ';\n  ', '\n  ', '\n  ', '\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  background-color: ', ';\n  border-radius: 4px;\n  border: 1px solid ', ';\n  color: ', ';\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n'], ['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  background-color: ', ';\n  border-radius: 4px;\n  border: 1px solid ', ';\n  color: ', ';\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 0.7rem;\n  color: ', ';\n  margin-top: 8px;\n  position: absolute;\n  bottom: -16px;\n  left: 0px;\n  animation: ', ' 0.4s;\n'], ['\n  font-size: 0.7rem;\n  color: ', ';\n  margin-top: 8px;\n  position: absolute;\n  bottom: -16px;\n  left: 0px;\n  animation: ', ' 0.4s;\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  border-radius: 4px;\n  background-color: ', ';\n  color: ', ';\n  border: 1px solid ', ';\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n'], ['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  border-radius: 4px;\n  background-color: ', ';\n  color: ', ';\n  border: 1px solid ', ';\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 0.7rem;\n  color: ', ';\n  margin-top: 8px;\n  position: absolute;\n  bottom: -18px;\n  left: 0px;\n  animation: ', ' 0.4s;\n'], ['\n  font-size: 0.7rem;\n  color: ', ';\n  margin-top: 8px;\n  position: absolute;\n  bottom: -18px;\n  left: 0px;\n  animation: ', ' 0.4s;\n']);
 
 var _react = __webpack_require__(1);
 
@@ -9436,7 +9646,9 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _colorGetter = __webpack_require__(2);
+
+var _colorGetter2 = _interopRequireDefault(_colorGetter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9453,20 +9665,26 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var fadeIn = (0, _styledComponents.keyframes)(_templateObject);
 
 var InputWrapper = _styledComponents2.default.div(_templateObject2, function (props) {
-  return props.width || 'auto';
+  return props.width || '100%';
 }, function (props) {
-  return props.validator && 'margin-bottom: 16px;';
+  return props.validator && 'margin-bottom: 18px;';
 }, function (props) {
   return props.maxW && 'max-width: ' + props.maxW + ';';
 }, function (props) {
   return props.noMargin && 'margin: 0;';
 });
 var InputEl = _styledComponents2.default.input(_templateObject3, function (props) {
-  return props.bg || '' + _defaultTheme.greyLighter;
+  return props.bg || (0, _colorGetter2.default)(props, 'greyLighter');
 }, function (props) {
-  return props.error ? _defaultTheme.errorColor : _defaultTheme.greyLight;
-}, _defaultTheme.textColorDark, _defaultTheme.primaryColorLightest);
-var ValidationMessage = _styledComponents2.default.div(_templateObject4, _defaultTheme.errorColor, fadeIn);
+  return (0, _colorGetter2.default)(props, 'textColorDark');
+}, function (props) {
+  return props.error ? (0, _colorGetter2.default)(props, 'errorColor') : (0, _colorGetter2.default)(props, 'greyLight');
+}, function (props) {
+  return (0, _colorGetter2.default)(props, 'primaryColorLight');
+});
+var ValidationMessage = _styledComponents2.default.div(_templateObject4, function (props) {
+  return (0, _colorGetter2.default)(props, 'errorColor');
+}, fadeIn);
 
 var CHAR_WIDTH = 16;
 
@@ -9499,7 +9717,7 @@ var Input = function (_Component) {
     _this.state = {
       width: null,
       isValid: true,
-      value: _this.getValidValue(props.value)
+      value: getValidValue(props.value)
     };
     return _this;
   }
@@ -9626,7 +9844,7 @@ Input.defaultProps = {
 exports.default = Input;
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9645,7 +9863,7 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _media = __webpack_require__(4);
+var _media = __webpack_require__(5);
 
 var _media2 = _interopRequireDefault(_media);
 
@@ -9689,7 +9907,7 @@ var Box = exports.Box = _styledComponents2.default.div(_templateObject3, functio
 });
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9710,7 +9928,7 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _defaultTheme = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9753,7 +9971,7 @@ LineSeparator.propTypes = {
 exports.default = LineSeparator;
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9773,7 +9991,7 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _SquareLoader = __webpack_require__(23);
+var _SquareLoader = __webpack_require__(26);
 
 var _SquareLoader2 = _interopRequireDefault(_SquareLoader);
 
@@ -9794,7 +10012,7 @@ var LoadingOverlay = function LoadingOverlay() {
 exports.default = LoadingOverlay;
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9811,7 +10029,7 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _media = __webpack_require__(4);
+var _media = __webpack_require__(5);
 
 var _media2 = _interopRequireDefault(_media);
 
@@ -9844,7 +10062,7 @@ var Padder = _styledComponents2.default.div(_templateObject, function (props) {
 exports.default = Padder;
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9857,7 +10075,8 @@ Object.defineProperty(exports, "__esModule", {
 var _templateObject = _taggedTemplateLiteral(['\n  0% { background-color: #f5f5f5; }\n  50% { background-color: #eee }\n  100% { background-color: #f5f5f5; }\n'], ['\n  0% { background-color: #f5f5f5; }\n  50% { background-color: #eee }\n  100% { background-color: #f5f5f5; }\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  height: 20px;\n  width: ', '%;\n  border-radius: 3px;\n  animation: ', ' 3s linear infinite;\n'], ['\n  height: 20px;\n  width: ', '%;\n  border-radius: 3px;\n  animation: ', ' 3s linear infinite;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  padding: 0px 8px;\n  flex: 1;\n'], ['\n  padding: 0px 8px;\n  flex: 1;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 0.9rem;\n  height: 50px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: 100%;\n'], ['\n  font-size: 0.9rem;\n  height: 50px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: 100%;\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 0.9rem;\n  height: 50px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: 100%;\n'], ['\n  font-size: 0.9rem;\n  height: 50px;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  width: 100%;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  width: 100%;\n'], ['\n  width: 100%;\n']);
 
 var _react = __webpack_require__(1);
 
@@ -9878,6 +10097,7 @@ var LoadingPlaceholder = _styledComponents2.default.div(_templateObject2, functi
 }, bgAnim);
 var Cell = _styledComponents2.default.div(_templateObject3);
 var Row = _styledComponents2.default.div(_templateObject4);
+var Wrapper = _styledComponents2.default.div(_templateObject5);
 
 var propTypes = {
   rows: _react.PropTypes.number
@@ -9887,13 +10107,17 @@ var getRandomInt = function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - (min + 1))) + min;
 };
 
+var range = function range(num) {
+  return Array.from(Array(num).keys());
+};
+
 var PlaceholderRows = function PlaceholderRows(_ref) {
   var _ref$rows = _ref.rows,
       rows = _ref$rows === undefined ? 6 : _ref$rows;
   return _react2.default.createElement(
-    'div',
+    Wrapper,
     null,
-    Array.from(Array(rows).keys())(rows).map(function (idx) {
+    range(rows).map(function (idx) {
       return _react2.default.createElement(
         Row,
         { key: 'dummy_' + idx },
@@ -9911,7 +10135,7 @@ PlaceholderRows.propTypes = propTypes;
 exports.default = PlaceholderRows;
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9924,7 +10148,7 @@ Object.defineProperty(exports, "__esModule", {
 var _templateObject = _taggedTemplateLiteral(['\n  flex: none;\n  display: flex;\n  align-items: center;\n  font-weight: normal;\n  font-size: 1rem;\n  background: transparent;\n  position: relative;\n'], ['\n  flex: none;\n  display: flex;\n  align-items: center;\n  font-weight: normal;\n  font-size: 1rem;\n  background: transparent;\n  position: relative;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  border: none;\n  box-shadow: none;\n  background: transparent;\n  background-image: none;\n  appearance: none;\n  padding: 8px 24px 8px 8px;\n  border-radius: 4px;\n  border: 2px solid ', ';\n  z-index: 2;\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n'], ['\n  border: none;\n  box-shadow: none;\n  background: transparent;\n  background-image: none;\n  appearance: none;\n  padding: 8px 24px 8px 8px;\n  border-radius: 4px;\n  border: 2px solid ', ';\n  z-index: 2;\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  align-items: center;\n  position: absolute;\n  right: 8px;\n  top: 0px;\n  z-index: 1;\n'], ['\n  display: flex;\n  flex-direction: row;\n  height: 100%;\n  align-items: center;\n  position: absolute;\n  right: 8px;\n  top: 0px;\n  z-index: 1;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 1rem;\n  color: ', ';\n'], ['\n  font-size: 1rem;\n  color: ', ';\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 1rem;\n  color: ', ';\n  transform: rotate(90deg);\n'], ['\n  font-size: 1rem;\n  color: ', ';\n  transform: rotate(90deg);\n']);
 
 var _react = __webpack_require__(1);
 
@@ -9934,16 +10158,24 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _colorGetter = __webpack_require__(2);
+
+var _colorGetter2 = _interopRequireDefault(_colorGetter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var SelectWrapper = _styledComponents2.default.div(_templateObject);
-var SelectEl = _styledComponents2.default.select(_templateObject2, _defaultTheme.greyDark, _defaultTheme.primaryColorLightest);
+var SelectEl = _styledComponents2.default.select(_templateObject2, function (props) {
+  return (0, _colorGetter2.default)(props, 'greyDark');
+}, function (props) {
+  return (0, _colorGetter2.default)(props, 'primaryColorLightest');
+});
 var ArrowWrapper = _styledComponents2.default.div(_templateObject3);
-var ArrowDown = _styledComponents2.default.i(_templateObject4, _defaultTheme.greyDarker);
+var ArrowDown = _styledComponents2.default.div(_templateObject4, function (props) {
+  return (0, _colorGetter2.default)(props, 'greyDarker');
+});
 
 var Select = function Select(_ref) {
   var children = _ref.children,
@@ -9966,7 +10198,11 @@ var Select = function Select(_ref) {
     _react2.default.createElement(
       ArrowWrapper,
       null,
-      _react2.default.createElement(ArrowDown, { className: 'ion-ios-arrow-down' })
+      _react2.default.createElement(
+        ArrowDown,
+        null,
+        '\u203A'
+      )
     )
   );
 };
@@ -9980,7 +10216,7 @@ Select.propTypes = {
 exports.default = Select;
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10077,7 +10313,7 @@ Spinner.propTypes = {
 exports.default = Spinner;
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10150,7 +10386,7 @@ SquareLoader.propTypes = {
 exports.default = SquareLoader;
 
 /***/ }),
-/* 24 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10234,7 +10470,7 @@ Text.propTypes = {
 exports.default = Text;
 
 /***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10249,8 +10485,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n  from { opacity: 0; }\n  to { opacity: 1; }\n'], ['\n  from { opacity: 0; }\n  to { opacity: 1; }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  ', '\n'], ['\n  display: flex;\n  flex-direction: column;\n  ', '\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  margin-bottom: 16px;\n  background-color: ', ';\n  border-radius: 4px;\n  margin-top: 8px;\n  border: 1px solid ', ';\n  color: ', ';\n  max-width: 100%;\n  height: ', ';\n  overflow: hidden;\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n  @media print {\n    height: ', ';\n    margin-bottom: 4px;\n  }\n'], ['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  margin-bottom: 16px;\n  background-color: ', ';\n  border-radius: 4px;\n  margin-top: 8px;\n  border: 1px solid ', ';\n  color: ', ';\n  max-width: 100%;\n  height: ', ';\n  overflow: hidden;\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n  @media print {\n    height: ', ';\n    margin-bottom: 4px;\n  }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  ', '\n'], ['\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  ', '\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  margin-bottom: 16px;\n  border-radius: 4px;\n  margin-top: 8px;\n  max-width: 100%;\n  overflow: hidden;\n  height: ', ';\n  background-color: ', ';\n  border: 1px solid ', ';\n  color: ', ';\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n  @media print {\n    height: ', ';\n    margin-bottom: 4px;\n  }\n'], ['\n  padding: 8px;\n  font-size: 1rem;\n  flex-direction: row;\n  margin-bottom: 16px;\n  border-radius: 4px;\n  margin-top: 8px;\n  max-width: 100%;\n  overflow: hidden;\n  height: ', ';\n  background-color: ', ';\n  border: 1px solid ', ';\n  color: ', ';\n\n  &:focus {\n    outline: none;\n    box-shadow: 0px 0px 2px ', ';\n  }\n  @media print {\n    height: ', ';\n    margin-bottom: 4px;\n  }\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  font-size: 0.7rem;\n  color: ', ';\n  margin-top: 8px;\n  position: absolute;\n  bottom: -16px;\n  left: 0px;\n  animation: ', ' 0.4s;\n'], ['\n  font-size: 0.7rem;\n  color: ', ';\n  margin-top: 8px;\n  position: absolute;\n  bottom: -16px;\n  left: 0px;\n  animation: ', ' 0.4s;\n']);
 
 var _react = __webpack_require__(1);
@@ -10261,7 +10497,9 @@ var _styledComponents = __webpack_require__(0);
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
-var _defaultTheme = __webpack_require__(2);
+var _colorGetter = __webpack_require__(2);
+
+var _colorGetter2 = _interopRequireDefault(_colorGetter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10281,13 +10519,23 @@ var TextareaWrapper = _styledComponents2.default.div(_templateObject2, function 
   return props.maxW && 'max-width: ' + props.maxW + ';';
 });
 
-var TextareaEl = _styledComponents2.default.textarea(_templateObject3, _defaultTheme.greyLighter, _defaultTheme.greyLight, _defaultTheme.textColorDark, function (props) {
+var TextareaEl = _styledComponents2.default.textarea(_templateObject3, function (props) {
   return props.height || '30px';
-}, _defaultTheme.primaryColorLightest, function (props) {
+}, function (props) {
+  return (0, _colorGetter2.default)(props, 'greyLighter');
+}, function (props) {
+  return (0, _colorGetter2.default)(props, 'greyLight');
+}, function (props) {
+  return (0, _colorGetter2.default)(props, 'textColorDark');
+}, function (props) {
+  return (0, _colorGetter2.default)(props, 'primaryColorLightest');
+}, function (props) {
   return props.height ? 'auto' : '24px';
 });
 
-var ValidationMessage = _styledComponents2.default.div(_templateObject4, _defaultTheme.errorColor, fadeIn);
+var ValidationMessage = _styledComponents2.default.div(_templateObject4, function (props) {
+  return (0, _colorGetter2.default)(props, 'errorColor');
+}, fadeIn);
 
 var propTypes = {
   autoResize: _react.PropTypes.bool,
@@ -10316,7 +10564,7 @@ var Textarea = function (_Component) {
     _this.state = {
       height: null,
       isValid: true,
-      value: _this.getValidValue(props.value)
+      value: getValidValue(props.value)
     };
     return _this;
   }
@@ -10429,7 +10677,224 @@ Textarea.defaultProps = {
 exports.default = Textarea;
 
 /***/ }),
-/* 26 */
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  position: relative;\n'], ['\n  display: flex;\n  flex-direction: column;\n  position: relative;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n  position: relative;\n  transform: translate3d(0, 0, 0);\n  background-color: ', ';\n  height: ', 'px;\n  width: ', 'px;\n  border-radius: ', 'px;\n  padding: ', 'px;\n  border: 1px solid ', ';\n'], ['\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n  position: relative;\n  transform: translate3d(0, 0, 0);\n  background-color: ', ';\n  height: ', 'px;\n  width: ', 'px;\n  border-radius: ', 'px;\n  padding: ', 'px;\n  border: 1px solid ', ';\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  z-index: 3;\n  border-radius: 50%;\n  background-color: ', ';\n  box-shadow: 0px 0px 3px rgba(0,0,0,0.2);\n  transition: transform 0.3s cubic-bezier(1,.19,.15,.7);\n  transition-delay: 0.1s;\n  will-change: transform;\n  border: 1px solid ', ';\n  height: ', 'px;\n  width: ', 'px;\n  transform: ', ';\n\n  &:active {\n    background-color: ', ';\n  }\n'], ['\n  z-index: 3;\n  border-radius: 50%;\n  background-color: ', ';\n  box-shadow: 0px 0px 3px rgba(0,0,0,0.2);\n  transition: transform 0.3s cubic-bezier(1,.19,.15,.7);\n  transition-delay: 0.1s;\n  will-change: transform;\n  border: 1px solid ', ';\n  height: ', 'px;\n  width: ', 'px;\n  transform: ', ';\n\n  &:active {\n    background-color: ', ';\n  }\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  z-index: 1;\n  background-repeat: no-repeat;\n  background-position: 50%;\n  pointer-events: none;\n  transition: transform 0.5s, opacity 0.3s ease;\n  opacity: ', ';\n  background-image: radial-gradient(\n    circle, ', ' 10%, transparent 10.01%\n  );\n  transform: ', ';\n'], ['\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  position: absolute;\n  z-index: 1;\n  background-repeat: no-repeat;\n  background-position: 50%;\n  pointer-events: none;\n  transition: transform 0.5s, opacity 0.3s ease;\n  opacity: ', ';\n  background-image: radial-gradient(\n    circle, ', ' 10%, transparent 10.01%\n  );\n  transform: ', ';\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  font-size: ', ';\n  color: ', ';\n  position: absolute;\n  z-index: 2;\n  ', ';\n  ', ';\n'], ['\n  font-size: ', ';\n  color: ', ';\n  position: absolute;\n  z-index: 2;\n  ', ';\n  ', ';\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  font-size: ', ';\n  color: ', ';\n  position: absolute;\n  top: 0px;\n  transform: translateY(calc(-100% - 8px));\n  width: 100%;\n  text-align: center;\n'], ['\n  font-size: ', ';\n  color: ', ';\n  position: absolute;\n  top: 0px;\n  transform: translateY(calc(-100% - 8px));\n  width: 100%;\n  text-align: center;\n']);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styledComponents = __webpack_require__(0);
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+// Styled components
+var ToggleSwitchWrapper = _styledComponents2.default.div(_templateObject);
+var Toggle = _styledComponents2.default.div(_templateObject2, function (props) {
+  return props.bgClear;
+}, function (props) {
+  return props.width / 2;
+}, function (props) {
+  return props.width;
+}, function (props) {
+  return props.width / 4;
+}, function (props) {
+  return props.padding;
+}, function (props) {
+  return props.toggled ? props.bgToggled : props.borderColor;
+});
+
+var ToggleBall = _styledComponents2.default.div(_templateObject3, function (props) {
+  return props.ballColor;
+}, function (props) {
+  return props.borderColor;
+}, function (props) {
+  return props.width / 2 - props.padding * 2;
+}, function (props) {
+  return props.width / 2 - props.padding * 2;
+}, function (props) {
+  return props.toggled ? 'translateX(' + (props.width - props.width / 2) + 'px)' : 'translateX(0px)';
+}, function (props) {
+  return props.ballColorActive;
+});
+
+var RippleBg = _styledComponents2.default.div(_templateObject4, function (props) {
+  return props.visible ? 1 : 0;
+}, function (props) {
+  return props.bgToggled;
+}, function (props) {
+  return props.visible ? 'scale(10, 10)' : 'scale(0, 0)';
+});
+
+var InnerLabel = _styledComponents2.default.span(_templateObject5, function (props) {
+  return props.size;
+}, function (props) {
+  return props.color;
+}, function (props) {
+  return props.left && 'left: 10px;';
+}, function (props) {
+  return props.right && 'right: 10px;';
+});
+
+var OuterLabel = _styledComponents2.default.span(_templateObject6, function (props) {
+  return props.size;
+}, function (props) {
+  return props.color;
+});
+
+var propTypes = {
+  innerLabelLeft: _react.PropTypes.string,
+  innerLabelRight: _react.PropTypes.string,
+  innerLabelColor: _react.PropTypes.string,
+  innerLabelSize: _react.PropTypes.string,
+  outerLabel: _react.PropTypes.string,
+  outerLabelColor: _react.PropTypes.string,
+  outerLabelSize: _react.PropTypes.string,
+  initial: _react.PropTypes.bool,
+  onToggle: _react.PropTypes.func.isRequired,
+  width: _react.PropTypes.number.isRequired,
+  padding: _react.PropTypes.number.isRequired,
+  ballColor: _react.PropTypes.string.isRequired,
+  ballColorActive: _react.PropTypes.string.isRequired,
+  bgToggled: _react.PropTypes.string.isRequired,
+  bgClear: _react.PropTypes.string.isRequired,
+  borderColor: _react.PropTypes.string.isRequired
+};
+
+var ToggleSwitch = function (_Component) {
+  _inherits(ToggleSwitch, _Component);
+
+  function ToggleSwitch(props) {
+    _classCallCheck(this, ToggleSwitch);
+
+    var _this = _possibleConstructorReturn(this, (ToggleSwitch.__proto__ || Object.getPrototypeOf(ToggleSwitch)).call(this, props));
+
+    _this.toggle = _this.toggle.bind(_this);
+    _this.state = {
+      toggled: props.initial || false
+    };
+    return _this;
+  }
+
+  _createClass(ToggleSwitch, [{
+    key: 'toggle',
+    value: function toggle() {
+      var _this2 = this;
+
+      // Update local state first and then call toggle handler
+      this.setState(function (state) {
+        return { toggled: !state.toggled };
+      }, function () {
+        return _this2.props.onToggle(_this2.state.toggled);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        ToggleSwitchWrapper,
+        null,
+        this.props.outerLabel && _react2.default.createElement(
+          OuterLabel,
+          {
+            size: this.props.outerLabelSize,
+            color: this.props.outerLabelColor
+          },
+          this.props.outerLabel
+        ),
+        _react2.default.createElement(
+          Toggle,
+          _extends({
+            onClick: this.toggle,
+            toggled: this.state.toggled
+          }, this.props),
+          _react2.default.createElement(ToggleBall, _extends({
+            toggled: this.state.toggled
+          }, this.props)),
+          _react2.default.createElement(RippleBg, _extends({
+            visible: this.state.toggled
+          }, this.props)),
+          this.props.innerLabelLeft && _react2.default.createElement(
+            InnerLabel,
+            {
+              left: true,
+              size: this.props.innerLabelSize,
+              color: this.props.innerLabelColor
+            },
+            this.props.innerLabelLeft
+          ),
+          this.props.innerLabelRight && _react2.default.createElement(
+            InnerLabel,
+            {
+              right: true,
+              size: this.props.innerLabelSize,
+              color: this.props.innerLabelColor
+            },
+            this.props.innerLabelRight
+          )
+        )
+      );
+    }
+  }]);
+
+  return ToggleSwitch;
+}(_react.Component);
+
+ToggleSwitch.propTypes = propTypes;
+
+var green = '#22e222';
+var lightGrey = '#f5f5f5';
+var grey = '#ddd';
+var white = '#fff';
+var black = '#222';
+
+ToggleSwitch.defaultProps = {
+  initial: false,
+  width: 80,
+  padding: 3,
+  ballColor: white,
+  ballColorActive: lightGrey,
+  bgToggled: green,
+  bgClear: white,
+  borderColor: grey,
+  innerLabelSize: '12px',
+  innerLabelColor: black,
+  outerLabelSize: '16px',
+  outerLabelColor: black
+};
+
+exports.default = ToggleSwitch;
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10647,299 +11112,11 @@ Tooltip.defaultProps = {
 exports.default = Tooltip;
 
 /***/ }),
-/* 27 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-exports.byteLength = byteLength
-exports.toByteArray = toByteArray
-exports.fromByteArray = fromByteArray
-
-var lookup = []
-var revLookup = []
-var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array
-
-var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-for (var i = 0, len = code.length; i < len; ++i) {
-  lookup[i] = code[i]
-  revLookup[code.charCodeAt(i)] = i
-}
-
-revLookup['-'.charCodeAt(0)] = 62
-revLookup['_'.charCodeAt(0)] = 63
-
-function placeHoldersCount (b64) {
-  var len = b64.length
-  if (len % 4 > 0) {
-    throw new Error('Invalid string. Length must be a multiple of 4')
-  }
-
-  // the number of equal signs (place holders)
-  // if there are two placeholders, than the two characters before it
-  // represent one byte
-  // if there is only one, then the three characters before it represent 2 bytes
-  // this is just a cheap hack to not do indexOf twice
-  return b64[len - 2] === '=' ? 2 : b64[len - 1] === '=' ? 1 : 0
-}
-
-function byteLength (b64) {
-  // base64 is 4/3 + up to two characters of the original data
-  return b64.length * 3 / 4 - placeHoldersCount(b64)
-}
-
-function toByteArray (b64) {
-  var i, j, l, tmp, placeHolders, arr
-  var len = b64.length
-  placeHolders = placeHoldersCount(b64)
-
-  arr = new Arr(len * 3 / 4 - placeHolders)
-
-  // if there are placeholders, only get up to the last complete 4 chars
-  l = placeHolders > 0 ? len - 4 : len
-
-  var L = 0
-
-  for (i = 0, j = 0; i < l; i += 4, j += 3) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 18) | (revLookup[b64.charCodeAt(i + 1)] << 12) | (revLookup[b64.charCodeAt(i + 2)] << 6) | revLookup[b64.charCodeAt(i + 3)]
-    arr[L++] = (tmp >> 16) & 0xFF
-    arr[L++] = (tmp >> 8) & 0xFF
-    arr[L++] = tmp & 0xFF
-  }
-
-  if (placeHolders === 2) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 2) | (revLookup[b64.charCodeAt(i + 1)] >> 4)
-    arr[L++] = tmp & 0xFF
-  } else if (placeHolders === 1) {
-    tmp = (revLookup[b64.charCodeAt(i)] << 10) | (revLookup[b64.charCodeAt(i + 1)] << 4) | (revLookup[b64.charCodeAt(i + 2)] >> 2)
-    arr[L++] = (tmp >> 8) & 0xFF
-    arr[L++] = tmp & 0xFF
-  }
-
-  return arr
-}
-
-function tripletToBase64 (num) {
-  return lookup[num >> 18 & 0x3F] + lookup[num >> 12 & 0x3F] + lookup[num >> 6 & 0x3F] + lookup[num & 0x3F]
-}
-
-function encodeChunk (uint8, start, end) {
-  var tmp
-  var output = []
-  for (var i = start; i < end; i += 3) {
-    tmp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
-    output.push(tripletToBase64(tmp))
-  }
-  return output.join('')
-}
-
-function fromByteArray (uint8) {
-  var tmp
-  var len = uint8.length
-  var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
-  var output = ''
-  var parts = []
-  var maxChunkLength = 16383 // must be multiple of 3
-
-  // go through the array every three bytes, we'll deal with trailing stuff later
-  for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
-  }
-
-  // pad the end with zeros, but make sure to not forget the extra bytes
-  if (extraBytes === 1) {
-    tmp = uint8[len - 1]
-    output += lookup[tmp >> 2]
-    output += lookup[(tmp << 4) & 0x3F]
-    output += '=='
-  } else if (extraBytes === 2) {
-    tmp = (uint8[len - 2] << 8) + (uint8[len - 1])
-    output += lookup[tmp >> 10]
-    output += lookup[(tmp >> 4) & 0x3F]
-    output += lookup[(tmp << 2) & 0x3F]
-    output += '='
-  }
-
-  parts.push(output)
-
-  return parts.join('')
-}
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(Buffer) {var clone = (function() {
-'use strict';
-
-/**
- * Clones (copies) an Object using deep copying.
- *
- * This function supports circular references by default, but if you are certain
- * there are no circular references in your object, you can save some CPU time
- * by calling clone(obj, false).
- *
- * Caution: if `circular` is false and `parent` contains circular references,
- * your program may enter an infinite loop and crash.
- *
- * @param `parent` - the object to be cloned
- * @param `circular` - set to true if the object to be cloned may contain
- *    circular references. (optional - true by default)
- * @param `depth` - set to a number if the object is only to be cloned to
- *    a particular depth. (optional - defaults to Infinity)
- * @param `prototype` - sets the prototype to be used when cloning an object.
- *    (optional - defaults to parent prototype).
-*/
-function clone(parent, circular, depth, prototype) {
-  var filter;
-  if (typeof circular === 'object') {
-    depth = circular.depth;
-    prototype = circular.prototype;
-    filter = circular.filter;
-    circular = circular.circular
-  }
-  // maintain two arrays for circular references, where corresponding parents
-  // and children have the same index
-  var allParents = [];
-  var allChildren = [];
-
-  var useBuffer = typeof Buffer != 'undefined';
-
-  if (typeof circular == 'undefined')
-    circular = true;
-
-  if (typeof depth == 'undefined')
-    depth = Infinity;
-
-  // recurse this function so we don't reset allParents and allChildren
-  function _clone(parent, depth) {
-    // cloning null always returns null
-    if (parent === null)
-      return null;
-
-    if (depth == 0)
-      return parent;
-
-    var child;
-    var proto;
-    if (typeof parent != 'object') {
-      return parent;
-    }
-
-    if (clone.__isArray(parent)) {
-      child = [];
-    } else if (clone.__isRegExp(parent)) {
-      child = new RegExp(parent.source, __getRegExpFlags(parent));
-      if (parent.lastIndex) child.lastIndex = parent.lastIndex;
-    } else if (clone.__isDate(parent)) {
-      child = new Date(parent.getTime());
-    } else if (useBuffer && Buffer.isBuffer(parent)) {
-      child = new Buffer(parent.length);
-      parent.copy(child);
-      return child;
-    } else {
-      if (typeof prototype == 'undefined') {
-        proto = Object.getPrototypeOf(parent);
-        child = Object.create(proto);
-      }
-      else {
-        child = Object.create(prototype);
-        proto = prototype;
-      }
-    }
-
-    if (circular) {
-      var index = allParents.indexOf(parent);
-
-      if (index != -1) {
-        return allChildren[index];
-      }
-      allParents.push(parent);
-      allChildren.push(child);
-    }
-
-    for (var i in parent) {
-      var attrs;
-      if (proto) {
-        attrs = Object.getOwnPropertyDescriptor(proto, i);
-      }
-
-      if (attrs && attrs.set == null) {
-        continue;
-      }
-      child[i] = _clone(parent[i], depth - 1);
-    }
-
-    return child;
-  }
-
-  return _clone(parent, depth);
-}
-
-/**
- * Simple flat clone using prototype, accepts only objects, usefull for property
- * override on FLAT configuration object (no nested props).
- *
- * USE WITH CAUTION! This may not behave as you wish if you do not know how this
- * works.
- */
-clone.clonePrototype = function clonePrototype(parent) {
-  if (parent === null)
-    return null;
-
-  var c = function () {};
-  c.prototype = parent;
-  return new c();
-};
-
-// private utility functions
-
-function __objToStr(o) {
-  return Object.prototype.toString.call(o);
-};
-clone.__objToStr = __objToStr;
-
-function __isDate(o) {
-  return typeof o === 'object' && __objToStr(o) === '[object Date]';
-};
-clone.__isDate = __isDate;
-
-function __isArray(o) {
-  return typeof o === 'object' && __objToStr(o) === '[object Array]';
-};
-clone.__isArray = __isArray;
-
-function __isRegExp(o) {
-  return typeof o === 'object' && __objToStr(o) === '[object RegExp]';
-};
-clone.__isRegExp = __isRegExp;
-
-function __getRegExpFlags(re) {
-  var flags = '';
-  if (re.global) flags += 'g';
-  if (re.ignoreCase) flags += 'i';
-  if (re.multiline) flags += 'm';
-  return flags;
-};
-clone.__getRegExpFlags = __getRegExpFlags;
-
-return clone;
-})();
-
-if (typeof module === 'object' && module.exports) {
-  module.exports = clone;
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35).Buffer))
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var conversions = __webpack_require__(6);
-var route = __webpack_require__(30);
+var conversions = __webpack_require__(8);
+var route = __webpack_require__(32);
 
 var convert = {};
 
@@ -11019,10 +11196,10 @@ module.exports = convert;
 
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var conversions = __webpack_require__(6);
+var conversions = __webpack_require__(8);
 
 /*
 	this function routes a model to all other models.
@@ -11123,433 +11300,511 @@ module.exports = function (fromModel) {
 
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var colorNames = __webpack_require__(7);
+var colorNames = __webpack_require__(9);
+var swizzle = __webpack_require__(35);
 
-module.exports = {
-   getRgba: getRgba,
-   getHsla: getHsla,
-   getRgb: getRgb,
-   getHsl: getHsl,
-   getHwb: getHwb,
-   getAlpha: getAlpha,
+var reverseNames = {};
 
-   hexString: hexString,
-   rgbString: rgbString,
-   rgbaString: rgbaString,
-   percentString: percentString,
-   percentaString: percentaString,
-   hslString: hslString,
-   hslaString: hslaString,
-   hwbString: hwbString,
-   keyword: keyword
+// create a list of reverse color names
+for (var name in colorNames) {
+	if (colorNames.hasOwnProperty(name)) {
+		reverseNames[colorNames[name]] = name;
+	}
 }
 
-function getRgba(string) {
-   if (!string) {
-      return;
-   }
-   var abbr =  /^#([a-fA-F0-9]{3})$/,
-       hex =  /^#([a-fA-F0-9]{6})$/,
-       rgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/,
-       per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/,
-       keyword = /(\D+)/;
+var cs = module.exports = {
+	to: {}
+};
 
-   var rgb = [0, 0, 0],
-       a = 1,
-       match = string.match(abbr);
-   if (match) {
-      match = match[1];
-      for (var i = 0; i < rgb.length; i++) {
-         rgb[i] = parseInt(match[i] + match[i], 16);
-      }
-   }
-   else if (match = string.match(hex)) {
-      match = match[1];
-      for (var i = 0; i < rgb.length; i++) {
-         rgb[i] = parseInt(match.slice(i * 2, i * 2 + 2), 16);
-      }
-   }
-   else if (match = string.match(rgba)) {
-      for (var i = 0; i < rgb.length; i++) {
-         rgb[i] = parseInt(match[i + 1]);
-      }
-      a = parseFloat(match[4]);
-   }
-   else if (match = string.match(per)) {
-      for (var i = 0; i < rgb.length; i++) {
-         rgb[i] = Math.round(parseFloat(match[i + 1]) * 2.55);
-      }
-      a = parseFloat(match[4]);
-   }
-   else if (match = string.match(keyword)) {
-      if (match[1] == "transparent") {
-         return [0, 0, 0, 0];
-      }
-      rgb = colorNames[match[1]];
-      if (!rgb) {
-         return;
-      }
-   }
+cs.get = function (string) {
+	var prefix = string.substring(0, 3).toLowerCase();
+	var val;
+	var model;
+	switch (prefix) {
+		case 'hsl':
+			val = cs.get.hsl(string);
+			model = 'hsl';
+			break;
+		case 'hwb':
+			val = cs.get.hwb(string);
+			model = 'hwb';
+			break;
+		default:
+			val = cs.get.rgb(string);
+			model = 'rgb';
+			break;
+	}
 
-   for (var i = 0; i < rgb.length; i++) {
-      rgb[i] = scale(rgb[i], 0, 255);
-   }
-   if (!a && a != 0) {
-      a = 1;
-   }
-   else {
-      a = scale(a, 0, 1);
-   }
-   rgb[3] = a;
-   return rgb;
-}
+	if (!val) {
+		return null;
+	}
 
-function getHsla(string) {
-   if (!string) {
-      return;
-   }
-   var hsl = /^hsla?\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/;
-   var match = string.match(hsl);
-   if (match) {
-      var alpha = parseFloat(match[4]);
-      var h = scale(parseInt(match[1]), 0, 360),
-          s = scale(parseFloat(match[2]), 0, 100),
-          l = scale(parseFloat(match[3]), 0, 100),
-          a = scale(isNaN(alpha) ? 1 : alpha, 0, 1);
-      return [h, s, l, a];
-   }
-}
+	return {model: model, value: val};
+};
 
-function getHwb(string) {
-   if (!string) {
-      return;
-   }
-   var hwb = /^hwb\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/;
-   var match = string.match(hwb);
-   if (match) {
-    var alpha = parseFloat(match[4]);
-      var h = scale(parseInt(match[1]), 0, 360),
-          w = scale(parseFloat(match[2]), 0, 100),
-          b = scale(parseFloat(match[3]), 0, 100),
-          a = scale(isNaN(alpha) ? 1 : alpha, 0, 1);
-      return [h, w, b, a];
-   }
-}
+cs.get.rgb = function (string) {
+	if (!string) {
+		return null;
+	}
 
-function getRgb(string) {
-   var rgba = getRgba(string);
-   return rgba && rgba.slice(0, 3);
-}
+	var abbr = /^#([a-f0-9]{3,4})$/i;
+	var hex = /^#([a-f0-9]{6})([a-f0-9]{2})?$/i;
+	var rgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var keyword = /(\D+)/;
 
-function getHsl(string) {
-  var hsla = getHsla(string);
-  return hsla && hsla.slice(0, 3);
-}
+	var rgb = [0, 0, 0, 1];
+	var match;
+	var i;
+	var hexAlpha;
 
-function getAlpha(string) {
-   var vals = getRgba(string);
-   if (vals) {
-      return vals[3];
-   }
-   else if (vals = getHsla(string)) {
-      return vals[3];
-   }
-   else if (vals = getHwb(string)) {
-      return vals[3];
-   }
-}
+	if (match = string.match(hex)) {
+		hexAlpha = match[2];
+		match = match[1];
 
-// generators
-function hexString(rgb) {
-   return "#" + hexDouble(rgb[0]) + hexDouble(rgb[1])
-              + hexDouble(rgb[2]);
-}
+		for (i = 0; i < 3; i++) {
+			// https://jsperf.com/slice-vs-substr-vs-substring-methods-long-string/19
+			var i2 = i * 2;
+			rgb[i] = parseInt(match.slice(i2, i2 + 2), 16);
+		}
 
-function rgbString(rgba, alpha) {
-   if (alpha < 1 || (rgba[3] && rgba[3] < 1)) {
-      return rgbaString(rgba, alpha);
-   }
-   return "rgb(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2] + ")";
-}
+		if (hexAlpha) {
+			rgb[3] = Math.round((parseInt(hexAlpha, 16) / 255) * 100) / 100;
+		}
+	} else if (match = string.match(abbr)) {
+		match = match[1];
+		hexAlpha = match[3];
 
-function rgbaString(rgba, alpha) {
-   if (alpha === undefined) {
-      alpha = (rgba[3] !== undefined ? rgba[3] : 1);
-   }
-   return "rgba(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2]
-           + ", " + alpha + ")";
-}
+		for (i = 0; i < 3; i++) {
+			rgb[i] = parseInt(match[i] + match[i], 16);
+		}
 
-function percentString(rgba, alpha) {
-   if (alpha < 1 || (rgba[3] && rgba[3] < 1)) {
-      return percentaString(rgba, alpha);
-   }
-   var r = Math.round(rgba[0]/255 * 100),
-       g = Math.round(rgba[1]/255 * 100),
-       b = Math.round(rgba[2]/255 * 100);
+		if (hexAlpha) {
+			rgb[3] = Math.round((parseInt(hexAlpha + hexAlpha, 16) / 255) * 100) / 100;
+		}
+	} else if (match = string.match(rgba)) {
+		for (i = 0; i < 3; i++) {
+			rgb[i] = parseInt(match[i + 1], 0);
+		}
 
-   return "rgb(" + r + "%, " + g + "%, " + b + "%)";
-}
+		if (match[4]) {
+			rgb[3] = parseFloat(match[4]);
+		}
+	} else if (match = string.match(per)) {
+		for (i = 0; i < 3; i++) {
+			rgb[i] = Math.round(parseFloat(match[i + 1]) * 2.55);
+		}
 
-function percentaString(rgba, alpha) {
-   var r = Math.round(rgba[0]/255 * 100),
-       g = Math.round(rgba[1]/255 * 100),
-       b = Math.round(rgba[2]/255 * 100);
-   return "rgba(" + r + "%, " + g + "%, " + b + "%, " + (alpha || rgba[3] || 1) + ")";
-}
+		if (match[4]) {
+			rgb[3] = parseFloat(match[4]);
+		}
+	} else if (match = string.match(keyword)) {
+		if (match[1] === 'transparent') {
+			return [0, 0, 0, 0];
+		}
 
-function hslString(hsla, alpha) {
-   if (alpha < 1 || (hsla[3] && hsla[3] < 1)) {
-      return hslaString(hsla, alpha);
-   }
-   return "hsl(" + hsla[0] + ", " + hsla[1] + "%, " + hsla[2] + "%)";
-}
+		rgb = colorNames[match[1]];
 
-function hslaString(hsla, alpha) {
-   if (alpha === undefined) {
-      alpha = (hsla[3] !== undefined ? hsla[3] : 1);
-   }
-   return "hsla(" + hsla[0] + ", " + hsla[1] + "%, " + hsla[2] + "%, "
-           + alpha + ")";
-}
+		if (!rgb) {
+			return null;
+		}
+
+		rgb[3] = 1;
+
+		return rgb;
+	} else {
+		return null;
+	}
+
+	for (i = 0; i < 3; i++) {
+		rgb[i] = clamp(rgb[i], 0, 255);
+	}
+	rgb[3] = clamp(rgb[3], 0, 1);
+
+	return rgb;
+};
+
+cs.get.hsl = function (string) {
+	if (!string) {
+		return null;
+	}
+
+	var hsl = /^hsla?\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var match = string.match(hsl);
+
+	if (match) {
+		var alpha = parseFloat(match[4]);
+		var h = ((parseFloat(match[1]) % 360) + 360) % 360;
+		var s = clamp(parseFloat(match[2]), 0, 100);
+		var l = clamp(parseFloat(match[3]), 0, 100);
+		var a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);
+
+		return [h, s, l, a];
+	}
+
+	return null;
+};
+
+cs.get.hwb = function (string) {
+	if (!string) {
+		return null;
+	}
+
+	var hwb = /^hwb\(\s*([+-]?\d*[\.]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/;
+	var match = string.match(hwb);
+
+	if (match) {
+		var alpha = parseFloat(match[4]);
+		var h = ((parseFloat(match[1]) % 360) + 360) % 360;
+		var w = clamp(parseFloat(match[2]), 0, 100);
+		var b = clamp(parseFloat(match[3]), 0, 100);
+		var a = clamp(isNaN(alpha) ? 1 : alpha, 0, 1);
+		return [h, w, b, a];
+	}
+
+	return null;
+};
+
+cs.to.hex = function () {
+	var rgba = swizzle(arguments);
+
+	return (
+		'#' +
+		hexDouble(rgba[0]) +
+		hexDouble(rgba[1]) +
+		hexDouble(rgba[2]) +
+		(rgba[3] < 1
+			? (hexDouble(Math.round(rgba[3] * 255)))
+			: '')
+	);
+};
+
+cs.to.rgb = function () {
+	var rgba = swizzle(arguments);
+
+	return rgba.length < 4 || rgba[3] === 1
+		? 'rgb(' + Math.round(rgba[0]) + ', ' + Math.round(rgba[1]) + ', ' + Math.round(rgba[2]) + ')'
+		: 'rgba(' + Math.round(rgba[0]) + ', ' + Math.round(rgba[1]) + ', ' + Math.round(rgba[2]) + ', ' + rgba[3] + ')';
+};
+
+cs.to.rgb.percent = function () {
+	var rgba = swizzle(arguments);
+
+	var r = Math.round(rgba[0] / 255 * 100);
+	var g = Math.round(rgba[1] / 255 * 100);
+	var b = Math.round(rgba[2] / 255 * 100);
+
+	return rgba.length < 4 || rgba[3] === 1
+		? 'rgb(' + r + '%, ' + g + '%, ' + b + '%)'
+		: 'rgba(' + r + '%, ' + g + '%, ' + b + '%, ' + rgba[3] + ')';
+};
+
+cs.to.hsl = function () {
+	var hsla = swizzle(arguments);
+	return hsla.length < 4 || hsla[3] === 1
+		? 'hsl(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%)'
+		: 'hsla(' + hsla[0] + ', ' + hsla[1] + '%, ' + hsla[2] + '%, ' + hsla[3] + ')';
+};
 
 // hwb is a bit different than rgb(a) & hsl(a) since there is no alpha specific syntax
 // (hwb have alpha optional & 1 is default value)
-function hwbString(hwb, alpha) {
-   if (alpha === undefined) {
-      alpha = (hwb[3] !== undefined ? hwb[3] : 1);
-   }
-   return "hwb(" + hwb[0] + ", " + hwb[1] + "%, " + hwb[2] + "%"
-           + (alpha !== undefined && alpha !== 1 ? ", " + alpha : "") + ")";
-}
+cs.to.hwb = function () {
+	var hwba = swizzle(arguments);
 
-function keyword(rgb) {
-  return reverseNames[rgb.slice(0, 3)];
-}
+	var a = '';
+	if (hwba.length >= 4 && hwba[3] !== 1) {
+		a = ', ' + hwba[3];
+	}
+
+	return 'hwb(' + hwba[0] + ', ' + hwba[1] + '%, ' + hwba[2] + '%' + a + ')';
+};
+
+cs.to.keyword = function (rgb) {
+	return reverseNames[rgb.slice(0, 3)];
+};
 
 // helpers
-function scale(num, min, max) {
-   return Math.min(Math.max(min, num), max);
+function clamp(num, min, max) {
+	return Math.min(Math.max(min, num), max);
 }
 
 function hexDouble(num) {
-  var str = num.toString(16).toUpperCase();
-  return (str.length < 2) ? "0" + str : str;
-}
-
-
-//create a list of reverse color names
-var reverseNames = {};
-for (var name in colorNames) {
-   reverseNames[colorNames[name]] = name;
+	var str = num.toString(16).toUpperCase();
+	return (str.length < 2) ? '0' + str : str;
 }
 
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* MIT license */
-var clone = __webpack_require__(28);
-var convert = __webpack_require__(29);
-var string = __webpack_require__(31);
+"use strict";
 
-var Color = function (obj) {
-	if (obj instanceof Color) {
-		return obj;
-	}
+
+var colorString = __webpack_require__(33);
+var convert = __webpack_require__(31);
+
+var _slice = [].slice;
+
+var skippedModels = [
+	// to be honest, I don't really feel like keyword belongs in color convert, but eh.
+	'keyword',
+
+	// gray conflicts with some method names, and has its own method defined.
+	'gray',
+
+	// shouldn't really be in color-convert either...
+	'hex'
+];
+
+var hashedModelKeys = {};
+Object.keys(convert).forEach(function (model) {
+	hashedModelKeys[_slice.call(convert[model].labels).sort().join('')] = model;
+});
+
+var limiters = {};
+
+function Color(obj, model) {
 	if (!(this instanceof Color)) {
-		return new Color(obj);
+		return new Color(obj, model);
 	}
 
-	this.values = {
-		rgb: [0, 0, 0],
-		hsl: [0, 0, 0],
-		hsv: [0, 0, 0],
-		hwb: [0, 0, 0],
-		cmyk: [0, 0, 0, 0],
-		alpha: 1
-	};
+	if (model && model in skippedModels) {
+		model = null;
+	}
 
-	// parse Color() argument
-	var vals;
-	if (typeof obj === 'string') {
-		vals = string.getRgba(obj);
-		if (vals) {
-			this.setValues('rgb', vals);
-		} else if (vals = string.getHsla(obj)) {
-			this.setValues('hsl', vals);
-		} else if (vals = string.getHwb(obj)) {
-			this.setValues('hwb', vals);
-		} else {
-			throw new Error('Unable to parse color from string "' + obj + '"');
+	if (model && !(model in convert)) {
+		throw new Error('Unknown model: ' + model);
+	}
+
+	var i;
+	var channels;
+
+	if (!obj) {
+		this.model = 'rgb';
+		this.color = [0, 0, 0];
+		this.valpha = 1;
+	} else if (obj instanceof Color) {
+		this.model = obj.model;
+		this.color = obj.color.slice();
+		this.valpha = obj.valpha;
+	} else if (typeof obj === 'string') {
+		var result = colorString.get(obj);
+		if (result === null) {
+			throw new Error('Unable to parse color from string: ' + obj);
 		}
-	} else if (typeof obj === 'object') {
-		vals = obj;
-		if (vals.r !== undefined || vals.red !== undefined) {
-			this.setValues('rgb', vals);
-		} else if (vals.l !== undefined || vals.lightness !== undefined) {
-			this.setValues('hsl', vals);
-		} else if (vals.v !== undefined || vals.value !== undefined) {
-			this.setValues('hsv', vals);
-		} else if (vals.w !== undefined || vals.whiteness !== undefined) {
-			this.setValues('hwb', vals);
-		} else if (vals.c !== undefined || vals.cyan !== undefined) {
-			this.setValues('cmyk', vals);
-		} else {
-			throw new Error('Unable to parse color from object ' + JSON.stringify(obj));
+
+		this.model = result.model;
+		channels = convert[this.model].channels;
+		this.color = result.value.slice(0, channels);
+		this.valpha = typeof result.value[channels] === 'number' ? result.value[channels] : 1;
+	} else if (obj.length) {
+		this.model = model || 'rgb';
+		channels = convert[this.model].channels;
+		var newArr = _slice.call(obj, 0, channels);
+		this.color = zeroArray(newArr, channels);
+		this.valpha = typeof obj[channels] === 'number' ? obj[channels] : 1;
+	} else if (typeof obj === 'number') {
+		// this is always RGB - can be converted later on.
+		obj &= 0xFFFFFF;
+		this.model = 'rgb';
+		this.color = [
+			(obj >> 16) & 0xFF,
+			(obj >> 8) & 0xFF,
+			obj & 0xFF
+		];
+		this.valpha = 1;
+	} else {
+		this.valpha = 1;
+
+		var keys = Object.keys(obj);
+		if ('alpha' in obj) {
+			keys.splice(keys.indexOf('alpha'), 1);
+			this.valpha = typeof obj.alpha === 'number' ? obj.alpha : 0;
+		}
+
+		var hashedKeys = keys.sort().join('');
+		if (!(hashedKeys in hashedModelKeys)) {
+			throw new Error('Unable to parse color from object: ' + JSON.stringify(obj));
+		}
+
+		this.model = hashedModelKeys[hashedKeys];
+
+		var labels = convert[this.model].labels;
+		var color = [];
+		for (i = 0; i < labels.length; i++) {
+			color.push(obj[labels[i]]);
+		}
+
+		this.color = zeroArray(color);
+	}
+
+	// perform limitations (clamping, etc.)
+	if (limiters[this.model]) {
+		channels = convert[this.model].channels;
+		for (i = 0; i < channels; i++) {
+			var limit = limiters[this.model][i];
+			if (limit) {
+				this.color[i] = limit(this.color[i]);
+			}
 		}
 	}
-};
+
+	this.valpha = Math.max(0, Math.min(1, this.valpha));
+
+	if (Object.freeze) {
+		Object.freeze(this);
+	}
+}
 
 Color.prototype = {
-	rgb: function () {
-		return this.setSpace('rgb', arguments);
-	},
-	hsl: function () {
-		return this.setSpace('hsl', arguments);
-	},
-	hsv: function () {
-		return this.setSpace('hsv', arguments);
-	},
-	hwb: function () {
-		return this.setSpace('hwb', arguments);
-	},
-	cmyk: function () {
-		return this.setSpace('cmyk', arguments);
+	toString: function () {
+		return this.string();
 	},
 
-	rgbArray: function () {
-		return this.values.rgb;
+	toJSON: function () {
+		return this[this.model]();
 	},
-	hslArray: function () {
-		return this.values.hsl;
+
+	string: function (places) {
+		var self = this.model in colorString.to ? this : this.rgb();
+		self = self.round(typeof places === 'number' ? places : 1);
+		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);
+		return colorString.to[self.model](args);
 	},
-	hsvArray: function () {
-		return this.values.hsv;
+
+	percentString: function (places) {
+		var self = this.rgb().round(typeof places === 'number' ? places : 1);
+		var args = self.valpha === 1 ? self.color : self.color.concat(this.valpha);
+		return colorString.to.rgb.percent(args);
 	},
-	hwbArray: function () {
-		if (this.values.alpha !== 1) {
-			return this.values.hwb.concat([this.values.alpha]);
+
+	array: function () {
+		return this.valpha === 1 ? this.color.slice() : this.color.concat(this.valpha);
+	},
+
+	object: function () {
+		var result = {};
+		var channels = convert[this.model].channels;
+		var labels = convert[this.model].labels;
+
+		for (var i = 0; i < channels; i++) {
+			result[labels[i]] = this.color[i];
 		}
-		return this.values.hwb;
-	},
-	cmykArray: function () {
-		return this.values.cmyk;
-	},
-	rgbaArray: function () {
-		var rgb = this.values.rgb;
-		return rgb.concat([this.values.alpha]);
-	},
-	rgbaArrayNormalized: function () {
-		var rgb = this.values.rgb;
-		var glRgba = [];
-		for (var i = 0; i < 3; i++) {
-			glRgba[i] = rgb[i] / 255;
+
+		if (this.valpha !== 1) {
+			result.alpha = this.valpha;
 		}
-		glRgba.push(this.values.alpha);
-		return glRgba;
+
+		return result;
 	},
-	hslaArray: function () {
-		var hsl = this.values.hsl;
-		return hsl.concat([this.values.alpha]);
+
+	unitArray: function () {
+		var rgb = this.rgb().color;
+		rgb[0] /= 255;
+		rgb[1] /= 255;
+		rgb[2] /= 255;
+
+		if (this.valpha !== 1) {
+			rgb.push(this.valpha);
+		}
+
+		return rgb;
 	},
+
+	unitObject: function () {
+		var rgb = this.rgb().object();
+		rgb.r /= 255;
+		rgb.g /= 255;
+		rgb.b /= 255;
+
+		if (this.valpha !== 1) {
+			rgb.alpha = this.valpha;
+		}
+
+		return rgb;
+	},
+
+	round: function (places) {
+		places = Math.max(places || 0, 0);
+		return new Color(this.color.map(roundToPlace(places)).concat(this.valpha), this.model);
+	},
+
 	alpha: function (val) {
-		if (val === undefined) {
-			return this.values.alpha;
+		if (arguments.length) {
+			return new Color(this.color.concat(Math.max(0, Math.min(1, val))), this.model);
 		}
-		this.setValues('alpha', val);
-		return this;
+
+		return this.valpha;
 	},
 
-	red: function (val) {
-		return this.setChannel('rgb', 0, val);
-	},
-	green: function (val) {
-		return this.setChannel('rgb', 1, val);
-	},
-	blue: function (val) {
-		return this.setChannel('rgb', 2, val);
-	},
-	hue: function (val) {
-		if (val) {
-			val %= 360;
-			val = val < 0 ? 360 + val : val;
+	// rgb
+	red: getset('rgb', 0, maxfn(255)),
+	green: getset('rgb', 1, maxfn(255)),
+	blue: getset('rgb', 2, maxfn(255)),
+
+	hue: getset(['hsl', 'hsv', 'hsl', 'hwb', 'hcg'], 0, function (val) { return ((val % 360) + 360) % 360; }), // eslint-disable-line brace-style
+
+	saturationl: getset('hsl', 1, maxfn(100)),
+	lightness: getset('hsl', 2, maxfn(100)),
+
+	saturationv: getset('hsv', 1, maxfn(100)),
+	value: getset('hsv', 2, maxfn(100)),
+
+	chroma: getset('hcg', 1, maxfn(100)),
+	gray: getset('hcg', 2, maxfn(100)),
+
+	white: getset('hwb', 1, maxfn(100)),
+	wblack: getset('hwb', 2, maxfn(100)),
+
+	cyan: getset('cmyk', 0, maxfn(100)),
+	magenta: getset('cmyk', 1, maxfn(100)),
+	yellow: getset('cmyk', 2, maxfn(100)),
+	black: getset('cmyk', 3, maxfn(100)),
+
+	x: getset('xyz', 0, maxfn(100)),
+	y: getset('xyz', 1, maxfn(100)),
+	z: getset('xyz', 2, maxfn(100)),
+
+	l: getset('lab', 0, maxfn(100)),
+	a: getset('lab', 1),
+	b: getset('lab', 2),
+
+	keyword: function (val) {
+		if (arguments.length) {
+			return new Color(val);
 		}
-		return this.setChannel('hsl', 0, val);
-	},
-	saturation: function (val) {
-		return this.setChannel('hsl', 1, val);
-	},
-	lightness: function (val) {
-		return this.setChannel('hsl', 2, val);
-	},
-	saturationv: function (val) {
-		return this.setChannel('hsv', 1, val);
-	},
-	whiteness: function (val) {
-		return this.setChannel('hwb', 1, val);
-	},
-	blackness: function (val) {
-		return this.setChannel('hwb', 2, val);
-	},
-	value: function (val) {
-		return this.setChannel('hsv', 2, val);
-	},
-	cyan: function (val) {
-		return this.setChannel('cmyk', 0, val);
-	},
-	magenta: function (val) {
-		return this.setChannel('cmyk', 1, val);
-	},
-	yellow: function (val) {
-		return this.setChannel('cmyk', 2, val);
-	},
-	black: function (val) {
-		return this.setChannel('cmyk', 3, val);
+
+		return convert[this.model].keyword(this.color);
 	},
 
-	hexString: function () {
-		return string.hexString(this.values.rgb);
-	},
-	rgbString: function () {
-		return string.rgbString(this.values.rgb, this.values.alpha);
-	},
-	rgbaString: function () {
-		return string.rgbaString(this.values.rgb, this.values.alpha);
-	},
-	percentString: function () {
-		return string.percentString(this.values.rgb, this.values.alpha);
-	},
-	hslString: function () {
-		return string.hslString(this.values.hsl, this.values.alpha);
-	},
-	hslaString: function () {
-		return string.hslaString(this.values.hsl, this.values.alpha);
-	},
-	hwbString: function () {
-		return string.hwbString(this.values.hwb, this.values.alpha);
-	},
-	keyword: function () {
-		return string.keyword(this.values.rgb, this.values.alpha);
+	hex: function (val) {
+		if (arguments.length) {
+			return new Color(val);
+		}
+
+		return colorString.to.hex(this.rgb().round().color);
 	},
 
 	rgbNumber: function () {
-		return (this.values.rgb[0] << 16) | (this.values.rgb[1] << 8) | this.values.rgb[2];
+		var rgb = this.rgb().color;
+		return ((rgb[0] & 0xFF) << 16) | ((rgb[1] & 0xFF) << 8) | (rgb[2] & 0xFF);
 	},
 
 	luminosity: function () {
 		// http://www.w3.org/TR/WCAG20/#relativeluminancedef
-		var rgb = this.values.rgb;
+		var rgb = this.rgb().color;
+
 		var lum = [];
 		for (var i = 0; i < rgb.length; i++) {
 			var chan = rgb[i] / 255;
 			lum[i] = (chan <= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);
 		}
+
 		return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
 	},
 
@@ -11557,9 +11812,11 @@ Color.prototype = {
 		// http://www.w3.org/TR/WCAG20/#contrast-ratiodef
 		var lum1 = this.luminosity();
 		var lum2 = color2.luminosity();
+
 		if (lum1 > lum2) {
 			return (lum1 + 0.05) / (lum2 + 0.05);
 		}
+
 		return (lum2 + 0.05) / (lum1 + 0.05);
 	},
 
@@ -11574,7 +11831,7 @@ Color.prototype = {
 
 	dark: function () {
 		// YIQ equation from http://24ways.org/2010/calculating-color-contrast
-		var rgb = this.values.rgb;
+		var rgb = this.rgb().color;
 		var yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
 		return yiq < 128;
 	},
@@ -11584,84 +11841,78 @@ Color.prototype = {
 	},
 
 	negate: function () {
-		var rgb = [];
+		var rgb = this.rgb();
 		for (var i = 0; i < 3; i++) {
-			rgb[i] = 255 - this.values.rgb[i];
+			rgb.color[i] = 255 - rgb.color[i];
 		}
-		this.setValues('rgb', rgb);
-		return this;
+		return rgb;
 	},
 
 	lighten: function (ratio) {
-		this.values.hsl[2] += this.values.hsl[2] * ratio;
-		this.setValues('hsl', this.values.hsl);
-		return this;
+		var hsl = this.hsl();
+		hsl.color[2] += hsl.color[2] * ratio;
+		return hsl;
 	},
 
 	darken: function (ratio) {
-		this.values.hsl[2] -= this.values.hsl[2] * ratio;
-		this.setValues('hsl', this.values.hsl);
-		return this;
+		var hsl = this.hsl();
+		hsl.color[2] -= hsl.color[2] * ratio;
+		return hsl;
 	},
 
 	saturate: function (ratio) {
-		this.values.hsl[1] += this.values.hsl[1] * ratio;
-		this.setValues('hsl', this.values.hsl);
-		return this;
+		var hsl = this.hsl();
+		hsl.color[1] += hsl.color[1] * ratio;
+		return hsl;
 	},
 
 	desaturate: function (ratio) {
-		this.values.hsl[1] -= this.values.hsl[1] * ratio;
-		this.setValues('hsl', this.values.hsl);
-		return this;
+		var hsl = this.hsl();
+		hsl.color[1] -= hsl.color[1] * ratio;
+		return hsl;
 	},
 
 	whiten: function (ratio) {
-		this.values.hwb[1] += this.values.hwb[1] * ratio;
-		this.setValues('hwb', this.values.hwb);
-		return this;
+		var hwb = this.hwb();
+		hwb.color[1] += hwb.color[1] * ratio;
+		return hwb;
 	},
 
 	blacken: function (ratio) {
-		this.values.hwb[2] += this.values.hwb[2] * ratio;
-		this.setValues('hwb', this.values.hwb);
-		return this;
+		var hwb = this.hwb();
+		hwb.color[2] += hwb.color[2] * ratio;
+		return hwb;
 	},
 
-	greyscale: function () {
-		var rgb = this.values.rgb;
+	grayscale: function () {
 		// http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
+		var rgb = this.rgb().color;
 		var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
-		this.setValues('rgb', [val, val, val]);
-		return this;
+		return Color.rgb(val, val, val);
 	},
 
-	clearer: function (ratio) {
-		this.setValues('alpha', this.values.alpha - (this.values.alpha * ratio));
-		return this;
+	fade: function (ratio) {
+		return this.alpha(this.valpha - (this.valpha * ratio));
 	},
 
 	opaquer: function (ratio) {
-		this.setValues('alpha', this.values.alpha + (this.values.alpha * ratio));
-		return this;
+		return this.alpha(this.valpha + (this.valpha * ratio));
 	},
 
 	rotate: function (degrees) {
-		var hue = this.values.hsl[0];
+		var hsl = this.hsl();
+		var hue = hsl.color[0];
 		hue = (hue + degrees) % 360;
 		hue = hue < 0 ? 360 + hue : hue;
-		this.values.hsl[0] = hue;
-		this.setValues('hsl', this.values.hsl);
-		return this;
+		hsl.color[0] = hue;
+		return hsl;
 	},
 
-	/**
-	 * Ported from sass implementation in C
-	 * https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
-	 */
 	mix: function (mixinColor, weight) {
-		var color1 = this;
-		var color2 = mixinColor;
+		// ported from sass implementation in C
+		// https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
+		var color1 = this.rgb();
+		var color2 = mixinColor.rgb();
 		var p = weight === undefined ? 0.5 : weight;
 
 		var w = 2 * p - 1;
@@ -11670,249 +11921,107 @@ Color.prototype = {
 		var w1 = (((w * a === -1) ? w : (w + a) / (1 + w * a)) + 1) / 2.0;
 		var w2 = 1 - w1;
 
-		return this
-			.rgb(
+		return Color.rgb(
 				w1 * color1.red() + w2 * color2.red(),
 				w1 * color1.green() + w2 * color2.green(),
-				w1 * color1.blue() + w2 * color2.blue()
-			)
-			.alpha(color1.alpha() * p + color2.alpha() * (1 - p));
-	},
-
-	toJSON: function () {
-		return this.rgb();
-	},
-
-	clone: function () {
-		var col = new Color();
-		col.values = clone(this.values);
-		return col;
+				w1 * color1.blue() + w2 * color2.blue(),
+				color1.alpha() * p + color2.alpha() * (1 - p));
 	}
 };
 
-Color.prototype.getValues = function (space) {
-	var vals = {};
-
-	for (var i = 0; i < space.length; i++) {
-		vals[space.charAt(i)] = this.values[space][i];
+// model conversion methods and static constructors
+Object.keys(convert).forEach(function (model) {
+	if (skippedModels.indexOf(model) !== -1) {
+		return;
 	}
 
-	if (this.values.alpha !== 1) {
-		vals.a = this.values.alpha;
-	}
+	var channels = convert[model].channels;
 
-	// {r: 255, g: 255, b: 255, a: 0.4}
-	return vals;
-};
+	// conversion methods
+	Color.prototype[model] = function () {
+		if (this.model === model) {
+			return new Color(this);
+		}
 
-Color.prototype.setValues = function (space, vals) {
-	var spaces = {
-		rgb: ['red', 'green', 'blue'],
-		hsl: ['hue', 'saturation', 'lightness'],
-		hsv: ['hue', 'saturation', 'value'],
-		hwb: ['hue', 'whiteness', 'blackness'],
-		cmyk: ['cyan', 'magenta', 'yellow', 'black']
+		if (arguments.length) {
+			return new Color(arguments, model);
+		}
+
+		var newAlpha = typeof arguments[channels] === 'number' ? channels : this.valpha;
+		return new Color(assertArray(convert[this.model][model].raw(this.color)).concat(newAlpha), model);
 	};
 
-	var maxes = {
-		rgb: [255, 255, 255],
-		hsl: [360, 100, 100],
-		hsv: [360, 100, 100],
-		hwb: [360, 100, 100],
-		cmyk: [100, 100, 100, 100]
+	// 'static' construction methods
+	Color[model] = function (color) {
+		if (typeof color === 'number') {
+			color = zeroArray(_slice.call(arguments), channels);
+		}
+		return new Color(color, model);
 	};
+});
 
-	var i;
-	var alpha = 1;
-	if (space === 'alpha') {
-		alpha = vals;
-	} else if (vals.length) {
-		// [10, 10, 10]
-		this.values[space] = vals.slice(0, space.length);
-		alpha = vals[space.length];
-	} else if (vals[space.charAt(0)] !== undefined) {
-		// {r: 10, g: 10, b: 10}
-		for (i = 0; i < space.length; i++) {
-			this.values[space][i] = vals[space.charAt(i)];
+function roundTo(num, places) {
+	return Number(num.toFixed(places));
+}
+
+function roundToPlace(places) {
+	return function (num) {
+		return roundTo(num, places);
+	};
+}
+
+function getset(model, channel, modifier) {
+	model = Array.isArray(model) ? model : [model];
+
+	model.forEach(function (m) {
+		(limiters[m] || (limiters[m] = []))[channel] = modifier;
+	});
+
+	model = model[0];
+
+	return function (val) {
+		var result;
+
+		if (arguments.length) {
+			if (modifier) {
+				val = modifier(val);
+			}
+
+			result = this[model]();
+			result.color[channel] = val;
+			return result;
 		}
 
-		alpha = vals.a;
-	} else if (vals[spaces[space][0]] !== undefined) {
-		// {red: 10, green: 10, blue: 10}
-		var chans = spaces[space];
-
-		for (i = 0; i < space.length; i++) {
-			this.values[space][i] = vals[chans[i]];
+		result = this[model]().color[channel];
+		if (modifier) {
+			result = modifier(result);
 		}
 
-		alpha = vals.alpha;
-	}
+		return result;
+	};
+}
 
-	this.values.alpha = Math.max(0, Math.min(1, (alpha === undefined ? this.values.alpha : alpha)));
+function maxfn(max) {
+	return function (v) {
+		return Math.max(0, Math.min(max, v));
+	};
+}
 
-	if (space === 'alpha') {
-		return false;
-	}
+function assertArray(val) {
+	return Array.isArray(val) ? val : [val];
+}
 
-	var capped;
-
-	// cap values of the space prior converting all values
-	for (i = 0; i < space.length; i++) {
-		capped = Math.max(0, Math.min(maxes[space][i], this.values[space][i]));
-		this.values[space][i] = Math.round(capped);
-	}
-
-	// convert to all the other color spaces
-	for (var sname in spaces) {
-		if (sname !== space) {
-			this.values[sname] = convert[space][sname](this.values[space]);
-		}
-
-		// cap values
-		for (i = 0; i < sname.length; i++) {
-			capped = Math.max(0, Math.min(maxes[sname][i], this.values[sname][i]));
-			this.values[sname][i] = Math.round(capped);
+function zeroArray(arr, length) {
+	for (var i = 0; i < length; i++) {
+		if (typeof arr[i] !== 'number') {
+			arr[i] = 0;
 		}
 	}
 
-	return true;
-};
-
-Color.prototype.setSpace = function (space, args) {
-	var vals = args[0];
-
-	if (vals === undefined) {
-		// color.rgb()
-		return this.getValues(space);
-	}
-
-	// color.rgb(10, 10, 10)
-	if (typeof vals === 'number') {
-		vals = Array.prototype.slice.call(args);
-	}
-
-	this.setValues(space, vals);
-	return this;
-};
-
-Color.prototype.setChannel = function (space, index, val) {
-	if (val === undefined) {
-		// color.red()
-		return this.values[space][index];
-	} else if (val === this.values[space][index]) {
-		// color.red(color.red())
-		return this;
-	}
-
-	// color.red(100)
-	this.values[space][index] = val;
-	this.setValues(space, this.values[space]);
-
-	return this;
-};
+	return arr;
+}
 
 module.exports = Color;
-
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-exports.read = function (buffer, offset, isLE, mLen, nBytes) {
-  var e, m
-  var eLen = nBytes * 8 - mLen - 1
-  var eMax = (1 << eLen) - 1
-  var eBias = eMax >> 1
-  var nBits = -7
-  var i = isLE ? (nBytes - 1) : 0
-  var d = isLE ? -1 : 1
-  var s = buffer[offset + i]
-
-  i += d
-
-  e = s & ((1 << (-nBits)) - 1)
-  s >>= (-nBits)
-  nBits += eLen
-  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-
-  m = e & ((1 << (-nBits)) - 1)
-  e >>= (-nBits)
-  nBits += mLen
-  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-
-  if (e === 0) {
-    e = 1 - eBias
-  } else if (e === eMax) {
-    return m ? NaN : ((s ? -1 : 1) * Infinity)
-  } else {
-    m = m + Math.pow(2, mLen)
-    e = e - eBias
-  }
-  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
-}
-
-exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
-  var e, m, c
-  var eLen = nBytes * 8 - mLen - 1
-  var eMax = (1 << eLen) - 1
-  var eBias = eMax >> 1
-  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
-  var i = isLE ? 0 : (nBytes - 1)
-  var d = isLE ? 1 : -1
-  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
-
-  value = Math.abs(value)
-
-  if (isNaN(value) || value === Infinity) {
-    m = isNaN(value) ? 1 : 0
-    e = eMax
-  } else {
-    e = Math.floor(Math.log(value) / Math.LN2)
-    if (value * (c = Math.pow(2, -e)) < 1) {
-      e--
-      c *= 2
-    }
-    if (e + eBias >= 1) {
-      value += rt / c
-    } else {
-      value += rt * Math.pow(2, 1 - eBias)
-    }
-    if (value * c >= 2) {
-      e++
-      c /= 2
-    }
-
-    if (e + eBias >= eMax) {
-      m = 0
-      e = eMax
-    } else if (e + eBias >= 1) {
-      m = (value * c - 1) * Math.pow(2, mLen)
-      e = e + eBias
-    } else {
-      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
-      e = 0
-    }
-  }
-
-  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
-
-  e = (e << mLen) | m
-  eLen += mLen
-  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
-
-  buffer[offset + i - d] |= s * 128
-}
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports) {
-
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
 
 
 /***/ }),
@@ -11920,1831 +12029,61 @@ module.exports = Array.isArray || function (arr) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
- * @license  MIT
- */
-/* eslint-disable no-proto */
 
 
+var isArrayish = __webpack_require__(36);
 
-var base64 = __webpack_require__(27)
-var ieee754 = __webpack_require__(33)
-var isArray = __webpack_require__(34)
+var concat = Array.prototype.concat;
+var slice = Array.prototype.slice;
 
-exports.Buffer = Buffer
-exports.SlowBuffer = SlowBuffer
-exports.INSPECT_MAX_BYTES = 50
+var swizzle = module.exports = function swizzle(args) {
+	var results = [];
 
-/**
- * If `Buffer.TYPED_ARRAY_SUPPORT`:
- *   === true    Use Uint8Array implementation (fastest)
- *   === false   Use Object implementation (most compatible, even IE6)
- *
- * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
- * Opera 11.6+, iOS 4.2+.
- *
- * Due to various browser bugs, sometimes the Object implementation will be used even
- * when the browser supports typed arrays.
- *
- * Note:
- *
- *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
- *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
- *
- *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
- *
- *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
- *     incorrect length in some situations.
+	for (var i = 0, len = args.length; i < len; i++) {
+		var arg = args[i];
 
- * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
- * get the Object implementation, which is slower but behaves correctly.
- */
-Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
-  ? global.TYPED_ARRAY_SUPPORT
-  : typedArraySupport()
+		if (isArrayish(arg)) {
+			// http://jsperf.com/javascript-array-concat-vs-push/98
+			results = concat.call(results, slice.call(arg));
+		} else {
+			results.push(arg);
+		}
+	}
 
-/*
- * Export kMaxLength after typed array support is determined.
- */
-exports.kMaxLength = kMaxLength()
+	return results;
+};
 
-function typedArraySupport () {
-  try {
-    var arr = new Uint8Array(1)
-    arr.__proto__ = {__proto__: Uint8Array.prototype, foo: function () { return 42 }}
-    return arr.foo() === 42 && // typed array instances can be augmented
-        typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
-        arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
-  } catch (e) {
-    return false
-  }
-}
+swizzle.wrap = function (fn) {
+	return function () {
+		return fn(swizzle(arguments));
+	};
+};
 
-function kMaxLength () {
-  return Buffer.TYPED_ARRAY_SUPPORT
-    ? 0x7fffffff
-    : 0x3fffffff
-}
-
-function createBuffer (that, length) {
-  if (kMaxLength() < length) {
-    throw new RangeError('Invalid typed array length')
-  }
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    // Return an augmented `Uint8Array` instance, for best performance
-    that = new Uint8Array(length)
-    that.__proto__ = Buffer.prototype
-  } else {
-    // Fallback: Return an object instance of the Buffer class
-    if (that === null) {
-      that = new Buffer(length)
-    }
-    that.length = length
-  }
-
-  return that
-}
-
-/**
- * The Buffer constructor returns instances of `Uint8Array` that have their
- * prototype changed to `Buffer.prototype`. Furthermore, `Buffer` is a subclass of
- * `Uint8Array`, so the returned instances will have all the node `Buffer` methods
- * and the `Uint8Array` methods. Square bracket notation works as expected -- it
- * returns a single octet.
- *
- * The `Uint8Array` prototype remains unmodified.
- */
-
-function Buffer (arg, encodingOrOffset, length) {
-  if (!Buffer.TYPED_ARRAY_SUPPORT && !(this instanceof Buffer)) {
-    return new Buffer(arg, encodingOrOffset, length)
-  }
-
-  // Common case.
-  if (typeof arg === 'number') {
-    if (typeof encodingOrOffset === 'string') {
-      throw new Error(
-        'If encoding is specified then the first argument must be a string'
-      )
-    }
-    return allocUnsafe(this, arg)
-  }
-  return from(this, arg, encodingOrOffset, length)
-}
-
-Buffer.poolSize = 8192 // not used by this implementation
-
-// TODO: Legacy, not needed anymore. Remove in next major version.
-Buffer._augment = function (arr) {
-  arr.__proto__ = Buffer.prototype
-  return arr
-}
-
-function from (that, value, encodingOrOffset, length) {
-  if (typeof value === 'number') {
-    throw new TypeError('"value" argument must not be a number')
-  }
-
-  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
-    return fromArrayBuffer(that, value, encodingOrOffset, length)
-  }
-
-  if (typeof value === 'string') {
-    return fromString(that, value, encodingOrOffset)
-  }
-
-  return fromObject(that, value)
-}
-
-/**
- * Functionally equivalent to Buffer(arg, encoding) but throws a TypeError
- * if value is a number.
- * Buffer.from(str[, encoding])
- * Buffer.from(array)
- * Buffer.from(buffer)
- * Buffer.from(arrayBuffer[, byteOffset[, length]])
- **/
-Buffer.from = function (value, encodingOrOffset, length) {
-  return from(null, value, encodingOrOffset, length)
-}
-
-if (Buffer.TYPED_ARRAY_SUPPORT) {
-  Buffer.prototype.__proto__ = Uint8Array.prototype
-  Buffer.__proto__ = Uint8Array
-  if (typeof Symbol !== 'undefined' && Symbol.species &&
-      Buffer[Symbol.species] === Buffer) {
-    // Fix subarray() in ES2016. See: https://github.com/feross/buffer/pull/97
-    Object.defineProperty(Buffer, Symbol.species, {
-      value: null,
-      configurable: true
-    })
-  }
-}
-
-function assertSize (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('"size" argument must be a number')
-  } else if (size < 0) {
-    throw new RangeError('"size" argument must not be negative')
-  }
-}
-
-function alloc (that, size, fill, encoding) {
-  assertSize(size)
-  if (size <= 0) {
-    return createBuffer(that, size)
-  }
-  if (fill !== undefined) {
-    // Only pay attention to encoding if it's a string. This
-    // prevents accidentally sending in a number that would
-    // be interpretted as a start offset.
-    return typeof encoding === 'string'
-      ? createBuffer(that, size).fill(fill, encoding)
-      : createBuffer(that, size).fill(fill)
-  }
-  return createBuffer(that, size)
-}
-
-/**
- * Creates a new filled Buffer instance.
- * alloc(size[, fill[, encoding]])
- **/
-Buffer.alloc = function (size, fill, encoding) {
-  return alloc(null, size, fill, encoding)
-}
-
-function allocUnsafe (that, size) {
-  assertSize(size)
-  that = createBuffer(that, size < 0 ? 0 : checked(size) | 0)
-  if (!Buffer.TYPED_ARRAY_SUPPORT) {
-    for (var i = 0; i < size; ++i) {
-      that[i] = 0
-    }
-  }
-  return that
-}
-
-/**
- * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
- * */
-Buffer.allocUnsafe = function (size) {
-  return allocUnsafe(null, size)
-}
-/**
- * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
- */
-Buffer.allocUnsafeSlow = function (size) {
-  return allocUnsafe(null, size)
-}
-
-function fromString (that, string, encoding) {
-  if (typeof encoding !== 'string' || encoding === '') {
-    encoding = 'utf8'
-  }
-
-  if (!Buffer.isEncoding(encoding)) {
-    throw new TypeError('"encoding" must be a valid string encoding')
-  }
-
-  var length = byteLength(string, encoding) | 0
-  that = createBuffer(that, length)
-
-  var actual = that.write(string, encoding)
-
-  if (actual !== length) {
-    // Writing a hex string, for example, that contains invalid characters will
-    // cause everything after the first invalid character to be ignored. (e.g.
-    // 'abxxcd' will be treated as 'ab')
-    that = that.slice(0, actual)
-  }
-
-  return that
-}
-
-function fromArrayLike (that, array) {
-  var length = array.length < 0 ? 0 : checked(array.length) | 0
-  that = createBuffer(that, length)
-  for (var i = 0; i < length; i += 1) {
-    that[i] = array[i] & 255
-  }
-  return that
-}
-
-function fromArrayBuffer (that, array, byteOffset, length) {
-  array.byteLength // this throws if `array` is not a valid ArrayBuffer
-
-  if (byteOffset < 0 || array.byteLength < byteOffset) {
-    throw new RangeError('\'offset\' is out of bounds')
-  }
-
-  if (array.byteLength < byteOffset + (length || 0)) {
-    throw new RangeError('\'length\' is out of bounds')
-  }
-
-  if (byteOffset === undefined && length === undefined) {
-    array = new Uint8Array(array)
-  } else if (length === undefined) {
-    array = new Uint8Array(array, byteOffset)
-  } else {
-    array = new Uint8Array(array, byteOffset, length)
-  }
-
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    // Return an augmented `Uint8Array` instance, for best performance
-    that = array
-    that.__proto__ = Buffer.prototype
-  } else {
-    // Fallback: Return an object instance of the Buffer class
-    that = fromArrayLike(that, array)
-  }
-  return that
-}
-
-function fromObject (that, obj) {
-  if (Buffer.isBuffer(obj)) {
-    var len = checked(obj.length) | 0
-    that = createBuffer(that, len)
-
-    if (that.length === 0) {
-      return that
-    }
-
-    obj.copy(that, 0, 0, len)
-    return that
-  }
-
-  if (obj) {
-    if ((typeof ArrayBuffer !== 'undefined' &&
-        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
-      if (typeof obj.length !== 'number' || isnan(obj.length)) {
-        return createBuffer(that, 0)
-      }
-      return fromArrayLike(that, obj)
-    }
-
-    if (obj.type === 'Buffer' && isArray(obj.data)) {
-      return fromArrayLike(that, obj.data)
-    }
-  }
-
-  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
-}
-
-function checked (length) {
-  // Note: cannot use `length < kMaxLength()` here because that fails when
-  // length is NaN (which is otherwise coerced to zero.)
-  if (length >= kMaxLength()) {
-    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
-                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
-  }
-  return length | 0
-}
-
-function SlowBuffer (length) {
-  if (+length != length) { // eslint-disable-line eqeqeq
-    length = 0
-  }
-  return Buffer.alloc(+length)
-}
-
-Buffer.isBuffer = function isBuffer (b) {
-  return !!(b != null && b._isBuffer)
-}
-
-Buffer.compare = function compare (a, b) {
-  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
-    throw new TypeError('Arguments must be Buffers')
-  }
-
-  if (a === b) return 0
-
-  var x = a.length
-  var y = b.length
-
-  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
-    if (a[i] !== b[i]) {
-      x = a[i]
-      y = b[i]
-      break
-    }
-  }
-
-  if (x < y) return -1
-  if (y < x) return 1
-  return 0
-}
-
-Buffer.isEncoding = function isEncoding (encoding) {
-  switch (String(encoding).toLowerCase()) {
-    case 'hex':
-    case 'utf8':
-    case 'utf-8':
-    case 'ascii':
-    case 'latin1':
-    case 'binary':
-    case 'base64':
-    case 'ucs2':
-    case 'ucs-2':
-    case 'utf16le':
-    case 'utf-16le':
-      return true
-    default:
-      return false
-  }
-}
-
-Buffer.concat = function concat (list, length) {
-  if (!isArray(list)) {
-    throw new TypeError('"list" argument must be an Array of Buffers')
-  }
-
-  if (list.length === 0) {
-    return Buffer.alloc(0)
-  }
-
-  var i
-  if (length === undefined) {
-    length = 0
-    for (i = 0; i < list.length; ++i) {
-      length += list[i].length
-    }
-  }
-
-  var buffer = Buffer.allocUnsafe(length)
-  var pos = 0
-  for (i = 0; i < list.length; ++i) {
-    var buf = list[i]
-    if (!Buffer.isBuffer(buf)) {
-      throw new TypeError('"list" argument must be an Array of Buffers')
-    }
-    buf.copy(buffer, pos)
-    pos += buf.length
-  }
-  return buffer
-}
-
-function byteLength (string, encoding) {
-  if (Buffer.isBuffer(string)) {
-    return string.length
-  }
-  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
-      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
-    return string.byteLength
-  }
-  if (typeof string !== 'string') {
-    string = '' + string
-  }
-
-  var len = string.length
-  if (len === 0) return 0
-
-  // Use a for loop to avoid recursion
-  var loweredCase = false
-  for (;;) {
-    switch (encoding) {
-      case 'ascii':
-      case 'latin1':
-      case 'binary':
-        return len
-      case 'utf8':
-      case 'utf-8':
-      case undefined:
-        return utf8ToBytes(string).length
-      case 'ucs2':
-      case 'ucs-2':
-      case 'utf16le':
-      case 'utf-16le':
-        return len * 2
-      case 'hex':
-        return len >>> 1
-      case 'base64':
-        return base64ToBytes(string).length
-      default:
-        if (loweredCase) return utf8ToBytes(string).length // assume utf8
-        encoding = ('' + encoding).toLowerCase()
-        loweredCase = true
-    }
-  }
-}
-Buffer.byteLength = byteLength
-
-function slowToString (encoding, start, end) {
-  var loweredCase = false
-
-  // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
-  // property of a typed array.
-
-  // This behaves neither like String nor Uint8Array in that we set start/end
-  // to their upper/lower bounds if the value passed is out of range.
-  // undefined is handled specially as per ECMA-262 6th Edition,
-  // Section 13.3.3.7 Runtime Semantics: KeyedBindingInitialization.
-  if (start === undefined || start < 0) {
-    start = 0
-  }
-  // Return early if start > this.length. Done here to prevent potential uint32
-  // coercion fail below.
-  if (start > this.length) {
-    return ''
-  }
-
-  if (end === undefined || end > this.length) {
-    end = this.length
-  }
-
-  if (end <= 0) {
-    return ''
-  }
-
-  // Force coersion to uint32. This will also coerce falsey/NaN values to 0.
-  end >>>= 0
-  start >>>= 0
-
-  if (end <= start) {
-    return ''
-  }
-
-  if (!encoding) encoding = 'utf8'
-
-  while (true) {
-    switch (encoding) {
-      case 'hex':
-        return hexSlice(this, start, end)
-
-      case 'utf8':
-      case 'utf-8':
-        return utf8Slice(this, start, end)
-
-      case 'ascii':
-        return asciiSlice(this, start, end)
-
-      case 'latin1':
-      case 'binary':
-        return latin1Slice(this, start, end)
-
-      case 'base64':
-        return base64Slice(this, start, end)
-
-      case 'ucs2':
-      case 'ucs-2':
-      case 'utf16le':
-      case 'utf-16le':
-        return utf16leSlice(this, start, end)
-
-      default:
-        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
-        encoding = (encoding + '').toLowerCase()
-        loweredCase = true
-    }
-  }
-}
-
-// The property is used by `Buffer.isBuffer` and `is-buffer` (in Safari 5-7) to detect
-// Buffer instances.
-Buffer.prototype._isBuffer = true
-
-function swap (b, n, m) {
-  var i = b[n]
-  b[n] = b[m]
-  b[m] = i
-}
-
-Buffer.prototype.swap16 = function swap16 () {
-  var len = this.length
-  if (len % 2 !== 0) {
-    throw new RangeError('Buffer size must be a multiple of 16-bits')
-  }
-  for (var i = 0; i < len; i += 2) {
-    swap(this, i, i + 1)
-  }
-  return this
-}
-
-Buffer.prototype.swap32 = function swap32 () {
-  var len = this.length
-  if (len % 4 !== 0) {
-    throw new RangeError('Buffer size must be a multiple of 32-bits')
-  }
-  for (var i = 0; i < len; i += 4) {
-    swap(this, i, i + 3)
-    swap(this, i + 1, i + 2)
-  }
-  return this
-}
-
-Buffer.prototype.swap64 = function swap64 () {
-  var len = this.length
-  if (len % 8 !== 0) {
-    throw new RangeError('Buffer size must be a multiple of 64-bits')
-  }
-  for (var i = 0; i < len; i += 8) {
-    swap(this, i, i + 7)
-    swap(this, i + 1, i + 6)
-    swap(this, i + 2, i + 5)
-    swap(this, i + 3, i + 4)
-  }
-  return this
-}
-
-Buffer.prototype.toString = function toString () {
-  var length = this.length | 0
-  if (length === 0) return ''
-  if (arguments.length === 0) return utf8Slice(this, 0, length)
-  return slowToString.apply(this, arguments)
-}
-
-Buffer.prototype.equals = function equals (b) {
-  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
-  if (this === b) return true
-  return Buffer.compare(this, b) === 0
-}
-
-Buffer.prototype.inspect = function inspect () {
-  var str = ''
-  var max = exports.INSPECT_MAX_BYTES
-  if (this.length > 0) {
-    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
-    if (this.length > max) str += ' ... '
-  }
-  return '<Buffer ' + str + '>'
-}
-
-Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
-  if (!Buffer.isBuffer(target)) {
-    throw new TypeError('Argument must be a Buffer')
-  }
-
-  if (start === undefined) {
-    start = 0
-  }
-  if (end === undefined) {
-    end = target ? target.length : 0
-  }
-  if (thisStart === undefined) {
-    thisStart = 0
-  }
-  if (thisEnd === undefined) {
-    thisEnd = this.length
-  }
-
-  if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) {
-    throw new RangeError('out of range index')
-  }
-
-  if (thisStart >= thisEnd && start >= end) {
-    return 0
-  }
-  if (thisStart >= thisEnd) {
-    return -1
-  }
-  if (start >= end) {
-    return 1
-  }
-
-  start >>>= 0
-  end >>>= 0
-  thisStart >>>= 0
-  thisEnd >>>= 0
-
-  if (this === target) return 0
-
-  var x = thisEnd - thisStart
-  var y = end - start
-  var len = Math.min(x, y)
-
-  var thisCopy = this.slice(thisStart, thisEnd)
-  var targetCopy = target.slice(start, end)
-
-  for (var i = 0; i < len; ++i) {
-    if (thisCopy[i] !== targetCopy[i]) {
-      x = thisCopy[i]
-      y = targetCopy[i]
-      break
-    }
-  }
-
-  if (x < y) return -1
-  if (y < x) return 1
-  return 0
-}
-
-// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
-// OR the last index of `val` in `buffer` at offset <= `byteOffset`.
-//
-// Arguments:
-// - buffer - a Buffer to search
-// - val - a string, Buffer, or number
-// - byteOffset - an index into `buffer`; will be clamped to an int32
-// - encoding - an optional encoding, relevant is val is a string
-// - dir - true for indexOf, false for lastIndexOf
-function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
-  // Empty buffer means no match
-  if (buffer.length === 0) return -1
-
-  // Normalize byteOffset
-  if (typeof byteOffset === 'string') {
-    encoding = byteOffset
-    byteOffset = 0
-  } else if (byteOffset > 0x7fffffff) {
-    byteOffset = 0x7fffffff
-  } else if (byteOffset < -0x80000000) {
-    byteOffset = -0x80000000
-  }
-  byteOffset = +byteOffset  // Coerce to Number.
-  if (isNaN(byteOffset)) {
-    // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
-    byteOffset = dir ? 0 : (buffer.length - 1)
-  }
-
-  // Normalize byteOffset: negative offsets start from the end of the buffer
-  if (byteOffset < 0) byteOffset = buffer.length + byteOffset
-  if (byteOffset >= buffer.length) {
-    if (dir) return -1
-    else byteOffset = buffer.length - 1
-  } else if (byteOffset < 0) {
-    if (dir) byteOffset = 0
-    else return -1
-  }
-
-  // Normalize val
-  if (typeof val === 'string') {
-    val = Buffer.from(val, encoding)
-  }
-
-  // Finally, search either indexOf (if dir is true) or lastIndexOf
-  if (Buffer.isBuffer(val)) {
-    // Special case: looking for empty string/buffer always fails
-    if (val.length === 0) {
-      return -1
-    }
-    return arrayIndexOf(buffer, val, byteOffset, encoding, dir)
-  } else if (typeof val === 'number') {
-    val = val & 0xFF // Search for a byte value [0-255]
-    if (Buffer.TYPED_ARRAY_SUPPORT &&
-        typeof Uint8Array.prototype.indexOf === 'function') {
-      if (dir) {
-        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset)
-      } else {
-        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
-      }
-    }
-    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
-  }
-
-  throw new TypeError('val must be string, number or Buffer')
-}
-
-function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
-  var indexSize = 1
-  var arrLength = arr.length
-  var valLength = val.length
-
-  if (encoding !== undefined) {
-    encoding = String(encoding).toLowerCase()
-    if (encoding === 'ucs2' || encoding === 'ucs-2' ||
-        encoding === 'utf16le' || encoding === 'utf-16le') {
-      if (arr.length < 2 || val.length < 2) {
-        return -1
-      }
-      indexSize = 2
-      arrLength /= 2
-      valLength /= 2
-      byteOffset /= 2
-    }
-  }
-
-  function read (buf, i) {
-    if (indexSize === 1) {
-      return buf[i]
-    } else {
-      return buf.readUInt16BE(i * indexSize)
-    }
-  }
-
-  var i
-  if (dir) {
-    var foundIndex = -1
-    for (i = byteOffset; i < arrLength; i++) {
-      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
-        if (foundIndex === -1) foundIndex = i
-        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
-      } else {
-        if (foundIndex !== -1) i -= i - foundIndex
-        foundIndex = -1
-      }
-    }
-  } else {
-    if (byteOffset + valLength > arrLength) byteOffset = arrLength - valLength
-    for (i = byteOffset; i >= 0; i--) {
-      var found = true
-      for (var j = 0; j < valLength; j++) {
-        if (read(arr, i + j) !== read(val, j)) {
-          found = false
-          break
-        }
-      }
-      if (found) return i
-    }
-  }
-
-  return -1
-}
-
-Buffer.prototype.includes = function includes (val, byteOffset, encoding) {
-  return this.indexOf(val, byteOffset, encoding) !== -1
-}
-
-Buffer.prototype.indexOf = function indexOf (val, byteOffset, encoding) {
-  return bidirectionalIndexOf(this, val, byteOffset, encoding, true)
-}
-
-Buffer.prototype.lastIndexOf = function lastIndexOf (val, byteOffset, encoding) {
-  return bidirectionalIndexOf(this, val, byteOffset, encoding, false)
-}
-
-function hexWrite (buf, string, offset, length) {
-  offset = Number(offset) || 0
-  var remaining = buf.length - offset
-  if (!length) {
-    length = remaining
-  } else {
-    length = Number(length)
-    if (length > remaining) {
-      length = remaining
-    }
-  }
-
-  // must be an even number of digits
-  var strLen = string.length
-  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
-
-  if (length > strLen / 2) {
-    length = strLen / 2
-  }
-  for (var i = 0; i < length; ++i) {
-    var parsed = parseInt(string.substr(i * 2, 2), 16)
-    if (isNaN(parsed)) return i
-    buf[offset + i] = parsed
-  }
-  return i
-}
-
-function utf8Write (buf, string, offset, length) {
-  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
-}
-
-function asciiWrite (buf, string, offset, length) {
-  return blitBuffer(asciiToBytes(string), buf, offset, length)
-}
-
-function latin1Write (buf, string, offset, length) {
-  return asciiWrite(buf, string, offset, length)
-}
-
-function base64Write (buf, string, offset, length) {
-  return blitBuffer(base64ToBytes(string), buf, offset, length)
-}
-
-function ucs2Write (buf, string, offset, length) {
-  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
-}
-
-Buffer.prototype.write = function write (string, offset, length, encoding) {
-  // Buffer#write(string)
-  if (offset === undefined) {
-    encoding = 'utf8'
-    length = this.length
-    offset = 0
-  // Buffer#write(string, encoding)
-  } else if (length === undefined && typeof offset === 'string') {
-    encoding = offset
-    length = this.length
-    offset = 0
-  // Buffer#write(string, offset[, length][, encoding])
-  } else if (isFinite(offset)) {
-    offset = offset | 0
-    if (isFinite(length)) {
-      length = length | 0
-      if (encoding === undefined) encoding = 'utf8'
-    } else {
-      encoding = length
-      length = undefined
-    }
-  // legacy write(string, encoding, offset, length) - remove in v0.13
-  } else {
-    throw new Error(
-      'Buffer.write(string, encoding, offset[, length]) is no longer supported'
-    )
-  }
-
-  var remaining = this.length - offset
-  if (length === undefined || length > remaining) length = remaining
-
-  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
-    throw new RangeError('Attempt to write outside buffer bounds')
-  }
-
-  if (!encoding) encoding = 'utf8'
-
-  var loweredCase = false
-  for (;;) {
-    switch (encoding) {
-      case 'hex':
-        return hexWrite(this, string, offset, length)
-
-      case 'utf8':
-      case 'utf-8':
-        return utf8Write(this, string, offset, length)
-
-      case 'ascii':
-        return asciiWrite(this, string, offset, length)
-
-      case 'latin1':
-      case 'binary':
-        return latin1Write(this, string, offset, length)
-
-      case 'base64':
-        // Warning: maxLength not taken into account in base64Write
-        return base64Write(this, string, offset, length)
-
-      case 'ucs2':
-      case 'ucs-2':
-      case 'utf16le':
-      case 'utf-16le':
-        return ucs2Write(this, string, offset, length)
-
-      default:
-        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
-        encoding = ('' + encoding).toLowerCase()
-        loweredCase = true
-    }
-  }
-}
-
-Buffer.prototype.toJSON = function toJSON () {
-  return {
-    type: 'Buffer',
-    data: Array.prototype.slice.call(this._arr || this, 0)
-  }
-}
-
-function base64Slice (buf, start, end) {
-  if (start === 0 && end === buf.length) {
-    return base64.fromByteArray(buf)
-  } else {
-    return base64.fromByteArray(buf.slice(start, end))
-  }
-}
-
-function utf8Slice (buf, start, end) {
-  end = Math.min(buf.length, end)
-  var res = []
-
-  var i = start
-  while (i < end) {
-    var firstByte = buf[i]
-    var codePoint = null
-    var bytesPerSequence = (firstByte > 0xEF) ? 4
-      : (firstByte > 0xDF) ? 3
-      : (firstByte > 0xBF) ? 2
-      : 1
-
-    if (i + bytesPerSequence <= end) {
-      var secondByte, thirdByte, fourthByte, tempCodePoint
-
-      switch (bytesPerSequence) {
-        case 1:
-          if (firstByte < 0x80) {
-            codePoint = firstByte
-          }
-          break
-        case 2:
-          secondByte = buf[i + 1]
-          if ((secondByte & 0xC0) === 0x80) {
-            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F)
-            if (tempCodePoint > 0x7F) {
-              codePoint = tempCodePoint
-            }
-          }
-          break
-        case 3:
-          secondByte = buf[i + 1]
-          thirdByte = buf[i + 2]
-          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
-            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F)
-            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
-              codePoint = tempCodePoint
-            }
-          }
-          break
-        case 4:
-          secondByte = buf[i + 1]
-          thirdByte = buf[i + 2]
-          fourthByte = buf[i + 3]
-          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
-            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F)
-            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
-              codePoint = tempCodePoint
-            }
-          }
-      }
-    }
-
-    if (codePoint === null) {
-      // we did not generate a valid codePoint so insert a
-      // replacement char (U+FFFD) and advance only 1 byte
-      codePoint = 0xFFFD
-      bytesPerSequence = 1
-    } else if (codePoint > 0xFFFF) {
-      // encode to utf16 (surrogate pair dance)
-      codePoint -= 0x10000
-      res.push(codePoint >>> 10 & 0x3FF | 0xD800)
-      codePoint = 0xDC00 | codePoint & 0x3FF
-    }
-
-    res.push(codePoint)
-    i += bytesPerSequence
-  }
-
-  return decodeCodePointsArray(res)
-}
-
-// Based on http://stackoverflow.com/a/22747272/680742, the browser with
-// the lowest limit is Chrome, with 0x10000 args.
-// We go 1 magnitude less, for safety
-var MAX_ARGUMENTS_LENGTH = 0x1000
-
-function decodeCodePointsArray (codePoints) {
-  var len = codePoints.length
-  if (len <= MAX_ARGUMENTS_LENGTH) {
-    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
-  }
-
-  // Decode in chunks to avoid "call stack size exceeded".
-  var res = ''
-  var i = 0
-  while (i < len) {
-    res += String.fromCharCode.apply(
-      String,
-      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
-    )
-  }
-  return res
-}
-
-function asciiSlice (buf, start, end) {
-  var ret = ''
-  end = Math.min(buf.length, end)
-
-  for (var i = start; i < end; ++i) {
-    ret += String.fromCharCode(buf[i] & 0x7F)
-  }
-  return ret
-}
-
-function latin1Slice (buf, start, end) {
-  var ret = ''
-  end = Math.min(buf.length, end)
-
-  for (var i = start; i < end; ++i) {
-    ret += String.fromCharCode(buf[i])
-  }
-  return ret
-}
-
-function hexSlice (buf, start, end) {
-  var len = buf.length
-
-  if (!start || start < 0) start = 0
-  if (!end || end < 0 || end > len) end = len
-
-  var out = ''
-  for (var i = start; i < end; ++i) {
-    out += toHex(buf[i])
-  }
-  return out
-}
-
-function utf16leSlice (buf, start, end) {
-  var bytes = buf.slice(start, end)
-  var res = ''
-  for (var i = 0; i < bytes.length; i += 2) {
-    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256)
-  }
-  return res
-}
-
-Buffer.prototype.slice = function slice (start, end) {
-  var len = this.length
-  start = ~~start
-  end = end === undefined ? len : ~~end
-
-  if (start < 0) {
-    start += len
-    if (start < 0) start = 0
-  } else if (start > len) {
-    start = len
-  }
-
-  if (end < 0) {
-    end += len
-    if (end < 0) end = 0
-  } else if (end > len) {
-    end = len
-  }
-
-  if (end < start) end = start
-
-  var newBuf
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    newBuf = this.subarray(start, end)
-    newBuf.__proto__ = Buffer.prototype
-  } else {
-    var sliceLen = end - start
-    newBuf = new Buffer(sliceLen, undefined)
-    for (var i = 0; i < sliceLen; ++i) {
-      newBuf[i] = this[i + start]
-    }
-  }
-
-  return newBuf
-}
-
-/*
- * Need to make sure that buffer isn't trying to write out of bounds.
- */
-function checkOffset (offset, ext, length) {
-  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
-  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
-}
-
-Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
-  offset = offset | 0
-  byteLength = byteLength | 0
-  if (!noAssert) checkOffset(offset, byteLength, this.length)
-
-  var val = this[offset]
-  var mul = 1
-  var i = 0
-  while (++i < byteLength && (mul *= 0x100)) {
-    val += this[offset + i] * mul
-  }
-
-  return val
-}
-
-Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
-  offset = offset | 0
-  byteLength = byteLength | 0
-  if (!noAssert) {
-    checkOffset(offset, byteLength, this.length)
-  }
-
-  var val = this[offset + --byteLength]
-  var mul = 1
-  while (byteLength > 0 && (mul *= 0x100)) {
-    val += this[offset + --byteLength] * mul
-  }
-
-  return val
-}
-
-Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 1, this.length)
-  return this[offset]
-}
-
-Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 2, this.length)
-  return this[offset] | (this[offset + 1] << 8)
-}
-
-Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 2, this.length)
-  return (this[offset] << 8) | this[offset + 1]
-}
-
-Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 4, this.length)
-
-  return ((this[offset]) |
-      (this[offset + 1] << 8) |
-      (this[offset + 2] << 16)) +
-      (this[offset + 3] * 0x1000000)
-}
-
-Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 4, this.length)
-
-  return (this[offset] * 0x1000000) +
-    ((this[offset + 1] << 16) |
-    (this[offset + 2] << 8) |
-    this[offset + 3])
-}
-
-Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
-  offset = offset | 0
-  byteLength = byteLength | 0
-  if (!noAssert) checkOffset(offset, byteLength, this.length)
-
-  var val = this[offset]
-  var mul = 1
-  var i = 0
-  while (++i < byteLength && (mul *= 0x100)) {
-    val += this[offset + i] * mul
-  }
-  mul *= 0x80
-
-  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
-
-  return val
-}
-
-Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
-  offset = offset | 0
-  byteLength = byteLength | 0
-  if (!noAssert) checkOffset(offset, byteLength, this.length)
-
-  var i = byteLength
-  var mul = 1
-  var val = this[offset + --i]
-  while (i > 0 && (mul *= 0x100)) {
-    val += this[offset + --i] * mul
-  }
-  mul *= 0x80
-
-  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
-
-  return val
-}
-
-Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 1, this.length)
-  if (!(this[offset] & 0x80)) return (this[offset])
-  return ((0xff - this[offset] + 1) * -1)
-}
-
-Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 2, this.length)
-  var val = this[offset] | (this[offset + 1] << 8)
-  return (val & 0x8000) ? val | 0xFFFF0000 : val
-}
-
-Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 2, this.length)
-  var val = this[offset + 1] | (this[offset] << 8)
-  return (val & 0x8000) ? val | 0xFFFF0000 : val
-}
-
-Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 4, this.length)
-
-  return (this[offset]) |
-    (this[offset + 1] << 8) |
-    (this[offset + 2] << 16) |
-    (this[offset + 3] << 24)
-}
-
-Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 4, this.length)
-
-  return (this[offset] << 24) |
-    (this[offset + 1] << 16) |
-    (this[offset + 2] << 8) |
-    (this[offset + 3])
-}
-
-Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 4, this.length)
-  return ieee754.read(this, offset, true, 23, 4)
-}
-
-Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 4, this.length)
-  return ieee754.read(this, offset, false, 23, 4)
-}
-
-Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 8, this.length)
-  return ieee754.read(this, offset, true, 52, 8)
-}
-
-Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
-  if (!noAssert) checkOffset(offset, 8, this.length)
-  return ieee754.read(this, offset, false, 52, 8)
-}
-
-function checkInt (buf, value, offset, ext, max, min) {
-  if (!Buffer.isBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance')
-  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds')
-  if (offset + ext > buf.length) throw new RangeError('Index out of range')
-}
-
-Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
-  value = +value
-  offset = offset | 0
-  byteLength = byteLength | 0
-  if (!noAssert) {
-    var maxBytes = Math.pow(2, 8 * byteLength) - 1
-    checkInt(this, value, offset, byteLength, maxBytes, 0)
-  }
-
-  var mul = 1
-  var i = 0
-  this[offset] = value & 0xFF
-  while (++i < byteLength && (mul *= 0x100)) {
-    this[offset + i] = (value / mul) & 0xFF
-  }
-
-  return offset + byteLength
-}
-
-Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
-  value = +value
-  offset = offset | 0
-  byteLength = byteLength | 0
-  if (!noAssert) {
-    var maxBytes = Math.pow(2, 8 * byteLength) - 1
-    checkInt(this, value, offset, byteLength, maxBytes, 0)
-  }
-
-  var i = byteLength - 1
-  var mul = 1
-  this[offset + i] = value & 0xFF
-  while (--i >= 0 && (mul *= 0x100)) {
-    this[offset + i] = (value / mul) & 0xFF
-  }
-
-  return offset + byteLength
-}
-
-Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0)
-  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
-  this[offset] = (value & 0xff)
-  return offset + 1
-}
-
-function objectWriteUInt16 (buf, value, offset, littleEndian) {
-  if (value < 0) value = 0xffff + value + 1
-  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; ++i) {
-    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
-      (littleEndian ? i : 1 - i) * 8
-  }
-}
-
-Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset] = (value & 0xff)
-    this[offset + 1] = (value >>> 8)
-  } else {
-    objectWriteUInt16(this, value, offset, true)
-  }
-  return offset + 2
-}
-
-Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset] = (value >>> 8)
-    this[offset + 1] = (value & 0xff)
-  } else {
-    objectWriteUInt16(this, value, offset, false)
-  }
-  return offset + 2
-}
-
-function objectWriteUInt32 (buf, value, offset, littleEndian) {
-  if (value < 0) value = 0xffffffff + value + 1
-  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; ++i) {
-    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
-  }
-}
-
-Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset + 3] = (value >>> 24)
-    this[offset + 2] = (value >>> 16)
-    this[offset + 1] = (value >>> 8)
-    this[offset] = (value & 0xff)
-  } else {
-    objectWriteUInt32(this, value, offset, true)
-  }
-  return offset + 4
-}
-
-Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset] = (value >>> 24)
-    this[offset + 1] = (value >>> 16)
-    this[offset + 2] = (value >>> 8)
-    this[offset + 3] = (value & 0xff)
-  } else {
-    objectWriteUInt32(this, value, offset, false)
-  }
-  return offset + 4
-}
-
-Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) {
-    var limit = Math.pow(2, 8 * byteLength - 1)
-
-    checkInt(this, value, offset, byteLength, limit - 1, -limit)
-  }
-
-  var i = 0
-  var mul = 1
-  var sub = 0
-  this[offset] = value & 0xFF
-  while (++i < byteLength && (mul *= 0x100)) {
-    if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) {
-      sub = 1
-    }
-    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
-  }
-
-  return offset + byteLength
-}
-
-Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) {
-    var limit = Math.pow(2, 8 * byteLength - 1)
-
-    checkInt(this, value, offset, byteLength, limit - 1, -limit)
-  }
-
-  var i = byteLength - 1
-  var mul = 1
-  var sub = 0
-  this[offset + i] = value & 0xFF
-  while (--i >= 0 && (mul *= 0x100)) {
-    if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) {
-      sub = 1
-    }
-    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
-  }
-
-  return offset + byteLength
-}
-
-Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80)
-  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
-  if (value < 0) value = 0xff + value + 1
-  this[offset] = (value & 0xff)
-  return offset + 1
-}
-
-Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset] = (value & 0xff)
-    this[offset + 1] = (value >>> 8)
-  } else {
-    objectWriteUInt16(this, value, offset, true)
-  }
-  return offset + 2
-}
-
-Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset] = (value >>> 8)
-    this[offset + 1] = (value & 0xff)
-  } else {
-    objectWriteUInt16(this, value, offset, false)
-  }
-  return offset + 2
-}
-
-Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset] = (value & 0xff)
-    this[offset + 1] = (value >>> 8)
-    this[offset + 2] = (value >>> 16)
-    this[offset + 3] = (value >>> 24)
-  } else {
-    objectWriteUInt32(this, value, offset, true)
-  }
-  return offset + 4
-}
-
-Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
-  value = +value
-  offset = offset | 0
-  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
-  if (value < 0) value = 0xffffffff + value + 1
-  if (Buffer.TYPED_ARRAY_SUPPORT) {
-    this[offset] = (value >>> 24)
-    this[offset + 1] = (value >>> 16)
-    this[offset + 2] = (value >>> 8)
-    this[offset + 3] = (value & 0xff)
-  } else {
-    objectWriteUInt32(this, value, offset, false)
-  }
-  return offset + 4
-}
-
-function checkIEEE754 (buf, value, offset, ext, max, min) {
-  if (offset + ext > buf.length) throw new RangeError('Index out of range')
-  if (offset < 0) throw new RangeError('Index out of range')
-}
-
-function writeFloat (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
-  }
-  ieee754.write(buf, value, offset, littleEndian, 23, 4)
-  return offset + 4
-}
-
-Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
-  return writeFloat(this, value, offset, true, noAssert)
-}
-
-Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
-  return writeFloat(this, value, offset, false, noAssert)
-}
-
-function writeDouble (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
-  }
-  ieee754.write(buf, value, offset, littleEndian, 52, 8)
-  return offset + 8
-}
-
-Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
-  return writeDouble(this, value, offset, true, noAssert)
-}
-
-Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
-  return writeDouble(this, value, offset, false, noAssert)
-}
-
-// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
-Buffer.prototype.copy = function copy (target, targetStart, start, end) {
-  if (!start) start = 0
-  if (!end && end !== 0) end = this.length
-  if (targetStart >= target.length) targetStart = target.length
-  if (!targetStart) targetStart = 0
-  if (end > 0 && end < start) end = start
-
-  // Copy 0 bytes; we're done
-  if (end === start) return 0
-  if (target.length === 0 || this.length === 0) return 0
-
-  // Fatal error conditions
-  if (targetStart < 0) {
-    throw new RangeError('targetStart out of bounds')
-  }
-  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
-  if (end < 0) throw new RangeError('sourceEnd out of bounds')
-
-  // Are we oob?
-  if (end > this.length) end = this.length
-  if (target.length - targetStart < end - start) {
-    end = target.length - targetStart + start
-  }
-
-  var len = end - start
-  var i
-
-  if (this === target && start < targetStart && targetStart < end) {
-    // descending copy from end
-    for (i = len - 1; i >= 0; --i) {
-      target[i + targetStart] = this[i + start]
-    }
-  } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
-    // ascending copy from start
-    for (i = 0; i < len; ++i) {
-      target[i + targetStart] = this[i + start]
-    }
-  } else {
-    Uint8Array.prototype.set.call(
-      target,
-      this.subarray(start, start + len),
-      targetStart
-    )
-  }
-
-  return len
-}
-
-// Usage:
-//    buffer.fill(number[, offset[, end]])
-//    buffer.fill(buffer[, offset[, end]])
-//    buffer.fill(string[, offset[, end]][, encoding])
-Buffer.prototype.fill = function fill (val, start, end, encoding) {
-  // Handle string cases:
-  if (typeof val === 'string') {
-    if (typeof start === 'string') {
-      encoding = start
-      start = 0
-      end = this.length
-    } else if (typeof end === 'string') {
-      encoding = end
-      end = this.length
-    }
-    if (val.length === 1) {
-      var code = val.charCodeAt(0)
-      if (code < 256) {
-        val = code
-      }
-    }
-    if (encoding !== undefined && typeof encoding !== 'string') {
-      throw new TypeError('encoding must be a string')
-    }
-    if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
-      throw new TypeError('Unknown encoding: ' + encoding)
-    }
-  } else if (typeof val === 'number') {
-    val = val & 255
-  }
-
-  // Invalid ranges are not set to a default, so can range check early.
-  if (start < 0 || this.length < start || this.length < end) {
-    throw new RangeError('Out of range index')
-  }
-
-  if (end <= start) {
-    return this
-  }
-
-  start = start >>> 0
-  end = end === undefined ? this.length : end >>> 0
-
-  if (!val) val = 0
-
-  var i
-  if (typeof val === 'number') {
-    for (i = start; i < end; ++i) {
-      this[i] = val
-    }
-  } else {
-    var bytes = Buffer.isBuffer(val)
-      ? val
-      : utf8ToBytes(new Buffer(val, encoding).toString())
-    var len = bytes.length
-    for (i = 0; i < end - start; ++i) {
-      this[i + start] = bytes[i % len]
-    }
-  }
-
-  return this
-}
-
-// HELPER FUNCTIONS
-// ================
-
-var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
-
-function base64clean (str) {
-  // Node strips out invalid characters like \n and \t from the string, base64-js does not
-  str = stringtrim(str).replace(INVALID_BASE64_RE, '')
-  // Node converts strings with length < 2 to ''
-  if (str.length < 2) return ''
-  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
-  while (str.length % 4 !== 0) {
-    str = str + '='
-  }
-  return str
-}
-
-function stringtrim (str) {
-  if (str.trim) return str.trim()
-  return str.replace(/^\s+|\s+$/g, '')
-}
-
-function toHex (n) {
-  if (n < 16) return '0' + n.toString(16)
-  return n.toString(16)
-}
-
-function utf8ToBytes (string, units) {
-  units = units || Infinity
-  var codePoint
-  var length = string.length
-  var leadSurrogate = null
-  var bytes = []
-
-  for (var i = 0; i < length; ++i) {
-    codePoint = string.charCodeAt(i)
-
-    // is surrogate component
-    if (codePoint > 0xD7FF && codePoint < 0xE000) {
-      // last char was a lead
-      if (!leadSurrogate) {
-        // no lead yet
-        if (codePoint > 0xDBFF) {
-          // unexpected trail
-          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-          continue
-        } else if (i + 1 === length) {
-          // unpaired lead
-          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-          continue
-        }
-
-        // valid lead
-        leadSurrogate = codePoint
-
-        continue
-      }
-
-      // 2 leads in a row
-      if (codePoint < 0xDC00) {
-        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-        leadSurrogate = codePoint
-        continue
-      }
-
-      // valid surrogate pair
-      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
-    } else if (leadSurrogate) {
-      // valid bmp char, but last char was a lead
-      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-    }
-
-    leadSurrogate = null
-
-    // encode utf8
-    if (codePoint < 0x80) {
-      if ((units -= 1) < 0) break
-      bytes.push(codePoint)
-    } else if (codePoint < 0x800) {
-      if ((units -= 2) < 0) break
-      bytes.push(
-        codePoint >> 0x6 | 0xC0,
-        codePoint & 0x3F | 0x80
-      )
-    } else if (codePoint < 0x10000) {
-      if ((units -= 3) < 0) break
-      bytes.push(
-        codePoint >> 0xC | 0xE0,
-        codePoint >> 0x6 & 0x3F | 0x80,
-        codePoint & 0x3F | 0x80
-      )
-    } else if (codePoint < 0x110000) {
-      if ((units -= 4) < 0) break
-      bytes.push(
-        codePoint >> 0x12 | 0xF0,
-        codePoint >> 0xC & 0x3F | 0x80,
-        codePoint >> 0x6 & 0x3F | 0x80,
-        codePoint & 0x3F | 0x80
-      )
-    } else {
-      throw new Error('Invalid code point')
-    }
-  }
-
-  return bytes
-}
-
-function asciiToBytes (str) {
-  var byteArray = []
-  for (var i = 0; i < str.length; ++i) {
-    // Node's code seems to be doing this and not & 0x7F..
-    byteArray.push(str.charCodeAt(i) & 0xFF)
-  }
-  return byteArray
-}
-
-function utf16leToBytes (str, units) {
-  var c, hi, lo
-  var byteArray = []
-  for (var i = 0; i < str.length; ++i) {
-    if ((units -= 2) < 0) break
-
-    c = str.charCodeAt(i)
-    hi = c >> 8
-    lo = c % 256
-    byteArray.push(lo)
-    byteArray.push(hi)
-  }
-
-  return byteArray
-}
-
-function base64ToBytes (str) {
-  return base64.toByteArray(base64clean(str))
-}
-
-function blitBuffer (src, dst, offset, length) {
-  for (var i = 0; i < length; ++i) {
-    if ((i + offset >= dst.length) || (i >= src.length)) break
-    dst[i + offset] = src[i]
-  }
-  return i
-}
-
-function isnan (val) {
-  return val !== val // eslint-disable-line no-self-compare
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)))
 
 /***/ }),
 /* 36 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var g;
+"use strict";
 
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
 
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
+module.exports = function isArrayish(obj) {
+	if (!obj || typeof obj === 'string') {
+		return false;
+	}
 
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
+	return obj instanceof Array || Array.isArray(obj) ||
+		(obj.length >= 0 && (obj.splice instanceof Function ||
+			(Object.getOwnPropertyDescriptor(obj, (obj.length - 1)) && obj.constructor.name !== 'String')));
+};
 
 
 /***/ }),
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(3);
-module.exports = __webpack_require__(3);
+__webpack_require__(4);
+module.exports = __webpack_require__(4);
 
 
 /***/ })
