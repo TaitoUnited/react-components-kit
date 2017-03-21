@@ -7404,7 +7404,7 @@ function colorGetter(props, colorName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.successColorDarkest = exports.successColorDarker = exports.successColorDark = exports.successColorLightest = exports.successColorLighter = exports.successColorLight = exports.successColor = exports.successBaseColor = exports.errorColorDarkest = exports.errorColorDarker = exports.errorColorDark = exports.errorColorLightest = exports.errorColorLighter = exports.errorColorLight = exports.errorColor = exports.errorBaseColor = exports.secondaryColorDarkest = exports.secondaryColorDarker = exports.secondaryColorDark = exports.secondaryColorLightest = exports.secondaryColorLighter = exports.secondaryColorLight = exports.secondaryColor = exports.secondaryBaseColor = exports.primaryColorDarkest = exports.primaryColorDarker = exports.primaryColorDark = exports.primaryColorLightest = exports.primaryColorLighter = exports.primaryColorLight = exports.primaryColor = exports.primaryBaseColor = exports.greyDarkest = exports.greyDarker = exports.greyDark = exports.greyLight = exports.greyLighter = exports.greyLightest = exports.textColorLight = exports.textColorDark = exports.infoColor = exports.warnColor = undefined;
+exports.successColorDarkest = exports.successColorDarker = exports.successColorDark = exports.successColorLightest = exports.successColorLighter = exports.successColorLight = exports.successColor = exports.successBaseColor = exports.warnColorDarkest = exports.warnColorDarker = exports.warnColorDark = exports.warnColorLightest = exports.warnColorLighter = exports.warnColorLight = exports.warnColor = exports.warnBaseColor = exports.errorColorDarkest = exports.errorColorDarker = exports.errorColorDark = exports.errorColorLightest = exports.errorColorLighter = exports.errorColorLight = exports.errorColor = exports.errorBaseColor = exports.secondaryColorDarkest = exports.secondaryColorDarker = exports.secondaryColorDark = exports.secondaryColorLightest = exports.secondaryColorLighter = exports.secondaryColorLight = exports.secondaryColor = exports.secondaryBaseColor = exports.primaryColorDarkest = exports.primaryColorDarker = exports.primaryColorDark = exports.primaryColorLightest = exports.primaryColorLighter = exports.primaryColorLight = exports.primaryColor = exports.primaryBaseColor = exports.greyDarkest = exports.greyDarker = exports.greyDark = exports.greyLight = exports.greyLighter = exports.greyLightest = exports.textColorLight = exports.textColorDark = exports.infoColor = undefined;
 
 var _color = __webpack_require__(34);
 
@@ -7421,10 +7421,10 @@ var basePrimary = '#2490ec'; /* eslint-disable max-len */
 var baseSecondary = '#b57bff';
 var baseError = '#ea4444';
 var baseSuccess = '#5bde4e';
+var baseWarn = '#ffb741';
 
-var warnColor = exports.warnColor = '#ffb741';
 var infoColor = exports.infoColor = '#99d5f5';
-var textColorDark = exports.textColorDark = '#444';
+var textColorDark = exports.textColorDark = '#222';
 var textColorLight = exports.textColorLight = '#fff';
 
 var greyLightest = exports.greyLightest = '#f7f7f7';
@@ -7461,6 +7461,15 @@ var errorColorLightest = exports.errorColorLightest = (0, _color2.default)(baseE
 var errorColorDark = exports.errorColorDark = (0, _color2.default)(baseError).darken(0.2).hsl().string();
 var errorColorDarker = exports.errorColorDarker = (0, _color2.default)(baseError).darken(0.4).hsl().string();
 var errorColorDarkest = exports.errorColorDarkest = (0, _color2.default)(baseError).darken(0.6).hsl().string();
+
+var warnBaseColor = exports.warnBaseColor = (0, _color2.default)(baseWarn);
+var warnColor = exports.warnColor = (0, _color2.default)(baseWarn).hsl().string();
+var warnColorLight = exports.warnColorLight = (0, _color2.default)(baseWarn).lighten(0.2).hsl().string();
+var warnColorLighter = exports.warnColorLighter = (0, _color2.default)(baseWarn).lighten(0.3).hsl().string();
+var warnColorLightest = exports.warnColorLightest = (0, _color2.default)(baseWarn).lighten(0.5).hsl().string();
+var warnColorDark = exports.warnColorDark = (0, _color2.default)(baseWarn).darken(0.2).hsl().string();
+var warnColorDarker = exports.warnColorDarker = (0, _color2.default)(baseWarn).darken(0.3).hsl().string();
+var warnColorDarkest = exports.warnColorDarkest = (0, _color2.default)(baseWarn).darken(0.5).hsl().string();
 
 var successBaseColor = exports.successBaseColor = (0, _color2.default)(baseSuccess);
 var successColor = exports.successColor = (0, _color2.default)(baseSuccess).hsl().string();

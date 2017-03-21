@@ -10,10 +10,10 @@ const basePrimary = '#2490ec';
 const baseSecondary = '#b57bff';
 const baseError = '#ea4444';
 const baseSuccess = '#5bde4e';
+const baseWarn = '#ffb741';
 
-export const warnColor = '#ffb741';
 export const infoColor = '#99d5f5';
-export const textColorDark = '#444';
+export const textColorDark = '#222';
 export const textColorLight = '#fff';
 
 export const greyLightest = '#f7f7f7';
@@ -50,6 +50,15 @@ export const errorColorLightest = Color(baseError).lighten(0.6).hsl().string();
 export const errorColorDark = Color(baseError).darken(0.2).hsl().string();
 export const errorColorDarker = Color(baseError).darken(0.4).hsl().string();
 export const errorColorDarkest = Color(baseError).darken(0.6).hsl().string();
+
+export const warnBaseColor = Color(baseWarn);
+export const warnColor = Color(baseWarn).hsl().string();
+export const warnColorLight = Color(baseWarn).lighten(0.2).hsl().string();
+export const warnColorLighter = Color(baseWarn).lighten(0.3).hsl().string();
+export const warnColorLightest = Color(baseWarn).lighten(0.5).hsl().string();
+export const warnColorDark = Color(baseWarn).darken(0.2).hsl().string();
+export const warnColorDarker = Color(baseWarn).darken(0.3).hsl().string();
+export const warnColorDarkest = Color(baseWarn).darken(0.5).hsl().string();
 
 export const successBaseColor = Color(baseSuccess);
 export const successColor = Color(baseSuccess).hsl().string();
