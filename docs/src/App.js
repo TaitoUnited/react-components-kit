@@ -26,6 +26,7 @@ import {
   Badge,
   Icon,
   defaultTheme,
+  withRipple,
 } from 'react-components-kit';
 
 const SECTION_SEPARATION = '42px';
@@ -59,6 +60,11 @@ const Fab = styled.button`
   background-color: tomato;
   color: #fff;
 `;
+const RippleBlock = withRipple(styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: ${props => props.bg || '#eee'};
+`);
 
 class App extends Component {
   constructor(props) {
@@ -382,6 +388,17 @@ class App extends Component {
                 autoResize
               />
             </FormControl>
+          </Layout>
+
+          <Padder vert={SECTION_SEPARATION} />
+
+          <Heading el='h2'>withRipple (HOC)</Heading>
+          <Layout align='center'>
+            <RippleBlock bg='tomato' />
+            <Padder horiz='32px' />
+            <RippleBlock bg='blue' />
+            <Padder horiz='32px' />
+            <RippleBlock bg='mediumseagreen' />
           </Layout>
 
           <Padder vert={SECTION_SEPARATION} />

@@ -1,6 +1,144 @@
 import React, { Component, PropTypes } from 'react';
 import styled from 'styled-components';
 import { SketchPicker } from 'react-color';
+import {
+  Heading,
+  LineSeparator,
+  Layout,
+  Box,
+  Icon,
+  Padder,
+  Text,
+} from 'react-components-kit';
+
+class ColorBox extends Component {
+  shouldComponentUpdate(nextProps) {
+    if ((nextProps.color !== this.props.color) ||
+        (nextProps.selected !== this.props.selected)
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  render() {
+    const { color, selected } = this.props;
+    return (
+      <ColorBoxWrapper
+        color={color}
+        onClick={this.props.onClick}
+        selected={selected}
+      />
+    );
+  }
+}
+
+
+class ThemeChanger extends Component {
+  constructor(props) {
+    super(props);
+    this.selectColorBox = this.selectColorBox.bind(this);
+    this.exportTheme = this.exportTheme.bind(this);
+    this.state = {
+      selected: null,
+    }
+  }
+
+  selectColorBox(colorName) {
+    this.setState({ selected: colorName });
+  }
+
+  exportTheme() {
+    const { theme } = this.props;
+    const data = {};
+
+    Object.entries(theme)
+      .filter(([colorName]) => colorName.indexOf('Base') === -1)
+      .map(([colorName, colorValue]) => { data[colorName] = colorValue; });
+
+    const json = JSON.stringify(data, null, 2);
+
+    const tab = window.open(
+      `data:text/json,${encodeURIComponent(json)}`, '_blank'
+    );
+
+    // Switch to new tab
+    tab.focus();
+  }
+
+  render() {
+    const { theme } = this.props;
+
+    // Filter base colors since they are `Color` objects not color values
+    const colors = Object.entries(theme)
+      .filter(([colorName]) => colorName.indexOf('Base') === -1)
+      .sort((a, b) => {
+        const first = a[0].toLowerCase();
+        const second = b[0].toLowerCase();
+        return (first < second) ? -1 : (first > second) ? 1 : 0;
+      })
+
+    return (
+      <ThemeChangerWrapper isOpen={this.props.isOpen}>
+        <ThemeChangerPanel isOpen={this.props.isOpen}>
+          <Layout align='center'>
+            <Box flex='1'>
+              <Heading el='h2'>
+                {this.state.selected || 'Choose color to change'}
+              </Heading>
+            </Box>
+            <Padder />
+            <Box>
+              <Layout column align='center'>
+                <Box>
+                  <ExportThemeBtn onClick={this.exportTheme}>
+                    <Icon className='ion-ios-download' size='24px' color='#fff' />
+                  </ExportThemeBtn>
+                </Box>
+                <Padder vert='8px' />
+                <Box>
+                  <Text size='12px' color='#666'>
+                    Download theme (JSON)
+                  </Text>
+                </Box>
+              </Layout>
+            </Box>
+          </Layout>
+
+          <LineSeparator horizontal />
+          <Colors>
+            {colors.map(([colorName, colorValue]) =>
+              <ColorBox
+                color={colorValue}
+                label={colorName}
+                onClick={() => this.selectColorBox(colorName)}
+                selected={this.state.selected === colorName}
+                key={colorName}
+              />
+            )}
+          </Colors>
+          <ColorPicker>
+            {this.state.selected &&
+              <SketchPicker
+                color={
+                  this.props.theme[this.state.selected] || '#fff'
+                }
+                onChangeComplete={(color, event) =>
+                  this.props.updateThemeColor(
+                    this.state.selected,
+                    color.hex
+                  )
+                }
+              />
+            }
+          </ColorPicker>
+        </ThemeChangerPanel>
+
+        <Backdrop onClick={this.props.close} isOpen={this.props.isOpen} />
+      </ThemeChangerWrapper>
+    );
+  }
+}
 
 const ThemeChangerWrapper = styled.div`
   position: absolute;
@@ -55,85 +193,16 @@ const ColorPicker = styled.div`
   width: 100%;
   margin-top: 32px;
 `;
-
-
-class ColorBox extends Component {
-  shouldComponentUpdate(nextProps) {
-    if ((nextProps.color !== this.props.color) ||
-        (nextProps.selected !== this.props.selected)
-    ) {
-      return true;
-    }
-    return false;
-  }
-
-  render() {
-    const { color, selected } = this.props;
-    return (
-      <ColorBoxWrapper
-        color={color}
-        onClick={this.props.onClick}
-        selected={selected}
-      />
-    );
-  }
-}
-
-
-class ThemeChanger extends Component {
-  constructor(props) {
-    super(props);
-    this.selectColorBox = this.selectColorBox.bind(this);
-    this.state = {
-      selected: null,
-    }
-  }
-
-  selectColorBox(colorName) {
-    this.setState({ selected: colorName });
-  }
-
-  render() {
-    const { theme } = this.props;
-    const colors = Object.entries(theme).sort((a, b) => {
-      return a[0] < b[0];
-    })
-
-    return (
-      <ThemeChangerWrapper isOpen={this.props.isOpen}>
-        <ThemeChangerPanel isOpen={this.props.isOpen}>
-          <Colors>
-            {colors.map(([colorName, colorValue]) =>
-              <ColorBox
-                color={colorValue}
-                onClick={() => this.selectColorBox(colorName)}
-                selected={this.state.selected === colorName}
-                key={colorName}
-              />
-            )}
-          </Colors>
-          <ColorPicker>
-            {this.state.selected &&
-              <SketchPicker
-                color={
-                  this.props.theme[this.state.selected] || '#fff'
-                }
-                onChangeComplete={(color, event) =>
-                  this.props.updateThemeColor(
-                    this.state.selected,
-                    color.hex
-                  )
-                }
-              />
-            }
-          </ColorPicker>
-        </ThemeChangerPanel>
-
-        <Backdrop onClick={this.props.close} isOpen={this.props.isOpen} />
-      </ThemeChangerWrapper>
-    );
-  }
-}
+const ExportThemeBtn = styled.button`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+`;
 
 ThemeChanger.propTypes = {
   updateThemeColor: PropTypes.func.isRequired,

@@ -28,19 +28,19 @@ const App = () => {
 ```
 
 The possible colors with to change are:
-* primaryColor
-* secondaryColor
-* errorColor
-* warnColor
-* successColor
-* grey
+* **primaryColor**
+* **secondaryColor**
+* **errorColor**
+* **warnColor**
+* **successColor**
+* **grey**
 
 With these suffixes: `Light`, `Lighter`, `Lightest`, `Dark`, `Darker`, `Darkest`.
 
 The remaining colors without suffixes to change are:
-* infoColor
-* textColorDark
-* textColorLight
+* **infoColor**
+* **textColorDark**
+* **textColorLight**
 
 Check out the default color values in [defaultTheme.js](components/defaultTheme.js).
 
