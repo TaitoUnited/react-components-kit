@@ -11,6 +11,8 @@ import {
   Text,
 } from 'react-components-kit';
 
+import { getColorData, getColorName } from './utils';
+
 class ColorBox extends Component {
   shouldComponentUpdate(nextProps) {
     if ((nextProps.color !== this.props.color) ||
@@ -54,7 +56,7 @@ class ThemeChanger extends Component {
 
     Object.entries(theme)
       .filter(([colorName]) => colorName.indexOf('Base') === -1)
-      .map(([colorName, colorValue]) => { data[colorName] = colorValue; });
+      .forEach(([colorName, colorValue]) => { data[colorName] = colorValue; });
 
     const json = JSON.stringify(data, null, 2);
 
@@ -69,25 +71,45 @@ class ThemeChanger extends Component {
   render() {
     const { theme } = this.props;
 
-    // Filter base colors since they are `Color` objects not color values
-    const colors = Object.entries(theme)
+    // Group colors by baseColor, and Filter 'Base' colors because
+    // they are Color objects
+    const baseColors = {};
+    const derivedColors = {};
+    const otherColors = [];
+    Object.entries(theme)
       .filter(([colorName]) => colorName.indexOf('Base') === -1)
-      .sort((a, b) => {
-        const first = a[0].toLowerCase();
-        const second = b[0].toLowerCase();
-        return (first < second) ? -1 : (first > second) ? 1 : 0;
-      })
+      .forEach(([colorName, colorValue]) => {
+        const { group, lightness, isBaseColor } = getColorData(colorName);
+
+        if (group === 'text' || group === 'info') {
+          otherColors.push([colorName, colorValue]);
+          return;
+        }
+        if (isBaseColor) {
+          baseColors[group] = colorValue;
+        } else {
+          derivedColors[group] = {
+            ...derivedColors[group],
+            [lightness]: colorValue,
+          }
+        }
+      });
+
+    const rank = color => [
+      'Darkest', 'Darker', 'Dark', 'Light', 'Lighter', 'Lightest'
+    ].indexOf(color[0]);
+    const sortShades = shades => Object.entries(shades)
+      .sort((a, b) => rank(a) - rank(b));
 
     return (
       <ThemeChangerWrapper isOpen={this.props.isOpen}>
         <ThemeChangerPanel isOpen={this.props.isOpen}>
-          <Layout align='center'>
+          <Layout column align='center'>
             <Box flex='1'>
               <Heading el='h2'>
                 {this.state.selected || 'Choose color to change'}
               </Heading>
             </Box>
-            <Padder />
             <Box>
               <Layout column align='center'>
                 <Box>
@@ -106,8 +128,44 @@ class ThemeChanger extends Component {
           </Layout>
 
           <LineSeparator horizontal />
+          <Layout row>
+            <Layout column w='48px'>
+              {Object.entries(baseColors).map(([group, value]) => {
+                const colorName = getColorName({ group, lightness: '' });
+                return (
+                  <ColorBox
+                    color={value}
+                    label={colorName}
+                    onClick={() => this.selectColorBox(colorName)}
+                    selected={this.state.selected === colorName}
+                    key={colorName}
+                  />
+                );
+              })}
+            </Layout>
+            <LineSeparator vertical />
+            <div>
+              {Object.entries(derivedColors).map(([group, shades]) =>
+                <Layout row>
+                  {sortShades(shades).map(([lightness, value]) => {
+                    const colorName = getColorName({ group, lightness });
+                    return (
+                      <ColorBox
+                        color={value}
+                        label={colorName}
+                        onClick={() => this.selectColorBox(colorName)}
+                        selected={this.state.selected === colorName}
+                        key={colorName}
+                      />
+                    );
+                  })}
+                </Layout>
+              )}
+            </div>
+          </Layout>
+          <Padder vert='16px' />
           <Colors>
-            {colors.map(([colorName, colorValue]) =>
+            {otherColors.map(([colorName, colorValue]) =>
               <ColorBox
                 color={colorValue}
                 label={colorName}
@@ -150,7 +208,7 @@ const ThemeChangerWrapper = styled.div`
   ${props => !props.isOpen && 'pointer-events: none;'}
 `;
 const ThemeChangerPanel = styled.div`
-  width: 400px;
+  width: 420px;
   height: 100vh;
   position: fixed;
   right: 0;
@@ -159,7 +217,7 @@ const ThemeChangerPanel = styled.div`
   padding: 16px;
   transition: transform 0.3s ease-in;
   will-change: transform;
-  transform: translateX(${props => props.isOpen ? '0px' : '400px'});
+  transform: translateX(${props => props.isOpen ? '0px' : '420px'});
   ${props => props.isOpen && 'box-shadow: 0px 0px 12px rgba(0,0,0,0.5);'}
   z-index: 999998;
 `;
@@ -180,13 +238,15 @@ const Colors = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
 const ColorBoxWrapper = styled.div`
   width: 40px;
   height: 40px;
-  margin-bottom: 8px;
-  margin-right: 8px;
-  border: 3px solid white;
+  margin: 4px;
+  border: 1px solid black;
+  border-radius: 4px;
   ${props => props.selected && 'border-color: slategrey;'}
+  ${props => props.selected && 'border-width: 3px;'}
   background-color: ${props => props.color};
 `;
 const ColorPicker = styled.div`

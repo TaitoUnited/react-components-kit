@@ -25,9 +25,11 @@ import {
   Textarea,
   Badge,
   Icon,
-  defaultTheme,
   withRipple,
+  createTheme,
 } from 'react-components-kit';
+
+import { getColorName, getColorData } from './utils';
 
 const SECTION_SEPARATION = '42px';
 
@@ -79,7 +81,7 @@ class App extends Component {
       inputTwo: '',
       selectInput: 'foo1',
       textareaOne: '',
-      theme: { ...defaultTheme },
+      theme: createTheme(),
       colorPanelOpen: false,
     };
   }
@@ -96,12 +98,34 @@ class App extends Component {
   }
 
   updateThemeColor(colorName, newColorValue) {
-    this.setState(prevState => ({
-      theme: {
-        ...prevState.theme,
-        [colorName]: newColorValue,
-      },
-    }))
+    const { group, isBaseColor } = getColorData(colorName);
+    // base colors, e.g. primaryColor
+    if (isBaseColor) {
+      this.setState(prevState => ({
+        theme: {
+          ...createTheme({
+            primary: prevState.theme.primaryColor,
+            secondary: prevState.theme.secondaryColor,
+            error: prevState.theme.errorColor,
+            success: prevState.theme.successColor,
+            warn: prevState.theme.warnColor,
+            grey: prevState.theme.grey,
+            [group]: newColorValue,
+          }),
+          infoColor: prevState.theme.infoColor,
+          textColorDark: prevState.theme.textColorDark,
+          textColorLight: prevState.theme.textColorLight,
+        }
+      }));
+    } else {
+      this.setState(prevState => ({
+        theme: {
+          ...prevState.theme,
+          [colorName]: newColorValue,
+        },
+      }));
+    }
+
   }
 
   closeColorPanel() {
