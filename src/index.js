@@ -1,7 +1,4 @@
-import * as dt from './components/defaultTheme';
-
-export const defaultTheme = { ...dt };
-
+export { default as createTheme } from './components/createTheme';
 // Re-export for easier importing in other components
 export { default as Button } from './components/Button';
 export { default as IconButton } from './components/IconButton';

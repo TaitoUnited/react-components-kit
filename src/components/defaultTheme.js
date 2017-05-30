@@ -1,72 +1,63 @@
+import createTheme from './createTheme';
+
+const defaultTheme = createTheme();
+
 /* eslint-disable max-len */
 
-import Color from 'color';
+export const infoColor = defaultTheme.infoColor;
+export const textColorDark = defaultTheme.textColorDark;
+export const textColorLight = defaultTheme.textColorLight;
 
-/**
- * Theme variables
- */
+export const greyLightest = defaultTheme.greyLightest;
+export const greyLighter = defaultTheme.greyLighter;
+export const greyLight = defaultTheme.greyLight;
+export const greyDark = defaultTheme.greyDark;
+export const greyDarker = defaultTheme.greyDarker;
+export const greyDarkest = defaultTheme.greyDarkest;
 
-const basePrimary = '#2490ec';
-const baseSecondary = '#b57bff';
-const baseError = '#ea4444';
-const baseSuccess = '#5bde4e';
-const baseWarn = '#ffb741';
+export const primaryBaseColor = defaultTheme.primaryBaseColor;
+export const primaryColor = defaultTheme.primaryColor;
+export const primaryColorLight = defaultTheme.primaryColorLight;
+export const primaryColorLighter = defaultTheme.primaryColorLighter;
+export const primaryColorLightest = defaultTheme.primaryColorLightest;
+export const primaryColorDark = defaultTheme.primaryColorDark;
+export const primaryColorDarker = defaultTheme.primaryColorDarker;
+export const primaryColorDarkest = defaultTheme.primaryColorDarkest;
 
-export const infoColor = '#99d5f5';
-export const textColorDark = '#222';
-export const textColorLight = '#fff';
+export const secondaryBaseColor = defaultTheme.secondaryBaseColor;
+export const secondaryColor = defaultTheme.secondaryColor;
+export const secondaryColorLight = defaultTheme.secondaryColorLight;
+export const secondaryColorLighter = defaultTheme.secondaryColorLighter;
+export const secondaryColorLightest = defaultTheme.secondaryColorLightest;
+export const secondaryColorDark = defaultTheme.secondaryColorDark;
+export const secondaryColorDarker = defaultTheme.secondaryColorDarker;
+export const secondaryColorDarkest = defaultTheme.secondaryColorDarkest;
 
-export const greyLightest = '#f7f7f7';
-export const greyLighter = '#f2f2f2';
-export const greyLight = '#eee';
-export const greyDark = '#ccc';
-export const greyDarker = '#888';
-export const greyDarkest = '#666';
+export const errorBaseColor = defaultTheme.errorBaseColor;
+export const errorColor = defaultTheme.errorColor;
+export const errorColorLight = defaultTheme.errorColorLight;
+export const errorColorLighter = defaultTheme.errorColorLighter;
+export const errorColorLightest = defaultTheme.errorColorLightest;
+export const errorColorDark = defaultTheme.errorColorDark;
+export const errorColorDarker = defaultTheme.errorColorDarker;
+export const errorColorDarkest = defaultTheme.errorColorDarkest;
 
-// Base `Color` can be used to create additional variations
-export const primaryBaseColor = Color(basePrimary);
-export const primaryColor = Color(basePrimary).hsl().string();
-export const primaryColorLight = Color(basePrimary).lighten(0.3).hsl().string();
-export const primaryColorLighter = Color(basePrimary).lighten(0.6).hsl().string();
-export const primaryColorLightest = Color(basePrimary).lighten(0.8).hsl().string();
-export const primaryColorDark = Color(basePrimary).darken(0.2).hsl().string();
-export const primaryColorDarker = Color(basePrimary).darken(0.4).hsl().string();
-export const primaryColorDarkest = Color(basePrimary).darken(0.6).hsl().string();
+export const warnBaseColor = defaultTheme.warnBaseColor;
+export const warnColor = defaultTheme.warnColor;
+export const warnColorLight = defaultTheme.warnColorLight;
+export const warnColorLighter = defaultTheme.warnColorLighter;
+export const warnColorLightest = defaultTheme.warnColorLightest;
+export const warnColorDark = defaultTheme.warnColorDark;
+export const warnColorDarker = defaultTheme.warnColorDarker;
+export const warnColorDarkest = defaultTheme.warnColorDarkest;
 
-export const secondaryBaseColor = Color(baseSecondary);
-export const secondaryColor = Color(baseSecondary).hsl().string();
-export const secondaryColorLight = Color(baseSecondary).lighten(0.1).hsl().string();
-export const secondaryColorLighter = Color(baseSecondary).lighten(0.2).hsl().string();
-export const secondaryColorLightest = Color(baseSecondary).lighten(0.3).hsl().string();
-export const secondaryColorDark = Color(baseSecondary).darken(0.2).hsl().string();
-export const secondaryColorDarker = Color(baseSecondary).darken(0.4).hsl().string();
-export const secondaryColorDarkest = Color(baseSecondary).darken(0.6).hsl().string();
-
-export const errorBaseColor = Color(baseError);
-export const errorColor = Color(baseError).hsl().string();
-export const errorColorLight = Color(baseError).lighten(0.2).hsl().string();
-export const errorColorLighter = Color(baseError).lighten(0.4).hsl().string();
-export const errorColorLightest = Color(baseError).lighten(0.6).hsl().string();
-export const errorColorDark = Color(baseError).darken(0.2).hsl().string();
-export const errorColorDarker = Color(baseError).darken(0.4).hsl().string();
-export const errorColorDarkest = Color(baseError).darken(0.6).hsl().string();
-
-export const warnBaseColor = Color(baseWarn);
-export const warnColor = Color(baseWarn).hsl().string();
-export const warnColorLight = Color(baseWarn).lighten(0.2).hsl().string();
-export const warnColorLighter = Color(baseWarn).lighten(0.3).hsl().string();
-export const warnColorLightest = Color(baseWarn).lighten(0.5).hsl().string();
-export const warnColorDark = Color(baseWarn).darken(0.2).hsl().string();
-export const warnColorDarker = Color(baseWarn).darken(0.3).hsl().string();
-export const warnColorDarkest = Color(baseWarn).darken(0.5).hsl().string();
-
-export const successBaseColor = Color(baseSuccess);
-export const successColor = Color(baseSuccess).hsl().string();
-export const successColorLight = Color(baseSuccess).lighten(0.2).hsl().string();
-export const successColorLighter = Color(baseSuccess).lighten(0.4).hsl().string();
-export const successColorLightest = Color(baseSuccess).lighten(0.6).hsl().string();
-export const successColorDark = Color(baseSuccess).darken(0.2).hsl().string();
-export const successColorDarker = Color(baseSuccess).darken(0.4).hsl().string();
-export const successColorDarkest = Color(baseSuccess).darken(0.6).hsl().string();
+export const successBaseColor = defaultTheme.successBaseColor;
+export const successColor = defaultTheme.successColor;
+export const successColorLight = defaultTheme.successColorLight;
+export const successColorLighter = defaultTheme.successColorLighter;
+export const successColorLightest = defaultTheme.successColorLightest;
+export const successColorDark = defaultTheme.successColorDark;
+export const successColorDarker = defaultTheme.successColorDarker;
+export const successColorDarkest = defaultTheme.successColorDarkest;
 
 /* eslint-enable max-len */
