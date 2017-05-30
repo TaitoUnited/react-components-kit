@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { greyLight } from './defaultTheme';
 
 const VerticalLineSeparator = styled.div`
-  height: ${props => props.len || '40px'};
+  height: ${props => props.len || 'auto'};
   width: 1px;
   margin: 0px ${props => props.separation || '16px'};
   background-color: ${greyLight};
