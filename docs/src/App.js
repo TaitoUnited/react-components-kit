@@ -23,6 +23,7 @@ import {
   Input,
   Select,
   Textarea,
+  DateSelect,
   Badge,
   Icon,
   RadioButton,
@@ -30,7 +31,7 @@ import {
   createTheme,
 } from 'react-components-kit';
 
-import { getColorName, getColorData } from './utils';
+import { getColorData } from './utils';
 
 const SECTION_SEPARATION = '42px';
 
@@ -480,6 +481,25 @@ class App extends Component {
                 autoResize
               />
             </FormControl>
+          </Layout>
+
+          <Padder vert={SECTION_SEPARATION} />
+
+          <Heading el='h2'>DateSelect</Heading>
+
+          <Layout row>
+            <DateSelect
+              locale='fi-FI'
+              onSelect={date => console.log('selected: ', date)}
+            />
+
+            <Padder horiz='64px' />
+
+            <DateSelect
+              locale='en-US'
+              defaultDate={new Date()}
+              onSelect={date => console.log('selected: ', date)}
+            />
           </Layout>
 
           <Padder vert={SECTION_SEPARATION} />
