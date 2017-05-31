@@ -7,6 +7,7 @@ export { default as Input } from './components/Input';
 export { default as Textarea } from './components/Textarea';
 export { default as FormControl } from './components/FormControl';
 export { default as Select } from './components/Select';
+export { default as DateSelect } from './components/DateSelect';
 export { default as Card, CardAnimated } from './components/Card';
 export { default as LoadingOverlay } from './components/LoadingOverlay';
 export { default as Icon } from './components/Icon';
