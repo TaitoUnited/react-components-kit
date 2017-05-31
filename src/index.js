@@ -12,6 +12,7 @@ export { default as LoadingOverlay } from './components/LoadingOverlay';
 export { default as Icon } from './components/Icon';
 export { default as LineSeparator } from './components/LineSeparator';
 export { default as Tooltip } from './components/Tooltip';
+export { default as RadioButton } from './components/RadioButton';
 export { default as Spinner } from './components/Spinner';
 export { default as ContentEditable } from './components/ContentEditable';
 export { default as CircleProgress } from './components/CircleProgress';
