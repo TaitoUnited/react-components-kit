@@ -25,6 +25,7 @@ import {
   Textarea,
   Badge,
   Icon,
+  RadioButton,
   withRipple,
   createTheme,
 } from 'react-components-kit';
@@ -299,6 +300,73 @@ class App extends Component {
               innerLabelLeft='on'
               innerLabelRight='off'
             />
+          </Layout>
+
+          <Padder vert={SECTION_SEPARATION} />
+
+          <Heading el='h2'>RadioButton</Heading>
+          <Padder vert='16px' />
+          <Layout row align='center'>
+            <RadioButton
+              selected='radio-1-3'
+              onSelect={(val) => console.log('pressed ', val)}
+              padding='8px'
+            >
+              <option value='radio-1-1'>
+                A thing
+              </option>
+              <option value='radio-1-2'>
+                <Tooltip content='Click me to select me'>
+                  What Am I?
+                </Tooltip>
+              </option>
+              <option value='radio-1-3'>
+                <Box>
+                  <Icon className='ion-beer' />
+                  <Padder horiz='8px' />
+                  <Text>Custom content!</Text>
+                </Box>
+              </option>
+            </RadioButton>
+
+            <Padder horiz='32px' />
+
+            <RadioButton
+              padding='4px'
+              secondary
+              selected='radio-2-2'
+              column
+              onSelect={(val) => console.log('pressed ', val)}
+            >
+              <option value='radio-2-1'>one</option>
+              <option value='radio-2-2'>two</option>
+            </RadioButton>
+
+            <Padder horiz='32px' />
+
+            <RadioButton
+              padding='4px'
+              warn
+              onSelect={val => console.log(val)}
+            >
+              <option value='radio-3-1'>Nothing</option>
+              <option value='radio-3-2'>Selected</option>
+              <option value='radio-3-3'>At</option>
+              <option value='radio-3-4'>First</option>
+            </RadioButton>
+
+            <Padder horiz='32px' />
+
+            <RadioButton
+              selected='radio-4-1'
+              padding='8px'
+              success
+              onSelect={val => console.log(val)}
+            >
+              <option flex='1' value='radio-4-1'>Flex</option>
+              <option flex='1' value='radio-4-2'>Example</option>
+              <option flex='1' value='radio-4-3'>Big Content Here!</option>
+            </RadioButton>
           </Layout>
 
           <Padder vert={SECTION_SEPARATION} />
