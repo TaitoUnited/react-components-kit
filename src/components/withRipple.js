@@ -5,6 +5,8 @@ const RippleWrapper = styled.div`
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  display: inline-block;
+  align-self: flex-start;
 
   &:after {
     content: "";
