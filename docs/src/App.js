@@ -207,6 +207,7 @@ class App extends Component {
           <Padder vert={SECTION_SEPARATION} />
 
           <Heading el='h2'>Headings</Heading>
+
           <Layout align='center'>
             <Heading color='tomato'>
               Heading 1
@@ -222,6 +223,19 @@ class App extends Component {
             <Padder horiz='32px' />
             <Heading el='h4' color='rebeccapurple'>
               Heading 4
+            </Heading>
+          </Layout>
+          <Layout align='center'>
+            <Heading sub el='h2' color='primaryColorLight'>
+              Sub heading 2
+            </Heading>
+            <Padder horiz='32px' />
+            <Heading sub el='h3'>
+              Sub heading 3
+            </Heading>
+            <Padder horiz='32px' />
+            <Heading sub el='h4' color='secondaryColorDark'>
+              Sub heading 4
             </Heading>
           </Layout>
 

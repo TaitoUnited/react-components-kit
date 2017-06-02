@@ -7,6 +7,7 @@ import colorGetter from './colorGetter';
 const textCss = css`
   ${props => props.color && `color: ${colorGetter(props, props.color)};`}
   ${props => props.nomargin && 'margin: 0;'}
+  ${props => props.sub && 'font-weight: 400;'}
 `;
 const HeadingLg = styled.h1`
   ${textCss}
