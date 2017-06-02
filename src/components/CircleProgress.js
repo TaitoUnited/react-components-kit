@@ -1,11 +1,7 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
-import {
-  secondaryColor,
-  secondaryColorDark,
-  secondaryColorLight,
-} from './defaultTheme';
+import colorGetter from './colorGetter';
 
 const CIRCLE_COMPLETE = 629;
 
@@ -41,6 +37,9 @@ const InnerContent = styled.div`
   right: 0;
   bottom: 0;
 `;
+const Stop = styled.stop`
+  stop-color: ${props => colorGetter(props, props.stopColor)}
+`;
 
 const propTypes = {
   children: PropTypes.any,
@@ -68,28 +67,28 @@ const CircleProgress = ({ progress, size = 200, children }) => {
       <svg width='0' height='0'>
         <defs>
           <linearGradient id='cl1' gradientUnits='objectBoundingBox' x1='0' y1='0' x2='1' y2='1'>
-            <stop stopColor={secondaryColorLight} />
-            <stop offset='100%' stopColor={secondaryColor} />
+            <Stop stopColor='secondaryColorLight' />
+            <Stop offset='100%' stopColor='secondaryColor' />
           </linearGradient>
           <linearGradient id='cl2' gradientUnits='objectBoundingBox' x1='0' y1='0' x2='0' y2='1'>
-            <stop stopColor={secondaryColor} />
-            <stop offset='100%' stopColor={secondaryColorDark} />
+            <Stop stopColor='secondaryColor' />
+            <Stop offset='100%' stopColor='secondaryColorDark' />
           </linearGradient>
           <linearGradient id='cl3' gradientUnits='objectBoundingBox' x1='1' y1='0' x2='0' y2='1'>
-            <stop stopColor={secondaryColorDark} />
-            <stop offset='100%' stopColor={secondaryColor} />
+            <Stop stopColor='secondaryColorDark' />
+            <Stop offset='100%' stopColor='secondaryColor' />
           </linearGradient>
           <linearGradient id='cl4' gradientUnits='objectBoundingBox' x1='1' y1='1' x2='0' y2='0'>
-            <stop stopColor={secondaryColor} />
-            <stop offset='100%' stopColor={secondaryColorLight} />
+            <Stop stopColor='secondaryColor' />
+            <Stop offset='100%' stopColor='secondaryColorLight' />
           </linearGradient>
           <linearGradient id='cl5' gradientUnits='objectBoundingBox' x1='0' y1='1' x2='0' y2='0'>
-            <stop stopColor={secondaryColorLight} />
-            <stop offset='100%' stopColor={secondaryColorDark} />
+            <Stop stopColor='secondaryColorLight' />
+            <Stop offset='100%' stopColor='secondaryColorDark' />
           </linearGradient>
           <linearGradient id='cl6' gradientUnits='objectBoundingBox' x1='0' y1='1' x2='1' y2='0'>
-            <stop stopColor={secondaryColorDark} />
-            <stop offset='100%' stopColor={secondaryColorLight} />
+            <Stop stopColor='secondaryColorDark' />
+            <Stop offset='100%' stopColor={'secondaryColorLight'} />
           </linearGradient>
         </defs>
       </svg>

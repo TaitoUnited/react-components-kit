@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import styled from 'styled-components';
 
+import colorGetter from './colorGetter';
+
 // ============================
 
 const tooltipArrowHeight = 6;
@@ -42,9 +44,11 @@ const TooltipBubble = styled.div`
   font-size: 0.8rem;
   box-sizing: border-box;
   box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
-  color: ${props => props.textColor || '#fff'};
-  background-color: ${props => props.bgColor || 'rgba(0,0,0,0.8)'};
-  border-color: ${props => props.bgColor || 'rgba(0,0,0,0.8)'};
+  color: ${props => colorGetter(props, props.textColor) || '#fff'};
+  background-color: ${props => colorGetter(props, props.bgColor)
+    || 'rgba(0,0,0,0.8)'};
+  border-color: ${props => colorGetter(props, props.bgColor)
+    || 'rgba(0,0,0,0.8)'};
   visibility: ${props => props.show ? 'visible' : 'hidden'};
   ${props => !props.show && 'pointer-events: none;'}
   transition: transform 0.2s ease, opacity 0.3s ease;

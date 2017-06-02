@@ -8,6 +8,6 @@ import * as defaultTheme from './defaultTheme';
 
 export default function colorGetter(props, colorName) {
   return props.theme
-    ? props.theme[colorName] || defaultTheme[colorName]
-    : defaultTheme[colorName];
+    ? props.theme[colorName] || defaultTheme[colorName] || colorName
+    : defaultTheme[colorName] || colorName;
 }

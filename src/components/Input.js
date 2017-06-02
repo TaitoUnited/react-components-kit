@@ -22,7 +22,8 @@ const InputEl = styled.input`
   font-size: 1rem;
   flex-direction: row;
   border-radius: 4px;
-  background-color: ${props => props.bg || colorGetter(props, 'greyLighter')};
+  background-color: ${props => colorGetter(props, props.bg)
+    || colorGetter(props, 'greyLighter')};
   color: ${props => colorGetter(props, 'textColorDark')};
   border: 1px solid ${props => props.error
     ? colorGetter(props, 'errorColor')

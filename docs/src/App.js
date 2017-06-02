@@ -294,9 +294,9 @@ class App extends Component {
             <Padder horiz='32px' />
             <ToggleSwitch
               onToggle={() => console.log('TOGGLE!')}
-              ballColor='tomato'
-              borderColor='papayawhip'
-              bgToggled='papayawhip'
+              ballColor='primaryColorLight'
+              borderColor='primaryColorDark'
+              bgToggled='primaryColorLighter'
               outerLabel='toggle me!'
               innerLabelLeft='on'
               innerLabelRight='off'

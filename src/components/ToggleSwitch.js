@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import styled from 'styled-components';
 
+import colorGetter from './colorGetter';
+
 // Styled components
 const ToggleSwitchWrapper = styled.div`
   display: flex;
@@ -13,26 +15,26 @@ const Toggle = styled.div`
   overflow: hidden;
   position: relative;
   transform: translate3d(0, 0, 0);
-  background-color: ${props => props.bgClear};
+  background-color: ${props => colorGetter(props, props.bgClear)};
   height: ${props => (props.width / 2)}px;
   width: ${props => props.width}px;
   border-radius: ${props => props.width / 4}px;
   padding: ${props => props.padding}px;
   border: 1px solid ${props => props.toggled ?
-    props.bgToggled :
-    props.borderColor
+    colorGetter(props, props.bgToggled) :
+    colorGetter(props, props.borderColor)
   };
 `;
 
 const ToggleBall = styled.div`
   z-index: 3;
   border-radius: 50%;
-  background-color: ${props => props.ballColor};
+  background-color: ${props => colorGetter(props, props.ballColor)};
   box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
   transition: transform 0.3s cubic-bezier(1,.19,.15,.7);
   transition-delay: 0.1s;
   will-change: transform;
-  border: 1px solid ${props => props.borderColor};
+  border: 1px solid ${props => colorGetter(props, props.borderColor)};
   height: ${props => (props.width / 2) - (props.padding * 2)}px;
   width: ${props => (props.width / 2) - (props.padding * 2)}px;
   transform: ${props => props.toggled ?
@@ -41,7 +43,7 @@ const ToggleBall = styled.div`
   };
 
   &:active {
-    background-color: ${props => props.ballColorActive};
+    background-color: ${props => colorGetter(props, props.ballColorActive)};
   }
 `;
 
@@ -58,7 +60,8 @@ const RippleBg = styled.div`
   transition: transform 0.5s, opacity 0.3s ease;
   opacity: ${props => props.visible ? 1 : 0};
   background-image: radial-gradient(
-    circle, ${props => props.bgToggled} 10%, transparent 10.01%
+    circle, ${props =>
+      colorGetter(props, props.bgToggled)} 10%, transparent 10.01%
   );
   transform: ${props => props.visible ?
     'scale(10, 10)' :
@@ -68,7 +71,7 @@ const RippleBg = styled.div`
 
 const InnerLabel = styled.span`
   font-size: ${props => props.size};
-  color: ${props => props.color};
+  color: ${props => colorGetter(props, props.color)};
   position: absolute;
   z-index: 2;
   ${props => props.left && 'left: 10px;'};
@@ -77,7 +80,7 @@ const InnerLabel = styled.span`
 
 const OuterLabel = styled.span`
   font-size: ${props => props.size};
-  color: ${props => props.color};
+  color: ${props => colorGetter(props, props.color)};
   position: absolute;
   top: 0px;
   transform: translateY(calc(-100% - 8px));

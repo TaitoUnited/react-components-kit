@@ -47,7 +47,7 @@ class DateSelect extends Component {
             <Icon className='ion-calendar' />
             <Padder horiz='8px' />
             <SelectionBox onClick={this.toSelection} w={width} {...rest}>
-              <Text color={colorGetter(this.props, 'primaryColorDark')}>
+              <Text color='primaryColorDark'>
                 {selected.toLocaleDateString(locale)}
               </Text>
             </SelectionBox>

@@ -1,10 +1,6 @@
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
-import {
-  textColorDark,
-  secondaryColorLighter,
-  secondaryColorLight,
-} from './defaultTheme';
+import colorGetter from './colorGetter';
 
 function getCursorType(props) {
   if (props.disabled) return 'not-allowed';
@@ -21,7 +17,8 @@ const IconButtonWrapper = styled.div`
 
 const Icon = styled.i`
   font-size: ${props => props.size || '1.2rem'};
-  color: ${props => props.color || textColorDark};
+  color: ${props => colorGetter(props, props.color)
+    || colorGetter(props, 'textColorDark')};
   border-radius: 50%;
   background-color: transparent;
   width: ${props => props.w || '32px'};
@@ -30,17 +27,19 @@ const Icon = styled.i`
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease;
-  ${props => props.hasBg && `background-color: ${secondaryColorLighter}`};
+  ${props => props.hasBg && `background-color: ${
+    colorGetter(props, 'secondaryColorLighter')}`};
 
   &:active {
-    background-color: ${secondaryColorLight};
+    background-color: ${props => colorGetter(props, 'secondaryColorLight')};
   }
 `;
 
 const SubTitle = styled.span`
   margin-top: 8px;
   font-size: 10px;
-  color: ${props => props.color || textColorDark};
+  color: ${props => colorGetter(props, props.color)
+    || colorGetter(props, 'textColorDark')};
 `;
 
 const IconButton = ({ subtitle, color, size, bg, className, ...rest }) => (

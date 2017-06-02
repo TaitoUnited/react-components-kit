@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
 import styled, { css } from 'styled-components';
+import colorGetter from './colorGetter';
 
 const textCss = css`
   font-size: ${props => props.size || '1rem'};
   ${props => props.lineh && `line-height: ${props.lineh};`};
-  ${props => props.color && `color: ${props.color};`};
+  ${props => props.color && `color: ${colorGetter(props, props.color)};`}
 `;
 const Span = styled.span`
   ${textCss}

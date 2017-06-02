@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react';
 import styled, { css } from 'styled-components';
 
+import colorGetter from './colorGetter';
+
 const textCss = css`
-  ${props => props.color && `color: ${props.color};`};
+  ${props => props.color && `color: ${colorGetter(props, props.color)};`}
   ${props => props.nomargin && 'margin: 0;'}
 `;
 const HeadingLg = styled.h1`

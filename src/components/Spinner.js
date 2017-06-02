@@ -2,6 +2,8 @@
 import React, { PropTypes } from 'react';
 import styled, { keyframes } from 'styled-components';
 
+import colorGetter from './colorGetter';
+
 const circleAnim = keyframes`
   0% { transform: rotate(0deg); }
   50% { transform: rotate(180deg); }
@@ -29,7 +31,7 @@ const Circle = styled.div`
   display: inline-block;
   box-sizing: border-box;
   font-size: 0px;
-  color: ${props => props.color || '#333'};
+  color: ${props => colorGetter(props, props.color) || '#333'};
 `;
 
 const CircleInner = styled.div`

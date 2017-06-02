@@ -78,19 +78,19 @@ class Calendar extends Component {
     return (
       <CalendarWrapper>
         <MonthControls>
-          <Text>
+          <Title>
             {this.monthName(this.state.month)}&nbsp;{this.state.year}
-          </Text>
+          </Title>
           <IconButton
             onClick={() => this.changeMonth(-1)}
             className='ion-arrow-left-b'
-            color={colorGetter(this.props, 'primaryColorDark')}
+            color='primaryColorDark'
             size='1.6rem'
           />
           <IconButton
             onClick={() => this.changeMonth(1)}
             className='ion-arrow-right-b'
-            color={colorGetter(this.props, 'primaryColorDark')}
+            color='primaryColorDark'
             size='1.6rem'
           />
         </MonthControls>
@@ -149,7 +149,7 @@ const MonthControls = styled.div`
   align-items: flex-start;
 `;
 
-const Text = styled.span`
+const Title = styled.span`
   margin: auto auto;
 `;
 
