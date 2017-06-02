@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import { Box } from './Layout';
