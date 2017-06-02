@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import colorGetter from './colorGetter';
-import { Icon } from './Icon';
+import Icon from './Icon';
 
 const FormControlWrapper = styled.label`
   display: flex;
