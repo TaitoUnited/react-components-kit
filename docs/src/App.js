@@ -495,6 +495,14 @@ class App extends Component {
                 autoResize
               />
             </FormControl>
+            <Padder horiz='32px' />
+            <FormControl label='You can also add an icon!' icon='ion-planet'>
+              <Input
+                onChange={this.handleInputChange}
+                name='inputIcon'
+                value={this.state.inputIcon}
+              />
+            </FormControl>
           </Layout>
 
           <Padder vert={SECTION_SEPARATION} />
