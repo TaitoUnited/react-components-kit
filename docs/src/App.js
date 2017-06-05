@@ -29,6 +29,10 @@ import {
   RadioButton,
   withRipple,
   createTheme,
+  Table,
+  Head,
+  Row,
+  Cell,
 } from 'react-components-kit';
 
 import { getColorData } from './utils';
@@ -85,6 +89,9 @@ class App extends Component {
       textareaOne: '',
       theme: createTheme(),
       colorPanelOpen: false,
+      table: {
+        selected: null,
+      }
     };
   }
 
@@ -139,6 +146,24 @@ class App extends Component {
   }
 
   render() {
+    const people = [
+      {
+        name: 'matt',
+        email: 'matt@gmail.com',
+        editor: 'vim',
+      },
+      {
+        name: 'evaline',
+        email: 'evaline@gmail.com',
+        editor: 'atom',
+      },
+      {
+        name: 'susan',
+        email: 'susan@gmail.com',
+        editor: 'emacs',
+      }
+    ]
+
     return (
       <ThemeProvider theme={this.state.theme}>
         <AppWrapper column>
@@ -523,6 +548,39 @@ class App extends Component {
               onSelect={date => console.log('selected: ', date)}
             />
           </Layout>
+
+          <Padder vert={SECTION_SEPARATION} />
+
+          <Heading el='h2'>Table</Heading>
+
+          <Table>
+            <Head>
+              <Cell flex='1'>Name</Cell>
+              <Cell flex='1'>Email</Cell>
+              <Cell flex='1'>Fave Editor</Cell>
+            </Head>
+            {people.map((thing, idx) => (
+              <Row
+                active={this.state.table.selected === idx}
+                onMouseOver={() => this.setState({
+                  table: { selected: idx },
+                })}
+              >
+                <Cell
+                  flex='1'
+                  active={this.state.table.selected === idx}
+                >
+                  {thing.name}
+                </Cell>
+                <Cell flex='1'>
+                  {thing.email}
+                </Cell>
+                <Cell flex='1'>
+                  {thing.editor}
+                </Cell>
+              </Row>
+            ))}
+          </Table>
 
           <Padder vert={SECTION_SEPARATION} />
 
