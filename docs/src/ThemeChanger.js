@@ -60,13 +60,12 @@ class ThemeChanger extends Component {
       .forEach(([colorName, colorValue]) => { data[colorName] = colorValue; });
 
     const json = JSON.stringify(data, null, 2);
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(json);
+    const el = document.getElementById('downloadTheme');
 
-    const tab = window.open(
-      `data:text/json,${encodeURIComponent(json)}`, '_blank'
-    );
-
-    // Switch to new tab
-    tab.focus();
+    el.setAttribute('href', dataStr);
+    el.setAttribute('download', 'theme.json');
+    el.click();
   }
 
   render() {
@@ -194,6 +193,7 @@ class ThemeChanger extends Component {
         </ThemeChangerPanel>
 
         <Backdrop onClick={this.props.close} isOpen={this.props.isOpen} />
+        <a id='downloadTheme' style={{ display: 'none' }} />
       </ThemeChangerWrapper>
     );
   }
@@ -211,6 +211,7 @@ const ThemeChangerWrapper = styled.div`
 const ThemeChangerPanel = styled.div`
   width: 420px;
   height: 100vh;
+  overflow-y: auto;
   position: fixed;
   right: 0;
   top: 0;
@@ -244,11 +245,9 @@ const ColorBoxWrapper = styled.div`
   width: 40px;
   height: 40px;
   margin: 4px;
-  border: 1px solid black;
   border-radius: 4px;
-  ${props => props.selected && 'border-color: slategrey;'}
-  ${props => props.selected && 'border-width: 3px;'}
   background-color: ${props => props.color};
+  ${props => props.selected && 'border: 2px solid #222;'}
 `;
 const ColorPicker = styled.div`
   width: 100%;
