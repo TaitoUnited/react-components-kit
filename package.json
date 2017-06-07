@@ -54,8 +54,8 @@
   },
   "dependencies": {
     "color": "1.0.3",
-    "styled-components": "^1.4.4",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "styled-components": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
