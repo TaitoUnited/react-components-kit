@@ -78,4 +78,6 @@ helper to format the commit messages partly based on these [rules](https://gist.
 This way [semantic-release](https://github.com/semantic-release/semantic-release)
 knows how to bumb up the version number correctly when we finally push the code to master and Travis CI builds our package.
 
+**Do not** force push to the repo, since that may break semantic-release.
+
 You can see the Travis CI builds [here](https://travis-ci.org/TaitoUnited/react-components-kit)
