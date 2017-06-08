@@ -5,8 +5,9 @@ import colorGetter from './colorGetter';
 
 const textCss = css`
   font-size: ${props => props.size || '1rem'};
-  ${props => props.lineh && `line-height: ${props.lineh};`};
+  ${props => props.lineh && `line-height: ${props.lineh};`}
   ${props => props.color && `color: ${colorGetter(props, props.color)};`}
+  ${props => props.align && `text-align: ${props.align || 'initial'};`}
 `;
 const Span = styled.span`
   ${textCss}
