@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+function getAlignement(props) {
+  if (props.align === 'center') return '0px auto';
+  if (props.align === 'right') return '0px 0px 0px auto';
+  if (props.align === 'left') return '0px auto 0px 0px';
+  return '0px';
+}
+
 const RippleWrapper = styled.div`
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
   display: inline-block;
   align-self: flex-start;
+  margin: ${props => getAlignement(props)};
 
   &:after {
     content: "";
@@ -32,12 +40,13 @@ const RippleWrapper = styled.div`
   }
 `;
 
+
 /* eslint-disable react/prefer-stateless-function */
 const withRipple = (Comp) => {
   return class RippleProvider extends Component {
     render() {
       return (
-        <RippleWrapper>
+        <RippleWrapper align={this.props.align}>
           <Comp {...this.props} />
         </RippleWrapper>
       );

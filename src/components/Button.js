@@ -59,20 +59,12 @@ function getColor(props) {
   return colorGetter(props, 'primaryColor'); // default
 }
 
-function getAlignement(props) {
-  if (props.align === 'center') return '0px auto';
-  if (props.align === 'right') return '0px 0px 0px auto';
-  if (props.align === 'left') return '0px auto 0px 0px';
-  return '0px';
-}
-
 const ButtonWrapper = styled.button`
   outline: none;
   font-size: 1rem;
   padding: 8px 16px;
   font-weight: normal;
   width: ${props => props.w || 'auto'};
-  margin: ${props => getAlignement(props)};
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   border-style: solid;
   border-width: ${props => props.outline && !props.clear ? '1px' : '0px'};
