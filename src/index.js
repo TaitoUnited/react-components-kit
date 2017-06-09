@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export { default as createTheme } from './components/createTheme';
 // Re-export for easier importing in other components
 export { default as Button } from './components/Button';
@@ -26,3 +27,5 @@ export { Layout, Box } from './components/Layout';
 export { default as media } from './components/media';
 export { default as withRipple } from './components/withRipple';
 export { Table, Head, Row, Cell } from './components/Table';
+export { PivotButton, OrbitButton } from './components/OrbitButtonContainer';
+/* eslint-enable max-len */

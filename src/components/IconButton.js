@@ -29,10 +29,11 @@ const Icon = styled.i`
   justify-content: center;
   transition: background-color 0.2s ease;
   ${props => props.hasBg && `background-color: ${
-    colorGetter(props, 'secondaryColorLighter')}`};
+    colorGetter(props, props.bgColor || 'secondaryColorLighter')}`};
 
   &:active {
-    background-color: ${props => colorGetter(props, 'secondaryColorLight')};
+    background-color: ${props => colorGetter(props,
+      props.bgColor || 'secondaryColorLight')};
   }
 `;
 
@@ -57,6 +58,7 @@ const IconButton = ({ subtitle, color, size, bg, className, ...rest }) => (
 IconButton.propTypes = {
   subtitle: PropTypes.string,
   color: PropTypes.string,
+  bgColor: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,
   bg: PropTypes.bool,
