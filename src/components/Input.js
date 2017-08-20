@@ -1,50 +1,7 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import colorGetter from './colorGetter';
-
-const fadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 8px;
-  position: relative;
-  width: ${props => props.width || '100%'};
-  ${props => props.validator && 'margin-bottom: 18px;'}
-  ${props => props.maxW && `max-width: ${props.maxW};`}
-  ${props => props.noMargin && 'margin: 0;'}
-`;
-const InputEl = styled.input`
-  padding: 8px;
-  font-size: 1rem;
-  flex-direction: row;
-  border-radius: 4px;
-  background-color: ${props => colorGetter(props, props.bg)
-    || colorGetter(props, 'greyLighter')};
-  color: ${props => colorGetter(props, 'textColorDark')};
-  border: 1px solid ${props => props.error
-    ? colorGetter(props, 'errorColor')
-    : colorGetter(props, 'greyLight')
-  };
-
-  &:focus {
-    outline: none;
-    box-shadow: 0px 0px 2px ${props => colorGetter(props, 'primaryColorLight')};
-  }
-`;
-const ValidationMessage = styled.div`
-  font-size: 0.7rem;
-  color: ${props => colorGetter(props, 'errorColor')};
-  margin-top: 8px;
-  position: absolute;
-  bottom: -18px;
-  left: 0px;
-  animation: ${fadeIn} 0.4s;
-`;
 
 const CHAR_WIDTH = 16;
 
@@ -65,9 +22,6 @@ const getValidValue = (value) => {
 class Input extends Component {
   constructor(props) {
     super(props);
-    this.resize = this.resize.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.validate = this.validate.bind(this);
 
     this.state = {
       width: null,
@@ -119,7 +73,7 @@ class Input extends Component {
       nextProps.value !== this.props.value;
   }
 
-  resize() {
+  resize = () => {
     if (this.props.autoResize) {
       const { value } = this.props;
       const w = typeof value === 'number' ?
@@ -130,7 +84,7 @@ class Input extends Component {
     }
   }
 
-  validate(value) {
+  validate = (value) => {
     if (!this.props.validator(value)) {
       this.setState({ isValid: false });
     } else {
@@ -138,7 +92,7 @@ class Input extends Component {
     }
   }
 
-  handleChange(evnt) {
+  handleChange = (evnt) => {
     let isValid = true;
 
     if (this.props.validator) {
@@ -182,6 +136,49 @@ class Input extends Component {
     );
   }
 }
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  position: relative;
+  width: ${props => props.width || '100%'};
+  ${props => props.validator && 'margin-bottom: 18px;'}
+  ${props => props.maxW && `max-width: ${props.maxW};`}
+  ${props => props.noMargin && 'margin: 0;'}
+`;
+const InputEl = styled.input`
+  padding: 8px;
+  font-size: 1rem;
+  flex-direction: row;
+  border-radius: 4px;
+  background-color: ${props => colorGetter(props, props.bg)
+    || colorGetter(props, 'greyLighter')};
+  color: ${props => colorGetter(props, 'textColorDark')};
+  border: 1px solid ${props => props.error
+    ? colorGetter(props, 'errorColor')
+    : colorGetter(props, 'greyLight')
+  };
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px ${props => colorGetter(props, 'primaryColorLight')};
+  }
+`;
+const ValidationMessage = styled.div`
+  font-size: 0.7rem;
+  color: ${props => colorGetter(props, 'errorColor')};
+  margin-top: 8px;
+  position: absolute;
+  bottom: -18px;
+  left: 0px;
+  animation: ${fadeIn} 0.4s;
+`;
 
 Input.propTypes = propTypes;
 Input.defaultProps = {
