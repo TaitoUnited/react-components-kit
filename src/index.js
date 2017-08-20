@@ -26,3 +26,4 @@ export { Layout, Box } from './components/Layout';
 export { default as media } from './components/media';
 export { default as withRipple } from './components/withRipple';
 export { Table, Head, Row, Cell } from './components/Table';
+export { default as TextField } from './components/TextField';
