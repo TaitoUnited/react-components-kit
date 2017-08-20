@@ -12,7 +12,7 @@ import {
   Text,
 } from 'react-components-kit';
 
-import { getColorData, getColorName } from './utils';
+import { getColorData, getColorName } from '../utils';
 
 class ColorBox extends Component {
   shouldComponentUpdate(nextProps) {
@@ -36,22 +36,24 @@ class ColorBox extends Component {
   }
 }
 
+const rank = color => [
+  'Darkest', 'Darker', 'Dark', 'Light', 'Lighter', 'Lightest'
+].indexOf(color[0]);
+    
+const sortShades = shades => Object.entries(shades).sort(
+  (a, b) => rank(a) - rank(b)
+);
 
 class ThemeChanger extends Component {
-  constructor(props) {
-    super(props);
-    this.selectColorBox = this.selectColorBox.bind(this);
-    this.exportTheme = this.exportTheme.bind(this);
-    this.state = {
-      selected: null,
-    }
+  state = {
+    selected: null,
   }
 
-  selectColorBox(colorName) {
+  selectColorBox = (colorName) => {
     this.setState({ selected: colorName });
   }
 
-  exportTheme() {
+  exportTheme = () => {
     const { theme } = this.props;
     const data = {};
 
@@ -76,6 +78,7 @@ class ThemeChanger extends Component {
     const baseColors = {};
     const derivedColors = {};
     const otherColors = [];
+
     Object.entries(theme)
       .filter(([colorName]) => colorName.indexOf('Base') === -1)
       .forEach(([colorName, colorValue]) => {
@@ -94,12 +97,6 @@ class ThemeChanger extends Component {
           }
         }
       });
-
-    const rank = color => [
-      'Darkest', 'Darker', 'Dark', 'Light', 'Lighter', 'Lightest'
-    ].indexOf(color[0]);
-    const sortShades = shades => Object.entries(shades)
-      .sort((a, b) => rank(a) - rank(b));
 
     return (
       <ThemeChangerWrapper isOpen={this.props.isOpen}>
@@ -128,6 +125,7 @@ class ThemeChanger extends Component {
           </Layout>
 
           <LineSeparator horizontal />
+
           <Layout row>
             <Layout column w='48px'>
               {Object.entries(baseColors).map(([group, value]) => {
@@ -143,7 +141,9 @@ class ThemeChanger extends Component {
                 );
               })}
             </Layout>
+
             <LineSeparator vertical />
+
             <div>
               {Object.entries(derivedColors).map(([group, shades]) =>
                 <Layout row>
@@ -163,7 +163,9 @@ class ThemeChanger extends Component {
               )}
             </div>
           </Layout>
+
           <Padder vert='16px' />
+
           <Colors>
             {otherColors.map(([colorName, colorValue]) =>
               <ColorBox
@@ -175,6 +177,7 @@ class ThemeChanger extends Component {
               />
             )}
           </Colors>
+          
           <ColorPicker>
             {this.state.selected &&
               <SketchPicker
