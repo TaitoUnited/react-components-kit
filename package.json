@@ -50,12 +50,12 @@
     ]
   },
   "peerDependencies": {
-    "react": "^0.14.0 || 15.x"
+    "react": "^0.14.0 || 15.x || 16.x"
   },
   "dependencies": {
-    "color": "1.0.3",
-    "prop-types": "^15.5.8",
-    "styled-components": "^2.0.0"
+    "color": "2.0.0",
+    "prop-types": "^15.5.10",
+    "styled-components": "^2.1.2"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
