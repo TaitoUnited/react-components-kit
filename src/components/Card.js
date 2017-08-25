@@ -4,7 +4,7 @@ function getDepth(props) {
   if (props.depth === 1) return '0px 2px 4px rgba(0,0,0,0.1)';
   if (props.depth === 2) return '0px 4px 16px rgba(0,0,0,0.2)';
   if (props.depth === 3) return '0px 6px 22px rgba(0,0,0,0.3)';
-  return '0px 1px 4px rgba(0,0,0,0.3)';
+  return '0px 2px 4px rgba(0,0,0,0.1)';
 }
 
 function getCardAnimation(props) {

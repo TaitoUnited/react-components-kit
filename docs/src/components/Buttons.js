@@ -8,7 +8,7 @@ import {
   LineSeparator,
 } from 'react-components-kit';
 
-import Properties from './Properties';
+import Properties from './common/Properties';
 
 const buttonProperties = [
   {
@@ -51,7 +51,7 @@ const buttonProperties = [
 
 const Buttons = () => (
   <div>
-    <Heading el='h2'>Buttons</Heading>
+    <Heading>Buttons</Heading>
     <Layout column>
       <Layout align='center'>
         <Button primary>Primary</Button>

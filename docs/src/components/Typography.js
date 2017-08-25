@@ -12,7 +12,7 @@ import {
 
 const Typography = () => (
   <div>
-    <Heading el='h2'>Headings</Heading>
+    <Heading>Headings</Heading>
 
     <Layout align='center'>
       <Heading color='tomato'>

@@ -19,6 +19,7 @@ class Sidemenu extends Component {
     return (
       <SidemenuWrapper>
         <Title>react-components-kit</Title>
+        <Padder vert='12px' />
         <SectionTitle to='/'>Getting started</SectionTitle>
         <Padder vert='24px' />
 
@@ -42,6 +43,7 @@ class Sidemenu extends Component {
 
         <SectionTitle to='/form'>Form</SectionTitle>
         <MenuItem to='/form#textfield'>TextField</MenuItem>
+        <MenuItem to='/form#toggleswitch'>ToggleSwitch</MenuItem>
 
         <Padder vert='24px' />
 
@@ -95,8 +97,9 @@ const Title = styled.div`
 `;
 const SectionTitle = styled(Link)`
   font-size: 11px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  color: #666;
+  color: #11abbd;
   text-decoration: none;
   &:hover {
     text-decoration: underline;

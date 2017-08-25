@@ -69,7 +69,7 @@ const PropRow = styled.div`
 `;
 const Name = styled.div`
   flex: 1;
-  color: ${props => !props.head && '#059642'};
+  color: ${props => !props.head && '#11abbd'};
 `;
 const Type = styled.div`
   width: 80px;

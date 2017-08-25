@@ -18,9 +18,9 @@ import {
 
 const Utilities = () => (
   <div>
-    <Heading el='h2' id='badge'>
-      Badge
-    </Heading>
+    <Heading>Utilities</Heading>
+
+    <Heading el='h2' id='badge'>Badge</Heading>
 
     <Layout align='center'>
       <Badge mright='16px'>

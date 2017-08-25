@@ -22,7 +22,7 @@ const people = [
 
 const Tables = () => (
   <div>
-    <Heading el='h2'>Table</Heading>
+    <Heading>Table</Heading>
 
     <Table>
       <Head>

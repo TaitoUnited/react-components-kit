@@ -32,7 +32,7 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <Heading el='h2'>Form stuff</Heading>
+        <Heading>Form stuff</Heading>
         <Layout>
           <FormControl label='Awesomeness level is:'>
             <Padder vert='8px' />

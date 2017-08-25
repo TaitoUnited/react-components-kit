@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Route } from 'react-router-dom';
+import { media } from 'react-components-kit';
 
 import Home from './Home';
 import Buttons from './Buttons';
@@ -38,10 +39,19 @@ class Sections extends Component {
 }
 
 const SectionsWrapper = styled.div`
-  padding: 16px 24px;
+  padding: 16px 32px;
   min-height: 100vh;
+  max-width: 800px;
+  width: 100%;
   flex: 1;
   overflow: auto;
+
+  ${media.tablet`
+    padding: 16px 24px;
+  `}
+  ${media.phone`
+    padding: 16px;
+  `}
 `;
 
 Sections.propTypes = propTypes;

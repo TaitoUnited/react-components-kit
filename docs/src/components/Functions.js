@@ -4,6 +4,7 @@ import { Layout, Padder, Heading, withRipple } from 'react-components-kit';
 
 const Functions = () => (
   <div>
+    <Heading>Helper functions</Heading>
     <Heading el='h2'>withRipple (HOC)</Heading>
     <Layout align='center'>
       <RippleBlock bg='tomato' />
