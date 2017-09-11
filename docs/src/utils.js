@@ -28,3 +28,13 @@ export const getColorName = colorData => {
 
   return `${group}${group === 'grey' ? '' : 'Color'}${lightness}`;
 }
+
+export const ignoredThemeProps = [
+  'infoColor',
+  'textColorDark',
+  'textColorLight',
+  'gutterSize',
+  'dividerColor',
+  'dividerSpaceHorizontal',
+  'dividerSpaceVertical',
+];

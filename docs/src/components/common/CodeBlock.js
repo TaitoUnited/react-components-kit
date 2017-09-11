@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/styles';
 
 const propTypes = {
   code: PropTypes.string,
@@ -8,17 +10,19 @@ const propTypes = {
 
 const CodeBlock = ({ code = '' }) => (
   <CodeBlockWrapper>
-    <pre>{code.trim()}</pre>
+    <SyntaxHighlighter language='javascript' style={atomOneDark}>
+      {code.trim()}
+    </SyntaxHighlighter>
   </CodeBlockWrapper>
 );
 
-const CodeBlockWrapper = styled.code`
-  padding: 12px 16px;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #888;
-  background-color: #f5f5f5;
+const CodeBlockWrapper = styled.div`
   width: 100%;
+  & > pre {
+    border-radius: 4px;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+  }
 `;
 
 CodeBlock.propTypes = propTypes;

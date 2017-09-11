@@ -2,21 +2,31 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import {
   Layout,
-  Padder,
+  Gutter,
   ToggleSwitch,
   Heading,
-  Textarea,
   TextField,
-  FormControl,
-  Input,
-  Select,
-  DateSelect,
+  Divider,
+  Icon,
+  // Textarea,
+  // FormControl,
+  // Input,
+  // Select,
+  // DateSelect,
 } from 'react-components-kit';
+
+import Properties from './common/Properties';
+import CodeBlock from './common/CodeBlock';
+
+import { toggleSwitchExample, textFieldExample } from './codeSnippets';
+import { toggleSwitchProperties, textFieldProperties } from './compProperties';
 
 const isNumeric = n => !isNaN(parseFloat(n)) && isFinite(n);
 
 class Form extends Component {
-  state = {}
+  state = {
+    toggled: false,
+  }
 
   handleInputChange = (event) => {
     const target = event.target;
@@ -29,13 +39,112 @@ class Form extends Component {
     this.setState({ [name]: value });
   }
 
+  toggle = () => {
+    this.setState(({ toggled }) => ({ toggled: !toggled }));
+  };
+
   render() {
     return (
       <div>
         <Heading>Form stuff</Heading>
+
+        <Heading h2>ToggleSwitch</Heading>
+
+        <Gutter vertical />
+        <Layout align='center'>
+          <ToggleSwitch
+            onToggle={this.toggle}
+            isToggled={this.state.toggled}
+          />
+          <Gutter />
+          <ToggleSwitch
+            onToggle={this.toggle}
+            isToggled={this.state.toggled}
+            bg='rebeccapurple'
+            borderColor='rebeccapurple'
+            bgToggled='cadetblue'
+          />
+          <Gutter />
+          <ToggleSwitch
+            onToggle={this.toggle}
+            isToggled={this.state.toggled}
+            innerLeft={<Icon name='ios-checkmark-empty' size='25px' />}
+            innerRight={<Icon name='ios-close-empty' size='25px' />}
+            bgToggled='#ff04c9'
+          />
+        </Layout>
+
+        <Gutter vertical />
+    
         <Layout>
+          <CodeBlock code={toggleSwitchExample} />
+        </Layout>
+
+        <Layout>
+          <Properties properties={toggleSwitchProperties} />
+        </Layout>
+
+        <Divider />
+
+        <Heading h2>TextField</Heading>
+
+        <Layout column>
+          <TextField
+            name='textfield'
+            label='Basic textfield'
+            onChange={this.handleInputChange}
+            value={this.state.textfield}
+          />
+          
+          <Gutter vertical amount='32px' />
+
+          <TextField
+            name='textfieldvalidation'
+            label='With validation (number) and custom styles'
+            onChange={this.handleInputChange}
+            value={this.state.textfieldvalidation}
+            containerStyles={{ width: 400 }}
+            inputStyles={{ color: 'orange' }}
+            labelStyles={{ color: 'blue' }}
+            validator={isNumeric}
+            validationMessage='You must type a number'
+          />
+
+          <Gutter vertical amount='32px' />
+
+          <TextField
+            name='textfieldstacked'
+            label='With stacked label (fixed to top)'
+            onChange={this.handleInputChange}
+            value={this.state.textfieldstacked}
+            stackedLabel
+          />
+
+          <Gutter vertical amount='32px' />
+
+          <TextField
+            name='textfielddisabled'
+            label='Disabled textfield'
+            onChange={this.handleInputChange}
+            value={this.state.textfielddisabled}
+            disabled
+          />
+        </Layout>
+
+        <Gutter vertical />
+    
+        <Layout>
+          <CodeBlock code={textFieldExample} />
+        </Layout>
+
+        <Layout>
+          <Properties properties={textFieldProperties} />
+        </Layout>
+
+
+        {/* <Layout>
           <FormControl label='Awesomeness level is:'>
-            <Padder vert='8px' />
+            <Gutter vertical amount='8px' />
             <Select
               name='select'
               onSelect={this.handleInputChange}
@@ -46,11 +155,11 @@ class Form extends Component {
               <option value='foo3'>...dary</option>
             </Select>
           </FormControl>
-        </Layout>
+        </Layout> */}
 
-        <Padder vert='16px' />
+        {/* <Gutter vertical /> */}
 
-        <Layout>
+        {/* <Layout>
           <FormControl label='I`m a textarea - type a lot to make me auto-grow'>
             <Textarea
               name='textarea'
@@ -59,7 +168,7 @@ class Form extends Component {
               autoResize
             />
           </FormControl>
-          <Padder horiz='32px' />
+          <Gutter amount='32px' />
           <FormControl label='You can also add an icon!' icon='ion-planet'>
             <Input
               name='inputWithIcon'
@@ -67,61 +176,28 @@ class Form extends Component {
               value={this.state.inputWithIcon}
             />
           </FormControl>
-        </Layout>
+        </Layout> */}
 
-        <Padder vert='16px' />
+        {/* <Gutter vertical /> */}
 
-        <Layout>
-          <TextField
-            name='textfield'
-            label='Teemu testi'
-            onChange={this.handleInputChange}
-            value={this.state.textfield}
-          />
-        </Layout>
+        {/* <Gutter vertical /> */}
 
-        <Padder vert='16px' />
+        {/* <Heading h2>DateSelect</Heading> */}
 
-        <Heading el='h2'>DateSelect</Heading>
-
-        <Layout row>
+        {/* <Layout row>
           <DateSelect
             locale='fi-FI'
             onSelect={date => console.log('selected: ', date)}
           />
 
-          <Padder horiz='64px' />
+          <Gutter amount='64px' />
 
           <DateSelect
             locale='en-US'
             defaultDate={new Date()}
             onSelect={date => console.log('selected: ', date)}
           />
-        </Layout>
-
-        <Heading el='h2'>ToggleSwitch</Heading>
-
-        <Padder vert='16px' />
-        <Layout align='center'>
-          <ToggleSwitch onToggle={() => console.log('TOGGLE!')}/>
-          <Padder horiz='32px' />
-          <ToggleSwitch
-            onToggle={() => console.log('TOGGLE!')}
-            ballColor='blue'
-            borderColor='rebeccapurple'
-            bgToggled='rebeccapurple'
-          />
-          <Padder horiz='32px' />
-          <ToggleSwitch
-            onToggle={() => console.log('TOGGLE!')}
-            ballColor='primaryColorLight'
-            borderColor='primaryColorDark'
-            bgToggled='primaryColorLighter'
-            outerLabel='toggle me!'
-            innerLabelLeft='on'
-            innerLabelRight='off'
-          />
-        </Layout>
+        </Layout> */}
       </div>
     );
   }

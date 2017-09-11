@@ -6,14 +6,15 @@
   "dependencies": {
     "color": "^2.0.0",
     "react": "^15.6.1",
-    "react-color": "^2.13.4",
+    "react-color": "^2.13.5",
     "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.2",
+    "react-router-dom": "^4.2.2",
+    "react-syntax-highlighter": "^5.7.0",
     "styled-components": "^2.1.2"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
-    "react-scripts": "1.0.11"
+    "react-scripts": "1.0.13"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -22,6 +23,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "clear:install": "rm -rf node_modules && npm install"
+    "clean:install": "rm -rf node_modules && npm install"
   }
 }

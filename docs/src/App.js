@@ -8,15 +8,16 @@ import ThemeChanger from './components/ThemeChanger';
 import Sidemenu from './components/Sidemenu';
 import Sections from './components/Sections';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const themeOverrides = {
+  dividerSpaceHorizontal: '32px',
+  dividerSpaceVertical: '24px',
+};
 
-    this.state = {
-      theme: createTheme(),
-      colorPanelOpen: false,
-    };
-  }
+class App extends Component {
+  state = {
+    theme: {...createTheme(), ...themeOverrides},
+    colorPanelOpen: false,
+  };
 
   updateThemeColor = (colorName, newColorValue) => {
     const { group, isBaseColor } = getColorData(colorName);
@@ -24,6 +25,7 @@ class App extends Component {
     if (isBaseColor) {
       this.setState(prevState => ({
         theme: {
+          ...prevState.theme,
           ...createTheme({
             primary: prevState.theme.primaryColor,
             secondary: prevState.theme.secondaryColor,
@@ -33,9 +35,6 @@ class App extends Component {
             grey: prevState.theme.grey,
             [group]: newColorValue,
           }),
-          infoColor: prevState.theme.infoColor,
-          textColorDark: prevState.theme.textColorDark,
-          textColorLight: prevState.theme.textColorLight,
         }
       }));
     } else {
@@ -74,7 +73,7 @@ class App extends Component {
             <ThemeColorChangerButton>
               <Tooltip content='Change theme colors'>
                 <Fab onClick={this.openColorPanel}>
-                  <Icon className='ion-android-color-palette' size='24px' />
+                  <Icon color='#fff' name='android-color-palette' size='24px' />
                 </Fab>
               </Tooltip>
             </ThemeColorChangerButton>
@@ -93,16 +92,13 @@ class App extends Component {
 
 const AppWrapper = styled(Layout)`
   position: relative;
+  background: #fff;
 `;
-// const Logo = styled.img`
-//   width: 30px;
-//   height: auto;
-//   margin-left: 16px;
-// `;
 const ThemeColorChangerButton = styled.div`
   position: fixed;
   bottom: 32px;
   right: 32px;
+  z-index: 99;
 `;
 const Fab = styled.button`
   border-radius: 50%;

@@ -8,7 +8,7 @@ const propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
-      defaultVal: PropTypes.string.isRequired,
+      defaultVal: PropTypes.string,
       description: PropTypes.string,
       required: PropTypes.bool,
     }).isRequired
@@ -17,7 +17,7 @@ const propTypes = {
 
 const Properties = ({ properties }) => (
   <PropertiesWrapper>
-    <Heading sub el='h3'>Properties</Heading>
+    <Heading sub h3>Properties</Heading>
 
     <PropertiesTable>
       <strong>
@@ -30,7 +30,7 @@ const Properties = ({ properties }) => (
       </strong>
 
       {properties.map(prop =>
-        <PropRow>
+        <PropRow key={prop.name}>
           <Name>{prop.name}{prop.required ? ' *' : ''}</Name>
           <Type>{prop.type}</Type>
           <DefaultValue>{prop.defaultVal}</DefaultValue>
@@ -55,7 +55,7 @@ const PropertiesTable = styled.div`
 const PropRow = styled.div`
   display: flex;
   padding: 12px 16px;
-  font-size: 14px;
+  font-size: 12px;
   color: #333;
   border-bottom: 1px solid #eee;
 
@@ -69,16 +69,21 @@ const PropRow = styled.div`
 `;
 const Name = styled.div`
   flex: 1;
+  min-width: 160px;
   color: ${props => !props.head && '#11abbd'};
 `;
 const Type = styled.div`
-  width: 80px;
+  width: 100px;
+  padding: 0px 8px;
+  word-wrap: break-word;
   font-family: ${props => !props.head &&
     'Menlo,Monaco,Consolas,Courier New,monospace'
   };
 `;
 const DefaultValue = styled.div`
-  width: 80px;
+  width: 100px;
+  padding: 0px 8px;
+  word-wrap: break-word;
   font-family: ${props => !props.head &&
     'Menlo,Monaco,Consolas,Courier New,monospace'
   };

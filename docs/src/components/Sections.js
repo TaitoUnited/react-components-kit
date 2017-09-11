@@ -10,7 +10,7 @@ import Typography from './Typography';
 import Structure from './Structure';
 import Form from './Form';
 import Utilities from './Utilities';
-import Functions from './Functions';
+import Other from './Other';
 import Cards from './Cards';
 
 const propTypes = {
@@ -25,26 +25,30 @@ class Sections extends Component {
   render() {
     return (
       <SectionsWrapper>
-        <Route exact path='/' component={Home} />
-        <Route path='/buttons' component={Buttons} />
-        <Route path='/typography' component={Typography} />
-        <Route path='/structure' component={Structure} />
-        <Route path='/form' component={Form} />
-        <Route path='/cards' component={Cards} />
-        <Route path='/utilities' component={Utilities} />
-        <Route path='/functions' component={Functions} />
+        <RoutesWrapper>
+          <Route exact path='/' component={Home} />
+          <Route path='/buttons' component={Buttons} />
+          <Route path='/typography' component={Typography} />
+          <Route path='/structure' component={Structure} />
+          <Route path='/form' component={Form} />
+          <Route path='/cards' component={Cards} />
+          <Route path='/utilities' component={Utilities} />
+          <Route path='/other' component={Other} />
+        </RoutesWrapper>
       </SectionsWrapper>
     );
   }
 }
 
 const SectionsWrapper = styled.div`
-  padding: 16px 32px;
   min-height: 100vh;
-  max-width: 800px;
   width: 100%;
   flex: 1;
   overflow: auto;
+`;
+const RoutesWrapper = styled.div`
+  padding: 16px 32px;
+  max-width: 800px;
 
   ${media.tablet`
     padding: 16px 24px;

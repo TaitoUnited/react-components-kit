@@ -4,15 +4,14 @@ import styled from 'styled-components';
 import { SketchPicker } from 'react-color';
 import {
   Heading,
-  LineSeparator,
+  Divider,
   Layout,
-  Box,
   Icon,
-  Padder,
+  Gutter,
   Text,
 } from 'react-components-kit';
 
-import { getColorData, getColorName } from '../utils';
+import { getColorData, getColorName, ignoredThemeProps } from '../utils';
 
 class ColorBox extends Component {
   shouldComponentUpdate(nextProps) {
@@ -78,8 +77,10 @@ class ThemeChanger extends Component {
     const baseColors = {};
     const derivedColors = {};
     const otherColors = [];
+    console.debug('[theme]', theme);
 
     Object.entries(theme)
+      .filter(([colorName]) => !ignoredThemeProps.includes(colorName))
       .filter(([colorName]) => colorName.indexOf('Base') === -1)
       .forEach(([colorName, colorValue]) => {
         const { group, lightness, isBaseColor } = getColorData(colorName);
@@ -102,32 +103,36 @@ class ThemeChanger extends Component {
       <ThemeChangerWrapper isOpen={this.props.isOpen}>
         <ThemeChangerPanel isOpen={this.props.isOpen}>
           <Layout column align='center'>
-            <Box flex='1'>
-              <Heading el='h2'>
+            <Layout.Box flex='1'>
+              <Heading h2>
                 {this.state.selected || 'Choose color to change'}
               </Heading>
-            </Box>
-            <Box>
+            </Layout.Box>
+            <Layout.Box>
               <Layout column align='center'>
-                <Box>
+                <Layout.Box>
                   <ExportThemeBtn onClick={this.exportTheme}>
-                    <Icon className='ion-ios-download' size='24px' color='#fff' />
+                    <Icon
+                      className='ion-ios-download'
+                      size='24px'
+                      color='#fff'
+                    />
                   </ExportThemeBtn>
-                </Box>
-                <Padder vert='8px' />
-                <Box>
+                </Layout.Box>
+                <Gutter vertical amount='8px' />
+                <Layout.Box>
                   <Text size='12px' color='#666'>
                     Download theme (JSON)
                   </Text>
-                </Box>
+                </Layout.Box>
               </Layout>
-            </Box>
+            </Layout.Box>
           </Layout>
 
-          <LineSeparator horizontal />
+          <Divider />
 
           <Layout row>
-            <Layout column w='48px'>
+            <Layout column style={{ width: 'auto' }}>
               {Object.entries(baseColors).map(([group, value]) => {
                 const colorName = getColorName({ group, lightness: '' });
                 return (
@@ -142,7 +147,7 @@ class ThemeChanger extends Component {
               })}
             </Layout>
 
-            <LineSeparator vertical />
+            <Divider vertical amount='8px' />
 
             <div>
               {Object.entries(derivedColors).map(([group, shades]) =>
@@ -164,7 +169,7 @@ class ThemeChanger extends Component {
             </div>
           </Layout>
 
-          <Padder vert='16px' />
+          <Gutter vertical amount='16px' />
 
           <Colors>
             {otherColors.map(([colorName, colorValue]) =>
@@ -265,6 +270,7 @@ const ExportThemeBtn = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
+  cursor: pointer;
 `;
 
 ThemeChanger.propTypes = {

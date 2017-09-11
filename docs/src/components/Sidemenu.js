@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Padder } from 'react-components-kit';
+import { Gutter } from 'react-components-kit';
 
 import logo from '../taito_ukkeli.png';
 
@@ -19,50 +19,56 @@ class Sidemenu extends Component {
     return (
       <SidemenuWrapper>
         <Title>react-components-kit</Title>
-        <Padder vert='12px' />
+        <Gutter vertical amount='12px' />
         <SectionTitle to='/'>Getting started</SectionTitle>
-        <Padder vert='24px' />
+        <Gutter vertical />
 
         <SectionTitle to='/buttons'>Buttons</SectionTitle>
         <MenuItem to='/buttons#button'>Button</MenuItem>
 
-        <Padder vert='24px' />
+        <Gutter vertical />
 
         <SectionTitle to='/structure'>Structure</SectionTitle>
+        <MenuItem to='/structure#gutter'>Gutter</MenuItem>
+        <MenuItem to='/structure#divider'>Divider</MenuItem>
         <MenuItem to='/structure#layout'>Layout</MenuItem>
         <MenuItem to='/structure#box'>Box</MenuItem>
 
-        <Padder vert='24px' />
+        <Gutter vertical />
 
         <SectionTitle to='/typography'>Typography</SectionTitle>
         <MenuItem to='/typography#heading'>Heading</MenuItem>
         <MenuItem to='/typography#text'>Text</MenuItem>
         <MenuItem to='/typography#icon'>Icon</MenuItem>
 
-        <Padder vert='24px' />
+        <Gutter vertical />
 
         <SectionTitle to='/form'>Form</SectionTitle>
         <MenuItem to='/form#textfield'>TextField</MenuItem>
         <MenuItem to='/form#toggleswitch'>ToggleSwitch</MenuItem>
 
-        <Padder vert='24px' />
+        <Gutter vertical />
 
         <SectionTitle to='/cards'>Cards</SectionTitle>
         <MenuItem to='/cards#card'>Card</MenuItem>
+        <MenuItem to='/cards#card-animated'>Card (animated)</MenuItem>
 
-        <Padder vert='24px' />
+        <Gutter vertical />
 
         <SectionTitle to='/utilities'>Utilities</SectionTitle>
         <MenuItem to='/utilities#badge'>Badge</MenuItem>
-        <MenuItem to='/utilities#padder'>Padder</MenuItem>
+        <MenuItem to='/utilities#circleprogress'>CircleProgress</MenuItem>
+        <MenuItem to='/utilities#outsidereactor'>OutsideReactor</MenuItem>
+        <MenuItem to='/utilities#placeholder'>PlaceholderRows</MenuItem>
         <MenuItem to='/utilities#spinner'>Spinner</MenuItem>
         <MenuItem to='/utilities#tooltip'>Tooltip</MenuItem>
 
-        <Padder vert='24px' />
+        <Gutter vertical />
 
-        <SectionTitle to='/functions'>Functions</SectionTitle>
-        <MenuItem to='/functions#create-theme'>createTheme</MenuItem>
-        <MenuItem to='/functions#with-ripple'>withRipple (HOC)</MenuItem>
+        <SectionTitle to='/other'>Other</SectionTitle>
+        <MenuItem to='/other#create-theme'>createTheme</MenuItem>
+        <MenuItem to='/other#media'>media</MenuItem>
+        <MenuItem to='/other#with-ripple'>withRipple (HOC)</MenuItem>
 
         <FooterLink
           href='http://taitounited.fi/'
@@ -96,7 +102,7 @@ const Title = styled.div`
   color: #222;
 `;
 const SectionTitle = styled(Link)`
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #11abbd;
@@ -107,7 +113,7 @@ const SectionTitle = styled(Link)`
 `;
 const MenuItem = styled(Link)`
   font-size: 14px;
-  padding: 8px 0px;
+  padding: 6px 0px;
   color: #333;
   text-decoration: none;
   &:hover {

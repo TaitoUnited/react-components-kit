@@ -2,52 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   Layout,
-  Padder,
+  Gutter,
   Button,
   Heading,
-  LineSeparator,
+  Divider,
 } from 'react-components-kit';
 
 import Properties from './common/Properties';
-
-const buttonProperties = [
-  {
-    name: 'primary',
-    type: 'bool',
-    defaultVal: 'false',
-    description: 'Foobar foobar',
-  },
-  {
-    name: 'secondary',
-    type: 'bool',
-    defaultVal: 'false',
-    description: 'Foobar foobar',
-  },
-  {
-    name: 'danger',
-    type: 'bool',
-    defaultVal: 'false',
-    description: 'Foobar foobar',
-  },
-  {
-    name: 'disabled',
-    type: 'bool',
-    defaultVal: 'false',
-    description: 'Foobar foobar',
-  },
-  {
-    name: 'outline',
-    type: 'bool',
-    defaultVal: 'false',
-    description: 'Foobar foobar',
-  },
-  {
-    name: 'clear',
-    type: 'bool',
-    defaultVal: 'false',
-    description: 'Foobar foobar',
-  }
-];
+import CodeBlock from './common/CodeBlock';
+import { buttonsExample } from './codeSnippets';
+import { buttonProperties } from './compProperties';
 
 const Buttons = () => (
   <div>
@@ -55,40 +19,50 @@ const Buttons = () => (
     <Layout column>
       <Layout align='center'>
         <Button primary>Primary</Button>
-        <Padder />
+        <Gutter />
         <Button secondary>Secondary</Button>
-        <Padder />
+        <Gutter />
         <Button danger>Danger</Button>
-        <Padder />
+        <Gutter />
+        <Button flat>Flat</Button>
+        <Gutter />
         <Button danger disabled>Danger</Button>
       </Layout>
 
-      <Padder vert='16px' />
+      <Gutter vertical />
 
       <Layout align='center'>
         <Button primary outline>Primary</Button>
-        <Padder />
+        <Gutter />
         <Button secondary outline>Secondary</Button>
-        <Padder />
+        <Gutter />
         <Button danger outline>Danger</Button>
-        <Padder />
+        <Gutter />
+        <Button flat outline>Flat</Button>
+        <Gutter />
         <Button danger outline disabled>Danger</Button>
       </Layout>
 
-      <Padder vert='16px' />
+      <Gutter vertical />
 
       <Layout align='center'>
         <Button primary clear>Primary</Button>
-        <Padder />
+        <Gutter />
         <Button secondary clear>Secondary</Button>
-        <Padder />
+        <Gutter />
         <Button danger clear>Danger</Button>
-        <Padder />
+        <Gutter />
+        <Button flat clear>Flat</Button>
+        <Gutter />
         <Button danger clear disabled>Danger</Button>
       </Layout>
     </Layout>
 
-    <LineSeparator horizontal />
+    <Divider />
+
+    <Layout>
+      <CodeBlock code={buttonsExample} />
+    </Layout>
 
     <Layout>
       <Properties properties={buttonProperties} />
