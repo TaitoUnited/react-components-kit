@@ -113,7 +113,7 @@ class ThemeChanger extends Component {
                 <Layout.Box>
                   <ExportThemeBtn onClick={this.exportTheme}>
                     <Icon
-                      className='ion-ios-download'
+                      name='ios-download'
                       size='24px'
                       color='#fff'
                     />

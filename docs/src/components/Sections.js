@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { media } from 'react-components-kit';
 
 import Home from './Home';
@@ -26,14 +26,17 @@ class Sections extends Component {
     return (
       <SectionsWrapper>
         <RoutesWrapper>
-          <Route exact path='/' component={Home} />
-          <Route path='/buttons' component={Buttons} />
-          <Route path='/typography' component={Typography} />
-          <Route path='/structure' component={Structure} />
-          <Route path='/form' component={Form} />
-          <Route path='/cards' component={Cards} />
-          <Route path='/utilities' component={Utilities} />
-          <Route path='/other' component={Other} />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/buttons' component={Buttons} />
+            <Route path='/typography' component={Typography} />
+            <Route path='/structure' component={Structure} />
+            <Route path='/form' component={Form} />
+            <Route path='/cards' component={Cards} />
+            <Route path='/utilities' component={Utilities} />
+            <Route path='/other' component={Other} />
+            <Route component={Home} />
+          </Switch>
         </RoutesWrapper>
       </SectionsWrapper>
     );
