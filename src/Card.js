@@ -1,4 +1,12 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
+
+const propTypes = {
+  depth: PropTypes.number,
+  animDir: PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
+  children: PropTypes.any,
+};
 
 function getDepth(props) {
   if (props.depth === 1) return '0px 2px 4px rgba(0,0,0,0.1)';
@@ -21,7 +29,7 @@ function getCardAnimation(props) {
   `;
 }
 
-const Card = styled.div`
+const CardEl = styled.div`
   display: flex;
   flex-direction: column;
   padding: 32px;
@@ -29,18 +37,24 @@ const Card = styled.div`
   border-radius: 4px;
   width: 100%;
   box-shadow: ${props => getDepth(props)};
-
-  @media print {
-    box-shadow: none;
-    padding: 16px;
-  }
 `;
 
-export const CardAnimated = styled(Card)`
+const Animated = CardEl.extend`
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.4s ease-in;
   animation: ${props => getCardAnimation(props)} 1s forwards;
   animation-delay: 0.2s;
 `;
+
+class Card extends Component {
+  static Animated = Animated;
+
+  render() {
+    const { children, ...rest } = this.props;
+    return <CardEl {...rest}>{children}</CardEl>;
+  }
+}
+
+Card.propTypes = propTypes;
 
 export default Card;

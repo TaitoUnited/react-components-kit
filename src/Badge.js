@@ -29,15 +29,13 @@ const getColor = (props) => {
 const Badge = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${props => getBgColor(props)};
-  border: 1px solid ${props => getBorderColor(props)};
-  color: ${props => getColor(props)};
-  font-size: 0.7rem;
+  font-size: 12px;
   border-radius: 4px;
   height: 22px;
   padding: 0px 6px;
-  ${props => props.mleft && `margin-left: ${props.mleft};`}
-  ${props => props.mright && `margin-right: ${props.mright};`}
+  color: ${props => getColor(props)};
+  background-color: ${props => getBgColor(props)};
+  border: 1px solid ${props => getBorderColor(props)};
 `;
 
 export default Badge;

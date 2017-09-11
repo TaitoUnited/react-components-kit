@@ -1,15 +1,21 @@
 
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-
 import colorGetter from './colorGetter';
 
-const circleAnim = keyframes`
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
-`;
+const propTypes = {
+  sm: PropTypes.bool,
+  md: PropTypes.bool,
+  lg: PropTypes.bool,
+  color: PropTypes.string,
+};
+
+const Spinner = ({ sm, md, lg, color }) => (
+  <Circle small={sm} medium={md} large={lg} color={color}>
+    <CircleInner small={sm} medium={md} large={lg} />
+  </Circle>
+);
 
 const getIconSize = ({ small, medium, large }) => {
   if (small) return '16px';
@@ -25,9 +31,15 @@ const getBorderWidth = ({ small, medium, large }) => {
   return '2px';
 };
 
+const circleAnim = keyframes`
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+`;
+
 const Circle = styled.div`
-  width: ${props => getIconSize(props)};
-  height: ${props => getIconSize(props)};
+  width: ${getIconSize};
+  height: ${getIconSize};
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -40,35 +52,15 @@ const CircleInner = styled.div`
   box-sizing: border-box;
   display: inline-block;
   float: none;
-  width: ${props => getIconSize(props)};
-  height: ${props => getIconSize(props)};
+  width: ${getIconSize};
+  height: ${getIconSize};
   background: transparent;
-  border: ${props => getBorderWidth(props)} solid currentColor;
+  border: ${getBorderWidth} solid currentColor;
   border-bottom-color: transparent;
-  border-Radius: 100%;
+  border-radius: 100%;
   animation: ${circleAnim} 0.75s linear infinite;
 `;
 
-const Spinner = ({ sm, md, lg, color }) => (
-  <Circle
-    small={sm}
-    medium={md}
-    large={lg}
-    color={color}
-  >
-    <CircleInner
-      small={sm}
-      medium={md}
-      large={lg}
-    />
-  </Circle>
-);
-
-Spinner.propTypes = {
-  sm: PropTypes.bool,
-  md: PropTypes.bool,
-  lg: PropTypes.bool,
-  color: PropTypes.string,
-};
+Spinner.propTypes = propTypes;
 
 export default Spinner;

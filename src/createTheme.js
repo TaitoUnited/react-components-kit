@@ -6,20 +6,13 @@ import Color from 'color';
 
 // Base `Color` can be used to create additional variations
 function createTheme(baseColors = {}) {
-  const defaultBasePrimary = '#2490ec';
-  const defaultBaseSecondary = '#b57bff';
-  const defaultBaseError = '#ea4444';
-  const defaultBaseSuccess = '#5bde4e';
-  const defaultBaseWarn = '#ffb741';
-  const defaultBaseGrey = '#a6a6a6';
-
   const {
-    primary = defaultBasePrimary,
-    secondary = defaultBaseSecondary,
-    error = defaultBaseError,
-    success = defaultBaseSuccess,
-    warn = defaultBaseWarn,
-    grey = defaultBaseGrey,
+    primary = '#2490ec',
+    secondary = '#b57bff',
+    error = '#ea4444',
+    success = '#5bde4e',
+    warn = '#ffb741',
+    grey = '#ccc',
   } = baseColors;
 
   const theme = {};
@@ -72,9 +65,9 @@ function createTheme(baseColors = {}) {
   /* eslint-disable newline-per-chained-call */
   theme.greyBaseColor = Color(grey);
   theme.grey = Color(grey).hsl().string();
-  theme.greyLightest = Color(grey).lighten(0.5).grayscale().hsl().string();
-  theme.greyLighter = Color(grey).lighten(0.42).grayscale().hsl().string();
-  theme.greyLight = Color(grey).lighten(0.2).grayscale().hsl().string();
+  theme.greyLightest = Color(grey).lighten(0.20).grayscale().hsl().string();
+  theme.greyLighter = Color(grey).lighten(0.15).grayscale().hsl().string();
+  theme.greyLight = Color(grey).lighten(0.1).grayscale().hsl().string();
   theme.greyDark = Color(grey).darken(0.2).grayscale().hsl().string();
   theme.greyDarker = Color(grey).darken(0.3).grayscale().hsl().string();
   theme.greyDarkest = Color(grey).darken(0.5).grayscale().hsl().string();
@@ -83,6 +76,10 @@ function createTheme(baseColors = {}) {
   theme.infoColor = '#99d5f5';
   theme.textColorDark = '#222';
   theme.textColorLight = '#fff';
+  theme.gutterSize = '16px';
+  theme.dividerColor = '#ddd';
+  theme.dividerSpaceHorizontal = '16px';
+  theme.dividerSpaceVertical = '16px';
 
   return theme;
 }

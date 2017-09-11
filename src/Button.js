@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import colorGetter from './colorGetter';
 import withRipple from './withRipple';
 
@@ -61,31 +61,43 @@ function getColor(props) {
 
 const ButtonWrapper = styled.button`
   outline: none;
-  font-size: 1rem;
+  font-size: 16px;
   padding: 8px 16px;
   font-weight: normal;
-  width: ${props => props.w || 'auto'};
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   border-style: solid;
   border-width: ${props => props.outline && !props.clear ? '1px' : '0px'};
   border-radius: 4px;
   border-color: ${props => getColor(props)};
   color: ${props => props.outline || props.clear ? getColor(props) : '#fff'};
-  ${props => (!props.outline && !props.clear && !props.flat) &&
-    'box-shadow: 1px 3px 6px rgba(0,0,0,0.1);'
-  }
   ${props => getBgColor(props)};
-  ${props => props.disabled && 'opacity: 0.5; cursor: not-allowed;'};
-  ${props => props.small && 'padding: 4px 8px;'}
-  ${props => props.large && 'padding: 12px 20px;'}
-  ${props => props.small && 'font-size: 0.8rem;'}
-  ${props => props.large && 'font-size: 1.5rem;'}
+  ${props => !props.flat && !props.outline && css`
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  `}
+  ${props => (!props.outline && !props.clear && !props.flat) && css`
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.1);
+  `}
+  ${props => props.flat && !props.clear && !props.outline && css`
+    background: ${getColor(props)};
+  `}
+  ${props => props.disabled && css`
+    opacity: 0.5;
+    cursor: not-allowed;
+  `};
+  ${props => props.small && css`
+    padding: 4px 8px;
+    font-size: 12px;
+  `}
+  ${props => props.large && css`
+    padding: 12px 20px;
+    font-size: 24px;
+  `}
 
   &:hover {
     background: ${props => getHoverColor(props)};
     ${props => !props.clear && 'color: #fff;'}
     ${props => !props.disabled && 'cursor: pointer;'}
   }
+
   &:active {
     background: ${props => !props.clear && getActiveColor(props)};
     color: ${props => props.clear && getActiveColor(props)};

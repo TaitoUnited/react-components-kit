@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Box } from './Layout';
-import Padder from './Padder';
+import Layout from './Layout';
+import Gutter from './Gutter';
 import colorGetter from './colorGetter';
 import Calendar from './Calendar';
 import Text from './Text';
@@ -18,20 +18,16 @@ const propTypes = {
 class DateSelect extends Component {
   constructor(props) {
     super(props);
-
-    this.selectDate = this.selectDate.bind(this);
-    this.toSelection = this.toSelection.bind(this);
-
     this.state = {
       selected: props.defaultDate,
     };
   }
 
-  toSelection() {
+  toSelection = () => {
     this.setState({ selected: null });
   }
 
-  selectDate(year, month, day) {
+  selectDate = (year, month, day) => {
     const selectedDate = new Date(year, month, day);
     this.setState({ selected: selectedDate });
     this.props.onSelect(selectedDate);
@@ -44,15 +40,15 @@ class DateSelect extends Component {
     return (
       <DateSelectWrapper>
         {selected ?
-          (<Box row style={{ display: 'flex' }}>
+          (<Layout.Box row style={{ display: 'flex' }}>
             <Icon className='ion-calendar' />
-            <Padder horiz='8px' />
+            <Gutter horizontal amount='8px' />
             <SelectionBox onClick={this.toSelection} w={width} {...rest}>
               <Text color='primaryColorDark'>
                 {selected.toLocaleDateString(locale)}
               </Text>
             </SelectionBox>
-          </Box>)
+          </Layout.Box>)
           : <Calendar selectDate={this.selectDate} locale={locale} {...rest} />
         }
       </DateSelectWrapper>
@@ -66,7 +62,7 @@ const DateSelectWrapper = styled.div`
   margin: 8px 0px;
 `;
 
-const SelectionBox = styled(Box)`
+const SelectionBox = styled(Layout.Box)`
   display: flex;
   align-items: center;
   justify-content: center;

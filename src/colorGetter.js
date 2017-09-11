@@ -1,4 +1,6 @@
-import * as defaultTheme from './defaultTheme';
+import createTheme from './createTheme';
+
+const defaultTheme = createTheme();
 
 /* colorGetter =======
  *

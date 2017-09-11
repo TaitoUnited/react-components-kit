@@ -42,7 +42,7 @@ The remaining colors without suffixes to change are:
 * **textColorDark**
 * **textColorLight**
 
-Check out the default color values in [defaultTheme.js](components/defaultTheme.js).
+Check out the default theme variables in [createTheme.js](components/createTheme.js).
 
 ## Button
 

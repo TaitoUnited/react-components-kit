@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import moment from 'moment';
 
 import styled from 'styled-components';
 import colorGetter from './colorGetter';
 
-import { Layout, Box } from './Layout';
+import Layout from './Layout';
 import IconButton from './IconButton';
 
 const propTypes = {
@@ -16,21 +15,17 @@ const propTypes = {
 const range = n => Array.from(Array(n).keys());
 
 class Calendar extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    activeCell: '',
+    month: (new Date()).getMonth(),
+    year: (new Date()).getFullYear(),
+  };
 
-    this.state = {
-      activeCell: '',
-      month: (new Date()).getMonth(),
-      year: (new Date()).getFullYear(),
-    };
-  }
-
-  setActive(i, j) {
+  setActive = (i, j) => {
     this.setState({ activeCell: `${i}x${j}` });
   }
 
-  getDay(i, j) {
+  getDay = (i, j) => {
     const { year, month } = this.state;
     const firstDay = new Date(year, month, 1).getDay() || 7;
     const weeks = j * 7;
@@ -47,14 +42,14 @@ class Calendar extends Component {
     return { day: date.getDate(), relativeMonth };
   }
 
-  monthName(number) {
+  monthName = (number) => {
     const date = new Date();
     date.setDate(1);
     date.setMonth(number);
     return date.toLocaleDateString(this.props.locale, { month: 'long' });
   }
 
-  changeMonth(relativeMonth) {
+  changeMonth = (relativeMonth) => {
     const { year, month } = this.state;
 
     if (month === 0 && relativeMonth === -1) {
@@ -170,7 +165,7 @@ const Row = styled(Layout)`
   font-size: 0.9rem;
 `;
 
-const Cell = styled(Box)`
+const Cell = styled(Layout.Box)`
   padding: 8px 16px;
   text-align: center;
   ${props => props.active &&

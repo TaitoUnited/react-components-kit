@@ -4,14 +4,12 @@ import styled, { keyframes, css } from 'styled-components';
 import colorGetter from './colorGetter';
 
 const propTypes = {
-  autoResize: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
-  validator: PropTypes.func,
   validationMessage: PropTypes.string,
+  validator: PropTypes.func,
   value: PropTypes.string,
-  error: PropTypes.bool,
-  cacheValue: PropTypes.bool,
   label: PropTypes.string,
+  cacheValue: PropTypes.bool,
   stackedLabel: PropTypes.bool,
   containerStyles: PropTypes.object,
   inputStyles: PropTypes.object,
@@ -97,7 +95,7 @@ class TextField extends PureComponent {
     const labelUp = stackedLabel || isFocused || value;
 
     return (
-      <InputWrapper hasValidation={!!validator} style={containerStyles}>
+      <InputWrapper style={containerStyles}>
         {label &&
           <Label
             up={labelUp}
@@ -115,6 +113,7 @@ class TextField extends PureComponent {
           onChange={this.handleChange}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
+          notValid={!!validator && !isValid}
           innerRef={(node) => { this._input = node; }}
         />
 
@@ -131,6 +130,11 @@ class TextField extends PureComponent {
 const padV = 16;
 const padH = 16;
 const labelSize = 14;
+const fontSize = 16;
+
+// paddings + font size + border
+const inputHeight = (padV * 2) + fontSize + 2;
+
 const fadeIn = keyframes`
   from { opacity: 0; }
   to { opacity: 1; }
@@ -141,10 +145,10 @@ const InputWrapper = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
-  ${props => props.hasValidation && 'margin-bottom: 18px;'}
 `;
 const Label = styled.label`
   display: inline-block;
+  line-height: 1;
   flex: none;
   align-self: flex-start;
   color: inherit;
@@ -152,23 +156,25 @@ const Label = styled.label`
   font-size: ${labelSize}px;
   will-change: transform;
   transition: transform 0.3s cubic-bezier(.06,.67,.32,.82);
-  transform: translate(${padH}px, ${(1.333 * labelSize) + padV}px);
+  transform: translate(${padH}px, ${(inputHeight / 2) + (labelSize / 2)}px);
+  transform-origin: left;
   ${props => props.up && css`
-    transform: scale(0.8) translate(-2px, -2px);
+    transform: scale(0.8) translate(4px, -6px);
   `}
 `;
 const InputEl = styled.input`
-  font-size: 16px;
+  font-size: ${fontSize}px;
+  line-height: 1;
   border-radius: 3px;
   outline: none;
   padding: ${padV}px ${padH}px;
   color: ${props => colorGetter(props, 'textColorDark')};
   background-color: ${props => colorGetter(props, 'greyLightest')};
-  border: 1px solid ${props => props.error
+  border: 1px solid ${props => props.notValid
     ? colorGetter(props, 'errorColor')
     : colorGetter(props, 'greyLight')
   };
-  
+  ${props => props.notValid && 'margin-bottom: 16px;'}
   ${props => props.disabled && css`
     opacity: 0.5;
     cursor: not-allowed;
@@ -179,18 +185,16 @@ const InputEl = styled.input`
   }
 `;
 const ValidationMessage = styled.div`
-  font-size: 14px;
-  margin-top: 8px;
+  font-size: 12px;
   position: absolute;
-  bottom: -18px;
-  left: 0px;
+  bottom: -6px;
+  left: 8px;
   animation: ${fadeIn} 0.4s;
   color: ${props => colorGetter(props, 'errorColor')};
 `;
 
 TextField.propTypes = propTypes;
 TextField.defaultProps = {
-  autoResize: false,
   cacheValue: false,
   validationMessage: 'Tarkista syötteesi!',
   containerStyles: {},

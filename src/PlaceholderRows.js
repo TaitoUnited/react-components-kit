@@ -2,7 +2,29 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-// Styled components
+const propTypes = {
+  rows: PropTypes.number,
+};
+
+const range = num => Array.from(Array(num).keys());
+const getRandomInt = (min, max) => {
+  return Math.floor(Math.random() * (max - (min + 1))) + min;
+};
+
+const PlaceholderRows = ({ rows = 6 }) => (
+  <Wrapper>
+    {range(rows).map((idx) => {
+      return (
+        <Row key={`placeholder_row_${idx}`}>
+          <Cell>
+            <LoadingPlaceholder w={getRandomInt(4, 10)} />
+          </Cell>
+        </Row>
+      );
+    })}
+  </Wrapper>
+);
+
 const bgAnim = keyframes`
   0% { background-color: #f5f5f5; }
   50% { background-color: #eee }
@@ -30,31 +52,6 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const propTypes = {
-  rows: PropTypes.number,
-};
-
-const getRandomInt = (min, max) => {
-  return Math.floor(Math.random() * (max - (min + 1))) + min;
-};
-
-const range = (num) => {
-  return Array.from(Array(num).keys());
-};
-
-const PlaceholderRows = ({ rows = 6 }) => (
-  <Wrapper>
-    {range(rows).map((idx) => {
-      return (
-        <Row key={`dummy_${idx}`}>
-          <Cell>
-            <LoadingPlaceholder w={getRandomInt(2, 8)} />
-          </Cell>
-        </Row>
-      );
-    })}
-  </Wrapper>
-);
-
 PlaceholderRows.propTypes = propTypes;
+
 export default PlaceholderRows;
