@@ -460,4 +460,41 @@ export const textFieldProperties = [
   },
 ];
 
+export const drawerProperties = [
+  {
+    name: 'isOpen *',
+    type: 'bool',
+    defaultVal: 'false',
+    description: 'Is the drawer open or not',
+  },
+  {
+    name: 'toggleDrawer *',
+    type: 'func',
+    description: 'Open / close the drawer',
+  },
+  {
+    name: 'children',
+    type: 'any',
+    description: 'Inner menu content of the drawer',
+  },
+  {
+    name: 'bg',
+    type: 'string',
+    defaultVal: '#fff',
+    description: 'background color of the drawer',
+  },
+  {
+    name: 'useGradient',
+    type: 'bool',
+    defaultVal: 'false',
+    description: 'Use a sligth gradient for the background color',
+  },
+  {
+    name: 'side',
+    type: 'string',
+    defaultVal: 'left',
+    description: 'Determines whether drawer is on the left or right side',
+  },
+];
+
 /* eslint-enable max-len */

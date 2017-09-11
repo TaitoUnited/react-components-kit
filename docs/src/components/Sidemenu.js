@@ -28,6 +28,24 @@ class Sidemenu extends Component {
 
         <Gutter vertical />
 
+        <SectionTitle to='/cards'>Cards</SectionTitle>
+        <MenuItem to='/cards#card'>Card</MenuItem>
+        <MenuItem to='/cards#card-animated'>Card (animated)</MenuItem>
+
+        <Gutter vertical />
+
+
+        <SectionTitle to='/form'>Form</SectionTitle>
+        <MenuItem to='/form#textfield'>TextField</MenuItem>
+        <MenuItem to='/form#toggleswitch'>ToggleSwitch</MenuItem>
+
+        <Gutter vertical />
+
+        <SectionTitle to='/navigation'>Navigation</SectionTitle>
+        <MenuItem to='/navigation#drawer'>Drawer</MenuItem>
+
+        <Gutter vertical />
+
         <SectionTitle to='/structure'>Structure</SectionTitle>
         <MenuItem to='/structure#gutter'>Gutter</MenuItem>
         <MenuItem to='/structure#divider'>Divider</MenuItem>
@@ -40,18 +58,6 @@ class Sidemenu extends Component {
         <MenuItem to='/typography#heading'>Heading</MenuItem>
         <MenuItem to='/typography#text'>Text</MenuItem>
         <MenuItem to='/typography#icon'>Icon</MenuItem>
-
-        <Gutter vertical />
-
-        <SectionTitle to='/form'>Form</SectionTitle>
-        <MenuItem to='/form#textfield'>TextField</MenuItem>
-        <MenuItem to='/form#toggleswitch'>ToggleSwitch</MenuItem>
-
-        <Gutter vertical />
-
-        <SectionTitle to='/cards'>Cards</SectionTitle>
-        <MenuItem to='/cards#card'>Card</MenuItem>
-        <MenuItem to='/cards#card-animated'>Card (animated)</MenuItem>
 
         <Gutter vertical />
 

@@ -350,3 +350,21 @@ const ExampleComponent = styled.div\`
   \`}
 \`;
 `;
+
+export const drawerExample = `
+import { Drawer } from 'react-components-kit';
+
+const Example = () => (
+  <div>
+    <Drawer
+      isOpen={this.state.drawerOpen}
+      toggleDrawer={this.toggleDrawer}
+      side={this.state.drawerSide}
+      bg='rebeccapurple'
+      useGradient
+    >
+      // ... menu component goes here
+    </Drawer>
+  </div>
+);
+`;

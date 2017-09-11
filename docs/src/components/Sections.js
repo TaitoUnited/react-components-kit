@@ -12,6 +12,7 @@ import Form from './Form';
 import Utilities from './Utilities';
 import Other from './Other';
 import Cards from './Cards';
+import Navigation from './Navigation';
 
 const propTypes = {
   something: PropTypes.any,
@@ -29,10 +30,11 @@ class Sections extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/buttons' component={Buttons} />
-            <Route path='/typography' component={Typography} />
-            <Route path='/structure' component={Structure} />
-            <Route path='/form' component={Form} />
             <Route path='/cards' component={Cards} />
+            <Route path='/form' component={Form} />
+            <Route path='/navigation' component={Navigation} />
+            <Route path='/structure' component={Structure} />
+            <Route path='/typography' component={Typography} />
             <Route path='/utilities' component={Utilities} />
             <Route path='/other' component={Other} />
             <Route component={Home} />
