@@ -7,7 +7,7 @@ const CIRCLE_COMPLETE = 629;
 
 const propTypes = {
   children: PropTypes.any,
-  progress: PropTypes.number.isRequired,
+  progress: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   size: PropTypes.string,
   color: PropTypes.string,
 };

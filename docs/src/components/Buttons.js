@@ -1,12 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import {
-  Layout,
-  Gutter,
-  Button,
-  Heading,
-  Divider,
-} from 'react-components-kit';
+import { Layout, Gutter, Button, Heading, Divider } from 'react-components-kit';
 
 import Properties from './common/Properties';
 import CodeBlock from './common/CodeBlock';

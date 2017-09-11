@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import {
   Layout,
   Gutter,
-  Button,
   Heading,
   Text,
   Divider,

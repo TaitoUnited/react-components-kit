@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   Layout,
   Gutter,
@@ -10,7 +9,7 @@ import {
 
 import Properties from './common/Properties';
 import CodeBlock from './common/CodeBlock';
-import { cardExample, cardAnimatedExample } from './codeSnippets';
+import { cardExample } from './codeSnippets';
 import { cardProperties, cardAnimatedProperties } from './compProperties';
 
 const Cards = () => (

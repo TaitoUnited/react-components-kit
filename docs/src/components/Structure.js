@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Heading, Layout, Gutter, Divider, Text } from 'react-components-kit';
 
 import Properties from './common/Properties';

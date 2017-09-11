@@ -21,7 +21,7 @@ const Home = () => (
     <p>
       Check out more detailed examples and all possible properties
       for each component in the sidemenu.
-      </p>
+    </p>
   </HomeWrapper>
 );
 
