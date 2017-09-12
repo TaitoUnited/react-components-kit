@@ -29,3 +29,4 @@ export { default as Table } from './Table';
 export { default as TextField } from './TextField';
 export { default as OutsideReactor } from './OutsideReactor';
 export { default as Drawer } from './Drawer';
+export { default as Dropmenu } from './Dropmenu';

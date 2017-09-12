@@ -368,3 +368,28 @@ const Example = () => (
   </div>
 );
 `;
+
+export const dropmenuExample = `
+import { Dropmenu } from 'react-components-kit';
+
+const Example = () => (
+  <div>
+    <Dropmenu
+      trigger={
+        <Icon
+          name='grid'
+          size='32px'
+          color='rebeccapurple'
+          touchable
+        />
+      }
+    >
+      <Dropmenu.Item>Foo</Dropmenu.Item>
+      <Dropmenu.Item>Bar</Dropmenu.Item>
+      <Dropmenu.Item>Baz</Dropmenu.Item>
+      <Divider amount='0px' />
+      <Dropmenu.Item>Baz</Dropmenu.Item>
+    </Dropmenu>
+  </div>
+);
+`;

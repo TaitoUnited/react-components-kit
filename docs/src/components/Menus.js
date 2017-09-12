@@ -7,14 +7,17 @@ import {
   Button,
   ToggleSwitch,
   Text,
+  Divider,
+  Dropmenu,
+  Icon,
 } from 'react-components-kit';
 
 import Properties from './common/Properties';
 import CodeBlock from './common/CodeBlock';
-import { drawerExample } from './codeSnippets';
-import { drawerProperties } from './compProperties';
+import { drawerExample, dropmenuExample } from './codeSnippets';
+import { drawerProperties, dropmenuProperties } from './compProperties';
 
-class Navigation extends Component {
+class Menus extends Component {
   state = {
     drawerOpen: false,
     drawerSide: 'left',
@@ -35,7 +38,7 @@ class Navigation extends Component {
 
     return (
       <div>
-        <Heading>Navigation</Heading>
+        <Heading>Menus</Heading>
     
         <Heading h2>Drawer</Heading>
 
@@ -90,9 +93,63 @@ class Navigation extends Component {
         <Layout>
           <Properties properties={drawerProperties} />
         </Layout>
+
+        <Divider />
+
+        <Heading h2>Dropmenu</Heading>
+
+        <Gutter vertical amount='16px' />
+
+        <Layout justify='space-around' align='center'>
+          <Dropmenu
+            trigger={
+              <Button primary>
+                Open menu&nbsp;
+                <Icon
+                  name='android-more-vertical'
+                  color='#fff'
+                  style={{ padding: 6 }}
+                />
+              </Button>
+            }
+          >
+            <Dropmenu.Item>Foo</Dropmenu.Item>
+            <Dropmenu.Item>Bar</Dropmenu.Item>
+            <Dropmenu.Item>Baz</Dropmenu.Item>
+            <Divider amount='0px' />
+            <Dropmenu.Item>Baz</Dropmenu.Item>
+          </Dropmenu>
+
+          <Dropmenu
+            trigger={
+              <Icon
+                name='grid'
+                size='32px'
+                color='rebeccapurple'
+                touchable
+              />
+            }
+          >
+            <Dropmenu.Item>Foo</Dropmenu.Item>
+            <Dropmenu.Item>Bar</Dropmenu.Item>
+            <Dropmenu.Item>Baz</Dropmenu.Item>
+            <Divider amount='0px' />
+            <Dropmenu.Item>Baz</Dropmenu.Item>
+          </Dropmenu>
+        </Layout>
+
+        <Gutter vertical amount='16px' />
+
+        <Layout>
+          <CodeBlock code={dropmenuExample} />
+        </Layout>
+    
+        <Layout>
+          <Properties properties={dropmenuProperties} />
+        </Layout>
       </div>
     );
   }
 }
 
-export default Navigation;
+export default Menus;

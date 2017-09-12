@@ -497,4 +497,17 @@ export const drawerProperties = [
   },
 ];
 
+export const dropmenuProperties = [
+  {
+    name: 'trigger *',
+    type: 'any',
+    description: 'A valid React component that triggers showing the menu on click',
+  },
+  {
+    name: 'children *',
+    type: 'any',
+    description: 'Menu content (note that you can use Dropmenu.Item here)',
+  },
+];
+
 /* eslint-enable max-len */

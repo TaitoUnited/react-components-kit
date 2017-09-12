@@ -41,8 +41,9 @@ class Sidemenu extends Component {
 
         <Gutter vertical />
 
-        <SectionTitle to='/navigation'>Navigation</SectionTitle>
-        <MenuItem to='/navigation#drawer'>Drawer</MenuItem>
+        <SectionTitle to='/menus'>Menus</SectionTitle>
+        <MenuItem to='/menus#drawer'>Drawer</MenuItem>
+        <MenuItem to='/menus#dropmen'>Dropmenu</MenuItem>
 
         <Gutter vertical />
 
