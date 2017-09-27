@@ -393,3 +393,53 @@ const Example = () => (
   </div>
 );
 `;
+
+export const modalExample = `
+import { Modal } from 'react-components-kit';
+
+class Example extends Component {
+  state = {
+    modalVisible: false,
+  };
+
+  hideModal = () => {
+    this.setState({ modalVisible: false });
+  };
+
+  showModal = () => {
+    this.setState({ modalVisible: true });
+  };
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.showModal}>
+          Show modal
+        </Button>
+
+        <Modal
+          visible={this.state.modalVisible}
+          hide={this.hideModal}
+          backdropBg='rgba(0, 0, 255, 0.5)'
+        >
+          <Modal.Body>
+            <h1 style={{ margin: 0 }}>Modal</h1>
+            <p>
+              You have full control of the modal content and state!
+            </p>
+            <p>
+              But you can also use Modal's internal static components
+              to compose your modal content.
+            </p>
+            <Modal.Footer>
+              <Button flat onClick={this.hideModal}>Cancel</Button>
+              <Gutter />
+              <Button flat onClick={this.confirmModal}>Confirm</Button>
+            </Modal.Footer>
+          </Modal.Body>
+        </Modal>
+      </div>
+    );
+  }
+}
+`;

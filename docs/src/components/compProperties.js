@@ -510,4 +510,37 @@ export const dropmenuProperties = [
   },
 ];
 
+export const modalProperties = [
+  {
+    name: 'visible *',
+    type: 'bool',
+    description: 'Determines whether modal is visible or not',
+  },
+  {
+    name: 'hide *',
+    type: 'func',
+    description: 'Function that is called when modal should be hid',
+  },
+  {
+    name: 'animateFromBottom',
+    type: 'bool',
+    description: 'Changes the modal to appear from bottom instead of top',
+  },
+  {
+    name: 'disableBackdropAction',
+    type: 'bool',
+    description: 'Dont hide modal when backdrop is clicked',
+  },
+  {
+    name: 'contentStyles',
+    type: 'object',
+    description: 'Custom styles for the modal (white box)',
+  },
+  {
+    name: 'backdropBg',
+    type: 'string',
+    description: 'Color value for the backdrop',
+  },
+];
+
 /* eslint-enable max-len */

@@ -14,6 +14,7 @@ import {
   CircleProgress,
   PlaceholderRows,
   OutsideReactor,
+  Modal,
 } from 'react-components-kit';
 
 import Properties from './common/Properties';
@@ -26,6 +27,7 @@ import {
   badgeExample,
   outsideReactorExample,
   placeholderExample,
+  modalExample,
 } from './codeSnippets';
 
 import {
@@ -35,12 +37,14 @@ import {
   badgeProperties,
   placeholderProperties,
   outsideReactorProperties,
+  modalProperties,
 } from './compProperties';
 
 class Utilities extends Component {
   state = {
     clickedOutside: false,
     progress: 30,
+    modalVisible: false,
   };
 
   handleClickOutside = () => {
@@ -52,8 +56,21 @@ class Utilities extends Component {
     }, 2000);
   };
 
+  hideModal = () => {
+    this.setState({ modalVisible: false });
+  };
+
+  showModal = () => {
+    this.setState({ modalVisible: true });
+  };
+
+  confirmModal = () => {
+    console.log('Modal confirmed!');
+    this.hideModal();
+  };
+
   render() {
-    const { clickedOutside } = this.state;
+    const { clickedOutside, modalVisible } = this.state;
 
     return (
       <div>
@@ -128,6 +145,51 @@ class Utilities extends Component {
           <Properties properties={circleProgressProperties} />
         </Layout>
     
+        <Divider />
+    
+        <Heading h2 id='modal'>
+          Modal
+        </Heading>
+
+        <Button onClick={this.showModal}>
+          Show modal
+        </Button>
+
+        <p>
+          PS: don't freak about the backdrop background color,
+          it's not the default color ;)
+        </p>
+
+        <Modal
+          visible={modalVisible}
+          hide={this.hideModal}
+          backdropBg='rgba(0, 0, 255, 0.5)'
+        >
+          <Modal.Body>
+            <h1 style={{ margin: 0 }}>Modal</h1>
+            <p>
+              You have full control of the modal content and state!
+            </p>
+            <p>
+              But you can also use Modal's internal static components
+              to compose your modal content.
+            </p>
+            <Modal.Footer>
+              <Button flat onClick={this.hideModal}>Cancel</Button>
+              <Gutter />
+              <Button flat onClick={this.confirmModal}>Confirm</Button>
+            </Modal.Footer>
+          </Modal.Body>
+        </Modal>
+
+        <Layout>
+          <CodeBlock code={modalExample} />
+        </Layout>
+
+        <Layout>
+          <Properties properties={modalProperties} />
+        </Layout>
+
         <Divider />
     
         <Heading h2 id='outsidereactor'>

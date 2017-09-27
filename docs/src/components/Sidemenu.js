@@ -65,6 +65,7 @@ class Sidemenu extends Component {
         <SectionTitle to='/utilities'>Utilities</SectionTitle>
         <MenuItem to='/utilities#badge'>Badge</MenuItem>
         <MenuItem to='/utilities#circleprogress'>CircleProgress</MenuItem>
+        <MenuItem to='/utilities#modal'>Modal</MenuItem>
         <MenuItem to='/utilities#outsidereactor'>OutsideReactor</MenuItem>
         <MenuItem to='/utilities#placeholder'>PlaceholderRows</MenuItem>
         <MenuItem to='/utilities#spinner'>Spinner</MenuItem>

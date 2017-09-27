@@ -30,3 +30,4 @@ export { default as TextField } from './TextField';
 export { default as OutsideReactor } from './OutsideReactor';
 export { default as Drawer } from './Drawer';
 export { default as Dropmenu } from './Dropmenu';
+export { default as Modal } from './Modal';
