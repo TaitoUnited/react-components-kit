@@ -7,6 +7,7 @@
     "example": "examples"
   },
   "scripts": {
+    "_comment": "TODO: enable tests and code coverage...",
     "commit": "git-cz",
     "check-coverage": "nyc check-coverage --statements 0 --branches 0 --functions 0 --lines 0",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
@@ -51,13 +52,15 @@
     ]
   },
   "peerDependencies": {
-    "react": "^0.14.0 || 15.x || 16.x"
+    "react": ">=15"
   },
   "dependencies": {
     "color": "2.0.0",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.0",
+    "react-transition-group": "2.2.0",
     "styled-components": "^2.1.2"
   },
+  "_comment": "NOTE that semantic-release v8 requires node >= 8!!!",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-eslint": "7.1.0",
@@ -67,7 +70,7 @@
     "babel-preset-stage-2": "6.24.1",
     "chai": "3.5.0",
     "codecov.io": "0.1.6",
-    "commitizen": "2.8.6",
+    "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "eslint": "3.9.1",
     "eslint-config-airbnb": "13.0.0",
@@ -75,15 +78,15 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.6.0",
-    "ghooks": "2.0.0",
+    "husky": "0.14.3",
     "istanbul": "0.4.5",
     "mocha": "3.1.2",
     "npm-run-all": "4.1.1",
     "nyc": "11.2.1",
-    "react": "15.6.1",
+    "react": "16.0.0",
     "rimraf": "2.6.1",
     "semantic-release": "^7.0.2",
-    "webpack": "3.5.6"
+    "webpack": "3.6.0"
   },
   "config": {
     "commitizen": {
