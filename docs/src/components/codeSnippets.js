@@ -443,3 +443,41 @@ class Example extends Component {
   }
 }
 `;
+
+export const tabsExample = `
+import { Tabs } from 'react-components-kit';
+
+const Example = () => (
+  <Tabs>
+    <Tabs.Panel label='Tab label 1'>
+      <Heading h4>Tab content 1</Heading>
+      <p>
+        Disrupt minimum viable product pivot waterfall is so 2000 and
+        late viral long shadow cortado SpaceTeam unicorn venture
+        capital pivot intuitive innovate. Disrupt sticky note user
+        centered design Steve Jobs ideate user story responsive.
+      </p>
+    </Tabs.Panel>
+    <Tabs.Panel label='Tab label 2'>
+      <Heading h4>Tab content 2</Heading>
+      <p>
+        Pair programming workflow co-working workflow piverate paradigm
+        hacker SpaceTeam. Quantitative vs. qualitative iterate
+        human-centered design bootstrapping user centered design
+        ideate driven physical computing quantitative vs. qualitative.
+      </p>
+    </Tabs.Panel>
+    <Tabs.Panel label='Tab label 3'>
+      <Heading h4>Tab content 3</Heading>
+      <p>
+        Pitch deck quantitative vs. qualitative long shadow driven fund
+        fund quantitative vs. qualitative. Pitch deck intuitive agile
+        bootstrapping hacker SpaceTeam piverate personas user centered
+        design affordances viral driven. Ship it sticky note
+        bootstrapping earned media thought leader responsive waterfall
+        is so 2000 and late human-centered design.
+      </p>
+    </Tabs.Panel>
+  </Tabs>
+);
+`;

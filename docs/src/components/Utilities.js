@@ -15,6 +15,7 @@ import {
   PlaceholderRows,
   OutsideReactor,
   Modal,
+  Tabs,
 } from 'react-components-kit';
 
 import Properties from './common/Properties';
@@ -28,6 +29,7 @@ import {
   outsideReactorExample,
   placeholderExample,
   modalExample,
+  tabsExample,
 } from './codeSnippets';
 
 import {
@@ -38,6 +40,7 @@ import {
   placeholderProperties,
   outsideReactorProperties,
   modalProperties,
+  tabsProperties,
 } from './compProperties';
 
 class Utilities extends Component {
@@ -75,7 +78,7 @@ class Utilities extends Component {
     return (
       <div>
         <Heading>Utilities</Heading>
-    
+        
         <Heading h2 id='badge'>Badge</Heading>
     
         <Layout align='center'>
@@ -276,7 +279,52 @@ class Utilities extends Component {
         </Layout>
     
         <Divider />
-    
+
+        <Heading h2>Tabs</Heading>
+        <Layout>
+          <Tabs>
+            <Tabs.Panel label='Tab label 1'>
+              <Heading h4>Tab content 1</Heading>
+              <p>
+                Disrupt minimum viable product pivot waterfall is so 2000 and
+                late viral long shadow cortado SpaceTeam unicorn venture
+                capital pivot intuitive innovate. Disrupt sticky note user
+                centered design Steve Jobs ideate user story responsive.
+              </p>
+            </Tabs.Panel>
+            <Tabs.Panel label='Tab label 2'>
+              <Heading h4>Tab content 2</Heading>
+              <p>
+                Pair programming workflow co-working workflow piverate paradigm
+                hacker SpaceTeam. Quantitative vs. qualitative iterate
+                human-centered design bootstrapping user centered design
+                ideate driven physical computing quantitative vs. qualitative.
+              </p>
+            </Tabs.Panel>
+            <Tabs.Panel label='Tab label 3'>
+              <Heading h4>Tab content 3</Heading>
+              <p>
+                Pitch deck quantitative vs. qualitative long shadow driven fund
+                fund quantitative vs. qualitative. Pitch deck intuitive agile
+                bootstrapping hacker SpaceTeam piverate personas user centered
+                design affordances viral driven. Ship it sticky note
+                bootstrapping earned media thought leader responsive waterfall
+                is so 2000 and late human-centered design.
+              </p>
+            </Tabs.Panel>
+          </Tabs>
+        </Layout>
+
+        <Layout>
+          <CodeBlock code={tabsExample} />
+        </Layout>
+
+        <Layout>
+          <Properties properties={tabsProperties} />
+        </Layout>
+
+        <Divider />
+
         <Heading h2>Tooltip</Heading>
         <Layout>
           <Layout.Box>

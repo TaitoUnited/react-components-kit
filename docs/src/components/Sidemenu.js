@@ -69,6 +69,7 @@ class Sidemenu extends Component {
         <MenuItem to='/utilities#outsidereactor'>OutsideReactor</MenuItem>
         <MenuItem to='/utilities#placeholder'>PlaceholderRows</MenuItem>
         <MenuItem to='/utilities#spinner'>Spinner</MenuItem>
+        <MenuItem to='/utilities#tabs'>Tabs</MenuItem>
         <MenuItem to='/utilities#tooltip'>Tooltip</MenuItem>
 
         <Gutter vertical />

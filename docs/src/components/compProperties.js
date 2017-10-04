@@ -543,4 +543,13 @@ export const modalProperties = [
   },
 ];
 
+export const tabsProperties = [
+  {
+    name: 'tabBreak',
+    type: 'string',
+    defaultVal: '768px',
+    description: 'A valid css value for max-width in media query (px, em etc)',
+  },
+];
+
 /* eslint-enable max-len */
