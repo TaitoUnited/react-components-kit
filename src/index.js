@@ -31,3 +31,4 @@ export { default as OutsideReactor } from './OutsideReactor';
 export { default as Drawer } from './Drawer';
 export { default as Dropmenu } from './Dropmenu';
 export { default as Modal } from './Modal';
+export { default as Tabs } from './Tabs';
