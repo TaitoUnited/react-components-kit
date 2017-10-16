@@ -193,6 +193,11 @@ export const layoutBoxProperties = [
     defaultVal: 'none',
     description: 'How much the box should flex',
   },
+  {
+    name: 'xs / sm / md / lg',
+    type: 'string | number',
+    description: 'Overwrite the flex value for different screen sizes',
+  },
 ];
 
 export const headingProperties = [
@@ -520,6 +525,11 @@ export const modalProperties = [
     name: 'hide *',
     type: 'func',
     description: 'Function that is called when modal should be hid',
+  },
+  {
+    name: 'elevation',
+    type: 'string | number',
+    description: 'The z-index for the modal',
   },
   {
     name: 'animateFromBottom',
