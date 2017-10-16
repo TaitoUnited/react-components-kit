@@ -30,11 +30,13 @@ class Modal extends PureComponent {
     disableBackdropAction: PropTypes.bool,
     contentStyles: PropTypes.object,
     backdropBg: PropTypes.string,
+    elevation: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children: PropTypes.any,
   };
 
   static defaultProps = {
     contentStyles: {},
+    elevation: 9999,
   };
 
   componentWillReceiveProps(nextProps) {
@@ -58,6 +60,7 @@ class Modal extends PureComponent {
       contentStyles,
       children,
       backdropBg,
+      elevation,
     } = this.props;
 
     return (
@@ -65,9 +68,9 @@ class Modal extends PureComponent {
         {(state) => {
           const show = state === 'entered';
           const dir = animateFromBottom ? 1 : -1;
-          
+
           return (
-            <Wrapper>
+            <Wrapper elevation={elevation}>
               <Main visible={show} dir={dir} style={contentStyles}>
                 {children}
               </Main>
@@ -83,17 +86,6 @@ class Modal extends PureComponent {
     );
   }
 }
-
-const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 const Main = styled.div`
   opacity: ${props => props.visible ? 1 : 0};
@@ -119,6 +111,26 @@ const Backdrop = styled.div`
   left: 0;
   background-color: ${props => props.bg || 'rgba(0,0,0,0.5)'};
   z-index: 100;
+`;
+
+const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: ${props => props.elevation};
+
+  ${Main} {
+    z-index: ${props => props.elevation + 2};
+  }
+
+  ${Backdrop} {
+    z-index: ${props => props.elevation + 1};
+  }
 `;
 
 export default Modal;

@@ -5,6 +5,10 @@ import media from './media';
 
 const Box = styled.div`
   flex: ${props => props.flex || 'none'};
+  ${props => props.xs && media.phone`flex: ${props.xs};`}
+  ${props => props.sm && media.tablet`flex: ${props.sm};`}
+  ${props => props.md && media.desktop`flex: ${props.md};`}
+  ${props => props.lg && media.giant`flex: ${props.lg};`}
 
   @media print {
     ${props => props.noprint && 'display: none;'}
