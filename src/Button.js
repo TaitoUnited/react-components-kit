@@ -60,7 +60,6 @@ function getColor(props) {
 }
 
 const ButtonWrapper = styled.button`
-  outline: none;
   font-size: 16px;
   padding: 8px 16px;
   font-weight: normal;
