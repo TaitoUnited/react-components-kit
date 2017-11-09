@@ -65,7 +65,7 @@ const ButtonWrapper = styled.button`
   padding: 8px 16px;
   font-weight: normal;
   border-style: solid;
-  border-width: ${props => props.outline && !props.clear ? '1px' : '0px'};
+  border-width: ${props => !props.clear ? '1px' : '0px'};
   border-radius: 4px;
   border-color: ${props => getColor(props)};
   color: ${props => props.outline || props.clear ? getColor(props) : '#fff'};
@@ -96,6 +96,7 @@ const ButtonWrapper = styled.button`
     background: ${props => getHoverColor(props)};
     ${props => !props.clear && 'color: #fff;'}
     ${props => !props.disabled && 'cursor: pointer;'}
+    ${props => !props.outline && !props.clear ? `border-color: ${getHoverColor(props)};` : ''};
   }
 
   &:active {
