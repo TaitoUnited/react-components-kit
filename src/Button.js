@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import Color from 'color';
 import colorGetter from './colorGetter';
 import withRipple from './withRipple';
-
 
 function getBgColor(props) {
   let color = colorGetter(props, 'primaryColor');
@@ -60,14 +60,13 @@ function getColor(props) {
 }
 
 const ButtonWrapper = styled.button`
-  outline: none;
+  padding: 0px;
   font-size: 16px;
-  padding: 8px 16px;
   font-weight: normal;
   border-style: solid;
-  border-width: ${props => props.outline && !props.clear ? '1px' : '0px'};
+  border-width: 1px;
   border-radius: 4px;
-  border-color: ${props => getColor(props)};
+  border-color: ${props => props.clear ? 'transparent' : getColor(props)};
   color: ${props => props.outline || props.clear ? getColor(props) : '#fff'};
   ${props => getBgColor(props)};
   ${props => !props.flat && !props.outline && css`
@@ -83,14 +82,6 @@ const ButtonWrapper = styled.button`
     opacity: 0.5;
     cursor: not-allowed;
   `};
-  ${props => props.small && css`
-    padding: 4px 8px;
-    font-size: 12px;
-  `}
-  ${props => props.large && css`
-    padding: 12px 20px;
-    font-size: 24px;
-  `}
 
   &:hover {
     background: ${props => getHoverColor(props)};
@@ -102,20 +93,40 @@ const ButtonWrapper = styled.button`
     background: ${props => !props.clear && getActiveColor(props)};
     color: ${props => props.clear && getActiveColor(props)};
   }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 2px 8px ${props =>
+      Color(getActiveColor(props)).alpha(0.6).string()
+    };
+  }
 `;
 
-const ButtonContent = styled.div`
+const ButtonContent = withRipple(styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  padding: 8px 16px;
   ${props => props.disabled && 'pointer-events: none;'};
-`;
+  ${props => props.small && css`
+    padding: 4px 8px;
+    font-size: 12px;
+  `}
+  ${props => props.large && css`
+    padding: 12px 20px;
+    font-size: 24px;
+  `}
+`);
+
+const rippleStyles = {
+  display: 'block',
+};
 
 const Button = ({ children, ...rest }) => (
-  <ButtonWrapper {...rest}>
-    <ButtonContent disabled={rest.disabled}>
+  <ButtonWrapper {...rest}
+  >
+    <ButtonContent {...rest} wrapperStyles={rippleStyles}>
       {children}
     </ButtonContent>
   </ButtonWrapper>
@@ -125,4 +136,4 @@ Button.propTypes = {
   children: PropTypes.any,
 };
 
-export default withRipple(Button);
+export default Button;
