@@ -102,7 +102,7 @@ const ButtonWrapper = styled.button`
   }
 `;
 
-const ButtonContent = withRipple(styled.div`
+const ButtonContent = withRipple(styled.span`
   display: flex;
   flex-direction: row;
   align-items: center;
