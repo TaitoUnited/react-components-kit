@@ -124,11 +124,11 @@ const rippleStyles = {
 };
 
 const Button = ({ children, ...rest }) => {
-  const { disabled, small, large } = rest;
+  const { disabled, small, large, className } = rest;
   return (
     <ButtonWrapper {...rest}
     >
-      <ButtonContent disabled={disabled} small={small} large={large} wrapperStyles={rippleStyles}>
+      <ButtonContent {...{ disabled, small, large, className }} wrapperStyles={rippleStyles}>
         {children}
       </ButtonContent>
     </ButtonWrapper>
