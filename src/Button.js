@@ -123,14 +123,17 @@ const rippleStyles = {
   display: 'block',
 };
 
-const Button = ({ children, ...rest }) => (
-  <ButtonWrapper {...rest}
-  >
-    <ButtonContent {...rest} wrapperStyles={rippleStyles}>
-      {children}
-    </ButtonContent>
-  </ButtonWrapper>
-);
+const Button = ({ children, ...rest }) => {
+  const { disabled, small, large, className } = rest;
+  return (
+    <ButtonWrapper {...rest}
+    >
+      <ButtonContent {...{ disabled, small, large, className }} wrapperStyles={rippleStyles}>
+        {children}
+      </ButtonContent>
+    </ButtonWrapper>
+  );
+}
 
 Button.propTypes = {
   children: PropTypes.any,
