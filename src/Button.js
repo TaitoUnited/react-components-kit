@@ -102,7 +102,7 @@ const ButtonWrapper = styled.button`
   }
 `;
 
-const ButtonContent = withRipple(styled.div`
+const ButtonContent = withRipple(styled.span`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -126,14 +126,16 @@ const rippleStyles = {
 const Button = ({ children, ...rest }) => {
   const { disabled, small, large, className } = rest;
   return (
-    <ButtonWrapper {...rest}
-    >
-      <ButtonContent {...{ disabled, small, large, className }} wrapperStyles={rippleStyles}>
+    <ButtonWrapper {...rest}>
+      <ButtonContent
+        {...{ disabled, small, large, className }}
+        wrapperStyles={rippleStyles}
+      >
         {children}
       </ButtonContent>
     </ButtonWrapper>
   );
-}
+};
 
 Button.propTypes = {
   children: PropTypes.any,
